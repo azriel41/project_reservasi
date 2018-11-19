@@ -405,7 +405,7 @@
                                         <img src="{{ asset('assets_backend/images/users/1.jpg') }}" alt="user" class="img-circle" width="60">
                                     </div>
                                     <div class="m-l-10">
-                                        <h4 class="m-b-0">{{ Auth::user()->name }}</h4>
+                                        <h4 class="m-b-0">-</h4>
                                         <p class=" m-b-0">varun@gmail.com</p>
                                     </div>
                                 </div>
