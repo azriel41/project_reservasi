@@ -86,25 +86,164 @@
                                 <li class="sidebar-item">
                                     <a href="index3.html" class="sidebar-link">
                                         <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Master Room </span>
+                                        <span class="hide-menu"> Manage Room Types </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a href="index3.html" class="sidebar-link">
                                         <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Master Categories</span>
+                                        <span class="hide-menu"> Categories</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a href="index3.html" class="sidebar-link">
                                         <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Master Features</span>
+                                        <span class="hide-menu"> Features</span>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
-                </nav>
+                              <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                <i class="icon-Car-Wheel"></i>
+                                <span class="hide-menu"> Orders</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Orders </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Invoices </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Statuses </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Order Messages </span>
+                                    </a>
+                                </li>
+                            </ul>
+                              <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                <i class="icon-Car-Wheel"></i>
+                                <span class="hide-menu"> Customers </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Customers </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Address </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Contacts </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Titles </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Groups </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                <i class="icon-Car-Wheel"></i>
+                                <span class="hide-menu"> Ticketing </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Outbonds </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Swimming Pool </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Karaoke </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                <i class="icon-Car-Wheel"></i>
+                                <span class="hide-menu"> Preferences </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> General </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Orders </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Room Types </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Customers </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Customers </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> CMS </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index3.html" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Images </span>
+                                    </a>
+                                </li>
+                        </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
