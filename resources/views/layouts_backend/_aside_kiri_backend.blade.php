@@ -75,6 +75,12 @@
                                         <span class="hide-menu"> Master Customer</span>
                                     </a>
                                 </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('master_features') }}" class="sidebar-link">
+                                        <i class="icon-Record"></i>
+                                        <span class="hide-menu"> Master Features</span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sidebar-item">
@@ -143,30 +149,6 @@
                                     <a href="index3.html" class="sidebar-link">
                                         <i class="icon-Record"></i>
                                         <span class="hide-menu"> Customers </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Address </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Contacts </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Titles </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Groups </span>
                                     </a>
                                 </li>
                             </ul>

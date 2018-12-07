@@ -35,7 +35,7 @@
                     <h4 class="m-b-0 text-white">Customers</h4></div>
                 <div class="card-body">
                      <div class="text-right mb-3">
-                    <a href="{{ route('master_role_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus
+                    <a href="{{ route('customers_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus
     "></i> Add Data</a>
                 </div>
                    <div class="table-responsive">
@@ -47,31 +47,20 @@
                                     <th>First Name </th>
                                     <th>Last Name </th>
                                     <th>Email Address </th>
-                                    <th>Sales </th>
-                                    <th>Enabled </th>
-                                    <th>Newsletter </th>
-                                    <th>Opit-in </th>
                                     <th>Registration </th>
-                                    <th>Last Visit </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $element)
                                     <tr>
-                                        <td>{{ $element->m_id }}</td>
-                                        <td>{{ $element->m_social_title }}</td>
-                                        <td>{{ $element->m_first_name }}</td>
-                                        <td>{{ $element->m_last_name }}</td>
-                                        <td>{{ $element->m_email_address }}</td>
-                                        <td>{{ $element->m_sales }}</td>
-                                        <td>{{ $element->m_enabled }}</td>
-                                        <td>{{ $element->m_newsletter }}</td>
-                                        <td>{{ $element->m_opit_in }}</td>
-                                        <td>{{ $element->m_sales }}</td>
-                                        <td>{{ $element->m_registration }}</td>
-                                        <td>{{ $element->m_last_visit }}</td>
+                                        <td>{{ $element->mc_identity }}</td>
+                                        <td>{{ $element->mc_title }}</td>
+                                        <td>{{ $element->mc_name }}</td>
+                                        <td>{{ $element->mc_email_address }}</td>
+                                        <td>{{ $element->mc_registration }}</td>
+
                                         <td>
-                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('master_role_edit', ['id' => $element->m_code]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('customers_edit', ['id' => $element->m_code]) }}"><i class="fas fa-pencil-alt"></i></a>
                                             <button type="button" class="btn waves-effect waves-light btn-sm btn-danger delete" value="{{ $element->m_code }}" ><i class="fas fa-times"></i></button>
                                         </td>
                                     </tr>
@@ -112,7 +101,7 @@
                     ['<button style="background-color:red;"> Delete </button>', function (instance, toast) {
 
                         $.ajax({
-                            url  : baseUrl+'/master'+'/master_role/delete/'+this_val,
+                            url  : baseUrl+'/master'+'/customers/delete/'+this_val,
                             type :'get',
                             success:function(data){
                                 if (data.status == 'sukses') {

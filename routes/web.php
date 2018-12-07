@@ -71,12 +71,12 @@ Route::group(['middleware' => 'auth'], function () {
    Route::get('/catalog/catalog_categories/delete/{id}', 'catalog\catalog_categoriesController@delete')->name('catalog_categories_delete');
 
    //MASTER features
-   Route::get('/catalog/catalog_features', 'catalog\catalog_featuresController@index')->name('catalog_features');
-   Route::get('/catalog/catalog_features/create', 'catalog\catalog_featuresController@create')->name('catalog_features_create');
-   Route::get('/catalog/catalog_features/save', 'catalog\catalog_featuresController@save')->name('catalog_features_save');
-   Route::get('/catalog/catalog_features/edit/{id}', 'catalog\catalog_featuresController@edit')->name('catalog_features_edit');
-   Route::get('/catalog/catalog_features/update/{id}', 'catalog\catalog_featuresController@update')->name('catalog_features_update');
-   Route::get('/catalog/catalog_features/delete/{id}', 'catalog\catalog_featuresController@delete')->name('catalog_features_delete');
+   Route::get('/master/master_features', 'master\master_featuresController@index')->name('master_features');
+   Route::get('/master/master_features/create', 'master\master_featuresController@create')->name('master_features_create');
+   Route::get('/master/master_features/save', 'master\master_featuresController@save')->name('master_features_save');
+   Route::get('/master/master_features/edit/{id}', 'master\master_featuresController@edit')->name('master_features_edit');
+   Route::get('/master/master_features/update/{id}', 'master\master_featuresController@update')->name('master_features_update');
+   Route::get('/master/master_features/delete/{id}', 'master\master_featuresController@delete')->name('master_features_delete');
 
 
 
