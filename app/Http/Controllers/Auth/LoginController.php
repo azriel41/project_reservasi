@@ -29,6 +29,7 @@ class LoginController extends Controller
     // use AuthenticatesUsers;
     public function login(Request $req)
     {
+        // return 'a';
         $rules = array(
             'username' => 'required',
             'password' => 'required'
