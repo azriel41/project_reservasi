@@ -35,7 +35,7 @@
                     <h4 class="m-b-0 text-white">Card Title</h4></div>
                 <div class="card-body">
                      <div class="text-right mb-3">
-                    <a href="{{ route('master_role_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus
+                    <a href="{{ route('master_features_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus
     "></i> Add Data</a>
                 </div>
                    <div class="table-responsive">
@@ -53,7 +53,7 @@
                                         <td>{{ $element->mf_name }}</td>
                                         <td><i class="{{ $element->mf_icon }}"></i></td>
                                         <td>
-                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('master_role_edit', ['id' => $element->mf_id]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('master_features_edit', ['id' => $element->mf_id]) }}"><i class="fas fa-pencil-alt"></i></a>
                                             <button type="button" class="btn waves-effect waves-light btn-sm btn-danger delete" value="{{ $element->mf_id }}" ><i class="fas fa-times"></i></button>
                                         </td>
                                     </tr>
@@ -86,7 +86,7 @@
                 zindex: 999,
                 backgroundColor: '#1f1f22',
                 icon: 'fa fa-info-circle',
-                title: 'Are you Sure!',
+                title: 'Are you Sure?',
                 message: '',
                 position: 'center', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter
                 progressBarColor: 'rgb(0, 255, 184)',
@@ -94,12 +94,12 @@
                     ['<button style="background-color:red;"> Delete </button>', function (instance, toast) {
 
                         $.ajax({
-                            url  : baseUrl+'/master'+'/master_role/delete/'+this_val,
+                            url  : baseUrl+'/master'+'/master_features/delete/'+this_val,
                             type :'get',
                             success:function(data){
                                 if (data.status == 'sukses') {
                                     iziToast.success({position: 'topRight',message: 'Successfully Deleted!'});
-                                    window.location=('{{ route('master_role') }}')
+                                    window.location=('{{ route('master_features') }}')
                                 }else{
                                     iziToast.error({position: 'topRight',message: 'Error Check your data! '});
                                 }
