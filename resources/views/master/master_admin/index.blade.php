@@ -94,7 +94,7 @@
                 zindex: 999,
                 backgroundColor: '#1f1f22',
                 icon: 'fa fa-info-circle',
-                title: 'Are you Sure!',
+                title: 'Are you Sure?',
                 message: '',
                 position: 'center', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter
                 progressBarColor: 'rgb(0, 255, 184)',
