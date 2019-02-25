@@ -32,17 +32,17 @@
         <div class="col-md-12">
             <div class="card border-success">
                 <div class="card-header bg-success">
-                    <h4 class="m-b-0 text-white">Master Role</h4></div>
+                    <h4 class="m-b-0 text-white">Card Title</h4></div>
                 <div class="card-body">
                      <div class="text-right mb-3">
-                    <a href="{{ route('master_role_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus   "></i> Add Data</a>
+                    <a href="{{ route('master_role_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus
+    "></i> Add Data</a>
                 </div>
                    <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Level</th>
                                     <th>Name</th>
                                     <th>Action</th>
                                 </tr>
@@ -50,12 +50,11 @@
                             <tbody>
                                 @foreach ($data as $element)
                                     <tr>
-                                        <td>{{ $element->r_id }}</td>
-                                        <td>{{ $element->r_level }}</td>
-                                        <td>{{ $element->r_name }}</td>
+                                        <td>{{ $element->mc_id }}</td>
+                                        <td>{{ $element->mc_name }}</td>
                                         <td>
-                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('master_role_edit', ['id' => $element->r_id]) }}"><i class="fas fa-pencil-alt"></i></a>
-                                            <button type="button" class="btn waves-effect waves-light btn-sm btn-danger delete" value="{{ $element->r_id }}" ><i class="fas fa-times"></i></button>
+                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('catalog_category_edit', ['id' => $element->mc_id]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                            <button type="button" class="btn waves-effect waves-light btn-sm btn-danger delete" value="{{ $element->mc_id }}" ><i class="fas fa-times"></i></button>
                                         </td>
                                     </tr>
                                 @endforeach

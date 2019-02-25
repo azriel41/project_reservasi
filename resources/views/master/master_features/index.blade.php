@@ -32,7 +32,7 @@
         <div class="col-md-12">
             <div class="card border-success">
                 <div class="card-header bg-success">
-                    <h4 class="m-b-0 text-white">Card Title</h4></div>
+                    <h4 class="m-b-0 text-white">Master Features</h4></div>
                 <div class="card-body">
                      <div class="text-right mb-3">
                     <a href="{{ route('master_features_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus

@@ -39,20 +39,20 @@
 
                                     {{-- HIDDEN --}}
 
-                                    <input class="form-control" hidden="" type="text" name="r_id" value="{{ $data->r_id }}" id="r_id">
+                                    <input class="form-control" hidden="" type="text" name="mf_id" value="{{ $data->mf_id }}" id="mf_id">
 
 
                                     {{-- END HIDDEN --}}
                                     <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Level</label>
+                                        <label for="mf_name" class="col-2 col-form-label">Name</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="r_level" value="{{ $data->r_level }}" id="r_level">
+                                            <input class="form-control" type="text" name="mf_name" value="{{ $data->mf_name }}" id="mf_name">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="r_name" class="col-2 col-form-label">Name</label>
+                                        <label for="mf_icon" class="col-2 col-form-label">Icon</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="r_name" value="{{ $data->r_name }}" id="r_name">
+                                            <input class="form-control" type="text" name="mf_icon" value="{{ $data->mf_icon }}" id="mf_icon">
                                         </div>
                                     </div>
 
@@ -79,8 +79,8 @@
             timeout: 20000, 
             color: 'dark',
             icon: 'fas fa-question-circle',
-            title: 'Save Data!',
-            message: 'Apakah Anda Yakin ?!',
+            title: 'Save Data?',
+            message: 'Apakah Anda Yakin ?',
             position: 'center',
             progressBarColor: 'rgb(0, 255, 184)',
             buttons: [
@@ -96,12 +96,12 @@
 
                     $.ajax({
                         type: "get",
-                        url:'{{ route('master_role_update') }}',
+                        url:'{{ route('master_features_update') }}',
                         data: $('#save').serialize(),
                         processData: false,
                         contentType: false,
                       success:function(data){
-                        if (data.status == 'sukses') {
+                        if (data.status == 'Sukses') {
                             iziToast.success({
                                 icon: 'fa fa-save',
                                 position:'topRight',
@@ -109,13 +109,13 @@
                                 message: 'Data Berhasil Disimpan!',
                             });
 
-                            location.href = '{{ route('master_role') }}'
-                        }else if (data.status == 'ada') {
+                            location.href = '{{ route('master_features') }}'
+                        }else if (data.status == 'Ada') {
                             iziToast.warning({
                                 icon: 'fa fa-save',
                                 position:'topRight',
                                 title: 'Error!',
-                                message:'Level Sudah Terpakai',
+                                message:'Nama Sudah Terpakai',
                             });
 
                         }

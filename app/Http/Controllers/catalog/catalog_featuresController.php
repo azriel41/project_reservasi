@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\catalog;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class catalog_categoriesController  extends Controller
 {
     /**
      * Create a new controller instance.

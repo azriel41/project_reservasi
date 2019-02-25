@@ -6,7 +6,7 @@
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <!-- Title -->
-<title>Oke-trip.com</title>
+<title>Gunung Bale Resort</title>
 
 <!-- Favicon -->
 <link rel="icon" href="{{ asset('assets_frontend/img/core-img/favicon.png') }}">

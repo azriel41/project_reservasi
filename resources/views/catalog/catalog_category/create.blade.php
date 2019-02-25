@@ -73,7 +73,7 @@
             color: 'dark',
             icon: 'fas fa-question-circle',
             title: 'Save Data!',
-            message: 'Apakah Anda Yakin ?',
+            message: 'Apakah Anda Yakin ?!',
             position: 'center',
             progressBarColor: 'rgb(0, 255, 184)',
             buttons: [
@@ -94,7 +94,7 @@
                         processData: false,
                         contentType: false,
                       success:function(data){
-                        if (data.status == 'Sukses') {
+                        if (data.status == 'sukses') {
                             iziToast.success({
                                 icon: 'fa fa-save',
                                 position:'topRight',
@@ -103,7 +103,7 @@
                             });
 
                             location.href = '{{ route('master_role') }}'
-                        }else if (data.status == 'Ada') {
+                        }else if (data.status == 'ada') {
                             iziToast.warning({
                                 icon: 'fa fa-save',
                                 position:'topRight',

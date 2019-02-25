@@ -44,8 +44,7 @@
                             <!-- End User Profile-->
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="authentication-login1.html
-                                   " aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/') }}" aria-expanded="false">
                                 <i class="mdi mdi-directions"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
@@ -70,12 +69,6 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('master_customer') }}" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Master Customer</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
                                     <a href="{{ route('master_features') }}" class="sidebar-link">
                                         <i class="icon-Record"></i>
                                         <span class="hide-menu"> Master Features</span>
@@ -96,17 +89,12 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
+                                    <a href="{{ route('catalog_categories') }}" class="sidebar-link">
                                         <i class="icon-Record"></i>
                                         <span class="hide-menu"> Categories</span>
                                     </a>
                                 </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Features</span>
-                                    </a>
-                                </li>
+
                             </ul>
                               <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
@@ -201,18 +189,7 @@
                                         <span class="hide-menu"> Room Types </span>
                                     </a>
                                 </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Customers </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Customers </span>
-                                    </a>
-                                </li>
+                               
                                 <li class="sidebar-item">
                                     <a href="index3.html" class="sidebar-link">
                                         <i class="icon-Record"></i>

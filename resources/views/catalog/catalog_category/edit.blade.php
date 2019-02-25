@@ -36,16 +36,23 @@
                                 <h5 class="card-subtitle"> All bootstrap element classies </h5>
                                 <br>
                                 <form id="save">
+
+                                    {{-- HIDDEN --}}
+
+                                    <input class="form-control" hidden="" type="text" name="r_id" value="{{ $data->r_id }}" id="r_id">
+
+
+                                    {{-- END HIDDEN --}}
                                     <div class="form-group row">
                                         <label for="r_level" class="col-2 col-form-label">Level</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="r_level" id="r_level">
+                                            <input class="form-control" type="text" name="r_level" value="{{ $data->r_level }}" id="r_level">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="r_name" class="col-2 col-form-label">Name</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="r_name" id="r_name">
+                                            <input class="form-control" type="text" name="r_name" value="{{ $data->r_name }}" id="r_name">
                                         </div>
                                     </div>
 
@@ -73,7 +80,7 @@
             color: 'dark',
             icon: 'fas fa-question-circle',
             title: 'Save Data!',
-            message: 'Apakah Anda Yakin ?',
+            message: 'Apakah Anda Yakin ?!',
             position: 'center',
             progressBarColor: 'rgb(0, 255, 184)',
             buttons: [
@@ -89,12 +96,12 @@
 
                     $.ajax({
                         type: "get",
-                        url:'{{ route('master_role_save') }}',
+                        url:'{{ route('master_role_update') }}',
                         data: $('#save').serialize(),
                         processData: false,
                         contentType: false,
                       success:function(data){
-                        if (data.status == 'Sukses') {
+                        if (data.status == 'sukses') {
                             iziToast.success({
                                 icon: 'fa fa-save',
                                 position:'topRight',
@@ -103,7 +110,7 @@
                             });
 
                             location.href = '{{ route('master_role') }}'
-                        }else if (data.status == 'Ada') {
+                        }else if (data.status == 'ada') {
                             iziToast.warning({
                                 icon: 'fa fa-save',
                                 position:'topRight',

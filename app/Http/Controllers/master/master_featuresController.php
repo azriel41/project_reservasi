@@ -7,7 +7,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Validator;
 use DB;
-// use App\m_features;
+use App\m_features;
 
 class master_featuresController extends Controller
 {
@@ -29,7 +29,7 @@ class master_featuresController extends Controller
     	//get all name/value
     	$input = $request->all();
     	//check unique row , if exist == 1
-    	$check = DB::table('m_features')->where('r_level',$request->r_level)->count();
+    	$check = DB::table('m_features')->where('mf_name',$request->mf_name)->count();
     	//function check
     	if ($check > 0) {
         	return response()->json(['status'=>'ada']);
@@ -38,45 +38,45 @@ class master_featuresController extends Controller
         $data = m_features::create($input);
         //return response 
         if ($data == true) {
-        	return response()->json(['status'=>'sukses']);
+        	return response()->json(['status'=>'Sukses']);
         }else{
-        	return response()->json(['status'=>'gagal']);
+        	return response()->json(['status'=>'Gagal']);
         }
 
     }
     public function edit($id)
     {
-    	$data = DB::table('m_features')->where('r_id',$id)->first();
+    	$data = DB::table('m_features')->where('mf_id',$id)->first();
 
         return view('master.master_features.edit',compact('data'));
     }
     public function update(Request $request)
     {
     	//get all name/value
-        $input = $request->except('r_id');
+        $input = $request->except('mf_id');
     	//check unique row , if exist == 1
-    	// $check = DB::table('m_features')->where('r_level',$request->r_level)->count();
+    	// $check = DB::table('m_features')->where('mf_name',$request->mf_name)->count();
     	$check = DB::table('m_features')
-                        ->where('r_id',$request->r_id)
+                        ->where('mf_id',$request->mf_id)
                         ->first();
 
         if ($check != null) {
-            if ($check->r_id != $request->r_id) {
-                return response()->json(['status'=>'ada']);
+            if ($check->mf_id != $request->mf_id) {
+                return response()->json(['status'=>'Ada']);
             }
         }
     	//save data
-        $data = m_features::where('r_id', $request->r_id)->update($input);
+        $data = m_features::where('mf_id', $request->mf_id)->update($input);
         //return response 
         if ($data == true) {
-        	return response()->json(['status'=>'sukses']);
+        	return response()->json(['status'=>'Sukses']);
         }else{
-        	return response()->json(['status'=>'gagal']);
+        	return response()->json(['status'=>'Gagal']);
         }
     }
     public function delete($id)
     {
-    	$check = DB::table('m_features')->where('r_id',$id)->delete();
+    	$check = DB::table('m_features')->where('mf_id',$id)->delete();
 
     	if ($check == true) {
     		return response()->json(['status'=>'sukses']);

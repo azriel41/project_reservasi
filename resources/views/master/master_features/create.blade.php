@@ -37,15 +37,15 @@
                                 <br>
                                 <form id="save">
                                     <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Level</label>
+                                        <label for="mf_name" class="col-2 col-form-label">Name</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="r_level" id="r_level">
+                                            <input class="form-control" type="text" name="mf_name" id="mf_name">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="r_name" class="col-2 col-form-label">Name</label>
+                                        <label for="mf_icon" class="col-2 col-form-label">Icon</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="r_name" id="r_name">
+                                            <input class="form-control" type="text" name="mf_icon" id="mf_icon">
                                         </div>
                                     </div>
 
@@ -73,7 +73,7 @@
             color: 'dark',
             icon: 'fas fa-question-circle',
             title: 'Save Data!',
-            message: 'Apakah Anda Yakin ?!',
+            message: 'Apakah Anda Yakin ?',
             position: 'center',
             progressBarColor: 'rgb(0, 255, 184)',
             buttons: [
@@ -89,7 +89,7 @@
 
                     $.ajax({
                         type: "get",
-                        url:'{{ route('master_role_save') }}',
+                        url:'{{ route('master_features_save') }}',
                         data: $('#save').serialize(),
                         processData: false,
                         contentType: false,
@@ -102,13 +102,13 @@
                                 message: 'Data Berhasil Disimpan!',
                             });
 
-                            location.href = '{{ route('master_role') }}'
-                        }else if (data.status == 'ada') {
+                            location.href = '{{ route('master_features') }}'
+                        }else if (data.status == 'Ada') {
                             iziToast.warning({
                                 icon: 'fa fa-save',
                                 position:'topRight',
                                 title: 'Error!',
-                                message:'Level Sudah Terpakai',
+                                message:'Nama Sudah Terpakai',
                             });
 
                         }
