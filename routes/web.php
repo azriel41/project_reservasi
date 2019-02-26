@@ -59,7 +59,7 @@
    Route::get('/master/master_features/create', 'master\master_featuresController@create')->name('master_features_create');
    Route::get('/master/master_features/save', 'master\master_featuresController@save')->name('master_features_save');
    Route::get('/master/master_features/edit/{id}', 'master\master_featuresController@edit')->name('master_features_edit');
-   Route::get('/master/master_features/update/{id}', 'master\master_featuresController@update')->name('master_features_update');
+   Route::get('/master/master_features/update', 'master\master_featuresController@update')->name('master_features_update');
    Route::get('/master/master_features/delete/{id}', 'master\master_featuresController@delete')->name('master_features_delete');
 
 
@@ -70,7 +70,7 @@
    Route::get('/catalog/catalog_room/create', 'catalog\catalog_roomController@create')->name('catalog_room_create');
    Route::get('/catalog/catalog_room/save', 'catalog\catalog_roomController@save')->name('catalog_room_save');
    Route::get('/catalog/catalog_room/edit/{id}', 'catalog\catalog_roomController@edit')->name('catalog_room_edit');
-   Route::get('/catalog/catalog_room/update/{id}', 'catalog\catalog_roomController@update')->name('catalog_room_update');
+   Route::get('/catalog/catalog_room/update', 'catalog\catalog_roomController@update')->name('catalog_room_update');
    Route::get('/catalog/catalog_room/delete/{id}', 'catalog\catalog_roomController@delete')->name('catalog_room_delete');
 
    //CATALOG categories

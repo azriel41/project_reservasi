@@ -53,6 +53,7 @@ class master_featuresController extends Controller
     public function update(Request $request)
     {
     	//get all name/value
+        // dd($request->all());
         $input = $request->except('mf_id');
     	//check unique row , if exist == 1
     	// $check = DB::table('m_features')->where('mf_name',$request->mf_name)->count();
