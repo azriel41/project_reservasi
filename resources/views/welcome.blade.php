@@ -8,593 +8,254 @@
 
 
 @section('content')
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url({{ asset('assets_frontend/img/bg-img/hero-11.jpg') }});">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12 col-md-10">
-                    <div class="hero-content">
-                        <h2>Discover places near you</h2>
-                        <h4>This is the best guide of your city</h4>
-                    </div>
-                    <!-- Hero Search Form -->
-                    <div class="hero-search-form">
-                        <!-- Tabs -->
-                        <div class="nav nav-tabs" id="heroTab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places" role="tab" aria-controls="nav-places" aria-selected="true">Places</a>
-                            <a class="nav-item nav-link" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab" aria-controls="nav-events" aria-selected="false">Events</a>
-                        </div>
-                        <!-- Tabs Content -->
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
-                                <h6>What are you looking for?</h6>
-                                <form action="#" method="get">
-                                    <select class="custom-select">
-                                        <option selected>Your Destinations</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Latvia</option>
-                                        <option value="3">Dhaka</option>
-                                        <option value="4">Melbourne</option>
-                                        <option value="5">London</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>All Catagories</option>
-                                        <option value="1">Catagories 1</option>
-                                        <option value="2">Catagories 2</option>
-                                        <option value="3">Catagories 3</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>Price Range</option>
-                                        <option value="1">$100 - $499</option>
-                                        <option value="2">$500 - $999</option>
-                                        <option value="3">$1000 - $4999</option>
-                                    </select>
-                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
-                                <h6>What are you looking for?</h6>
-                                <form action="#" method="get">
-                                    <select class="custom-select">
-                                        <option selected>Your Destinations</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Latvia</option>
-                                        <option value="3">Dhaka</option>
-                                        <option value="4">Melbourne</option>
-                                        <option value="5">London</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>All Catagories</option>
-                                        <option value="1">Catagories 1</option>
-                                        <option value="2">Catagories 2</option>
-                                        <option value="3">Catagories 3</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>Price Range</option>
-                                        <option value="1">$100 - $499</option>
-                                        <option value="2">$500 - $999</option>
-                                        <option value="3">$1000 - $4999</option>
-                                    </select>
-                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Hero Social Btn -->
-        <div class="hero-social-btn">
-            <div class="social-title d-flex align-items-center">
-                <h6>Follow us on Social Media</h6>
-                <span></span>
-            </div>
-            <div class="social-btns">
-                <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Welcome Area End ***** -->
-
-    <!-- ***** Catagory Area Start ***** -->
-    <section class="dorne-catagory-area">
+    <div class="intro">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="all-catagories">
-                        <div class="row">
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s">
-                                    <div class="catagory-content">
-                                        <img src="{{ asset('assets_frontend/img/core-img/icon-1.png') }}" alt="">
-                                        <a href="#">
-                                            <h6>Hotels</h6>
-                                        </a>
-                                    </div>
-                                </div>
+            <div class="row row-lg-eq-height">
+
+                <!-- Intro Content -->
+                <div class="col-lg-5 intro_col">
+                    <div class="intro_container d-flex flex-column align-items-start justify-content-center magic_up">
+                        <div class="intro_content">
+                            <div class="section_title_container">
+                                <div class="section_subtitle">luxury resort</div>
+                                <div class="section_title"><h2>Relax in our Hotel</h2></div>
                             </div>
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.4s">
-                                    <div class="catagory-content">
-                                        <img src="{{ asset('assets_frontend/img/core-img/icon-2.png') }}" alt="">
-                                        <a href="#">
-                                            <h6>Restaurants</h6>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="intro_text">
+                                <p>Praesent fermentum ligula in dui imperdiet, vel tempus nulla ultricies. Phasellus at commodo ligula. Nullam molestie volutpat sapien, a dignissim tortor laoreet quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                             </div>
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.6s">
-                                    <div class="catagory-content">
-                                        <img src="{{ asset('assets_frontend/img/core-img/icon-3.png') }}" alt="">
-                                        <a href="#">
-                                            <h6>Shopping</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.8s">
-                                    <div class="catagory-content">
-                                        <img src="{{ asset('assets_frontend/img/core-img/icon-4.png') }}" alt="">
-                                        <a href="#">
-                                            <h6>Beauty &amp; Spa</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1s">
-                                    <div class="catagory-content">
-                                        <img src="{{ asset('assets_frontend/img/core-img/icon-5.png') }}" alt="">
-                                        <a href="#">
-                                            <h6>Cinema</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="intro_link"><a href="rooms.html">View Rooms</a></div>
+                            <a href="#" class="button_container intro_button"><div class="button text-center"><span>Book Your Stay</span></div></a>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Intro Image -->
+                <div class="col-lg-7 intro_col">
+                    <div class="intro_images magic_up">
+                        <!-- Image credit: https://unsplash.com/@yuni_ladyday2 -->
+                        <div class="intro_1 intro_img"><img src="{{ asset('assets_frontend/images/intro_1.jpg') }}" alt=""></div>
+                        <!-- Image credit: https://unsplash.com/@liliane -->
+                        <div class="intro_2 intro_img"><img src="{{ asset('assets_frontend/images/intro_2.jpg') }}" alt=""></div>
+                        <!-- Image credit: https://unsplash.com/@brucemars -->
+                        <div class="intro_3 intro_img"><img src="{{ asset('assets_frontend/images/intro_3.jpg') }}" alt=""></div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ***** Catagory Area End ***** -->
+    </div>
 
-    <!-- ***** About Area Start ***** -->
-    <section class="dorne-about-area section-padding-0-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-content text-center">
-                        <h2>Discover your city with <br><span>Dorne</span></h2>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce quis tempus elit. Sed efficitur tortor neque, vitae aliquet urna varius sit amet. Ut rhoncus, nunc nec tincidunt volutpat, ex libero.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** About Area End ***** -->
+    <!-- Big Room -->
 
-    <!-- ***** Editor Pick Area Start ***** -->
-    <section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100" style="background-image: url({{ asset('assets_frontend/img/bg-img/hero-2.jpg') }});">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <span></span>
-                        <h4>Cities you must see</h4>
-                        <p>Editor’s pick</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.2s">
-                        <img src="{{ asset('assets_frontend/img/bg-img/editor-1.jpg') }}" alt="">
-                        <div class="editors-pick-info">
-                            <div class="places-total-destinations d-flex">
-                                <a href="#">New York</a>
-                                <a href="#">1643 Destinations</a>
-                            </div>
-                            <div class="add-more">
-                                <a href="#">+</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.4s">
-                        <img src="{{ asset('assets_frontend/img/bg-img/editor-2.jpg') }}" alt="">
-                        <div class="editors-pick-info">
-                            <div class="places-total-destinations d-flex">
-                                <a href="#">Barcelona</a>
-                                <a href="#">943 Destinations</a>
-                            </div>
-                            <div class="add-more">
-                                <a href="#">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.6s">
-                        <img src="{{ asset('assets_frontend/img/bg-img/editor-3.jpg') }}" alt="">
-                        <div class="editors-pick-info">
-                            <div class="places-total-destinations d-flex">
-                                <a href="#">paris</a>
-                                <a href="#">243 Destinations</a>
-                            </div>
-                            <div class="add-more">
-                                <a href="#">+</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Editor Pick Area End ***** -->
-
-    <!-- ***** Features Destinations Area Start ***** -->
-    <section class="dorne-features-destinations-area">
+    <div class="big_room">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading dark text-center">
-                        <span></span>
-                        <h4>Featured destinations</h4>
-                        <p>Editor’s pick</p>
+            <div class="row row-xl-eq-height">
+                <div class="col-xl-6 order-xl-1 order-2">
+                    <div class="big_room_slider_container">
+
+                        <!-- Big Room SLider -->
+                        <div class="owl-carousel owl-theme big_room_slider">
+                            
+                            <!-- Slide -->
+                            <div class="owl-item">
+                                <!-- Image credit: https://unsplash.com/@jbriscoe -->
+                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/img_1.jpg') }})"></div>
+                            </div>
+
+                            <!-- Slide -->
+                            <div class="owl-item">
+                                <!-- Image credit: https://unsplash.com/@jbriscoe -->
+                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/img_1.jpg') }})"></div>
+                            </div>
+
+                            <!-- Slide -->
+                            <div class="owl-item">
+                                <!-- Image credit: https://unsplash.com/@jbriscoe -->
+                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/img_1.jpg') }})"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="big_room_slider_nav_container d-flex flex-row align-items-start justify-content-start">
+                            <div class="big_room_slider_prev big_room_slider_nav"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+                            <div class="big_room_slider_next big_room_slider_nav"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="features-slides owl-carousel">
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-1.jpg') }}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
+                <div class="col-xl-6 order-xl-2 order-1">
+                    <div class="big_room_content">
+                        <div class="big_room_content_inner magic_up">
+                            <div class="section_title_container">
+                                <div class="section_subtitle">luxury resort</div>
+                                <div class="section_title"><h2>Rooms with private swimming pool</h2></div>
                             </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Ibiza</h5>
-                                    <p>Party</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
+                            <div class="big_room_text">
+                                <p>Praesent fermentum ligula in dui imperdiet, vel tempus nulla ultricies. Phasellus at commodo ligula. Nullam molestie volutpat sapien, a dignissim tortor laoreet quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra. Phasellus at commodo ligula. Nullam molestie volutpat sapien, a dignissim tortor  per inceptos himenaeos laoreet quis. Class aptent taciti soci osqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                             </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-2.jpg') }}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Paris</h5>
-                                    <p>Luxury</p>
+                            <div class="testimonial">
+                                <div class="testimonial_stars">
+                                    <ul class="d-flex flex-row align-items-start justfy-content-start">
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    </ul>
                                 </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                <div class="testimonial_text">“ Praesent fermentum ligula in dui imperdiet, vel tempus nulla ultricies. Phasellus at commodo ligula. Nullam molestie volutpat sapien, a dignissim tortor laoreet quis.</div>
+                                <div class="testimonial_author d-flex flex-row align-items-center justify-content-start">
+                                    <div class="testimonial_author_image"><img src="{{ asset('assets_frontend/images/testimonial.png') }}" alt=""></div>
+                                    <div class="testimonial_author_name"><a href="#">Michael Smith</a><span>, Client</span></div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-3.jpg') }}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Lake Como</h5>
-                                    <p>Spectacular</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-4.jpg') }}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Greece</h5>
-                                    <p>Sunny</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-5.jpg') }}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Norway</h5>
-                                    <p>All Year round</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                            
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ***** Features Destinations Area End ***** -->
+    </div>
 
-    <!-- ***** Features Restaurant Area Start ***** -->
-    <section class="dorne-features-restaurant-area bg-default">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <span></span>
-                        <h4>Featured Restaurants</h4>
-                        <p>Editor’s pick</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Room -->
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="features-slides owl-carousel">
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-6.jpg') }}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">8.5</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Martha’s bar</h5>
-                                    <p>Manhathan</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-7.jpg') }}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">9.5</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Delux Restaurant</h5>
-                                    <p>Paris</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-8.jpg') }}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">8.2</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Jim’s corner Pub</h5>
-                                    <p>Madrid</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-9.jpg') }}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">8.7</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>tower Risto bar</h5>
-                                    <p>Sydney</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets_frontend/img/bg-img/feature-10.jpg') }}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">9.8</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Pizzeria venezia</h5>
-                                    <p>Hong Kong</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Features Restaurant Area End ***** -->
-
-    <!-- ***** Features Events Area Start ***** -->
-    <section class="dorne-features-events-area bg-img bg-overlay-9 section-padding-100-50" style="background-image: url({{ asset('assets_frontend/img/bg-img/hero-3.jpg') }})">
+    <div class="rooms">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <span></span>
-                        <h4>Featured events</h4>
-                        <p>Editor’s pick</p>
+                <div class="col">
+                    <div class="section_title_container text-center magic_up">
+                        <div class="section_subtitle">luxury resort</div>
+                        <div class="section_title"><h2>Choose a Room</h2></div>
                     </div>
                 </div>
             </div>
+            <div class="row room_row magic_up">
 
+                <!-- Room -->
+                <div class="col-lg-4 room_col">
+                    <div class="room">
+                        <div class="room_image"><img src="{{ asset('assets_frontend/images/room_1.jpg') }}" alt="https://unsplash.com/@jonathan_percy"></div>
+                        <div class="room_content text-center">
+                            <div class="room_price">From $90 / <span>Night</span></div>
+                            <div class="room_type">double</div>
+                            <div class="room_title"><a href="rooms.html">Deluxe Suite</a></div>
+                            <div class="room_text">
+                                <p>Praesent fermentum ligula in dui imper diet, vel tempus nulla ultricies. Phasellus at commodo ligula.</p>
+                            </div>
+                            <a href="#" class="button_container room_button"><div class="button text-center"><span>Book Now</span></div></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Room -->
+                <div class="col-lg-4 room_col">
+                    <div class="room">
+                        <div class="room_image"><img src="{{ asset('assets_frontend/images/room_2.jpg') }}" alt="https://unsplash.com/@ultralinx"></div>
+                        <div class="room_content text-center">
+                            <div class="room_price">From $90 / <span>Night</span></div>
+                            <div class="room_type">single</div>
+                            <div class="room_title"><a href="rooms.html">Luxury Suite</a></div>
+                            <div class="room_text">
+                                <p>Praesent fermentum ligula in dui imper diet, vel tempus nulla ultricies. Phasellus at commodo ligula.</p>
+                            </div>
+                            <a href="#" class="button_container room_button"><div class="button text-center"><span>Book Now</span></div></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room -->
+                <div class="col-lg-4 room_col">
+                    <div class="room">
+                        <div class="room_image"><img src="{{ asset('assets_frontend/images/room_3.jpg') }}" alt="https://unsplash.com/@rhemakallianpur"></div>
+                        <div class="room_content text-center">
+                            <div class="room_price">From $90 / <span>Night</span></div>
+                            <div class="room_type">double</div>
+                            <div class="room_title"><a href="rooms.html">Deluxe Suite</a></div>
+                            <div class="room_text">
+                                <p>Praesent fermentum ligula in dui imper diet, vel tempus nulla ultricies. Phasellus at commodo ligula.</p>
+                            </div>
+                            <a href="#" class="button_container room_button"><div class="button text-center"><span>Book Now</span></div></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+
+    <div class="gallery">
+        <div class="gallery_slider_container">
+            
+            <!-- Gallery Slider -->
+            <div class="owl-carousel owl-theme gallery_slider magic_up">
+                <div class="owl-item gallery_item">
+                    <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
+                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_1.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_1.jpg') }}" alt=""></a>
+                </div>
+                <div class="owl-item gallery_item">
+                    <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
+                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_2.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_2.jpg') }}" alt=""></a>
+                </div>
+                <div class="owl-item gallery_item">
+                    <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
+                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_3.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_3.jpg') }}" alt=""></a>
+                </div>
+                <div class="owl-item gallery_item">
+                    <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
+                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_4.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_4.jpg') }}" alt=""></a>
+                </div>
+                <div class="owl-item gallery_item">
+                    <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
+                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_5.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_5.jpg') }}" alt=""></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Nav -->
+        <div class="gallery_slider_nav_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col clearfix">
+                        <div class="gallery_slider_nav_content d-flex flex-row align-items-start justify-content-start">
+                            <div class="gallery_slider_prev gallery_slider_nav"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+                            <div class="gallery_slider_next gallery_slider_nav"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
+
+    </div>
+
+    <!-- Newsletter -->
+
+    <div class="newsletter">
+        <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.2s">
-                        <div class="feature-events-thumb">
-                            <img src="{{ asset('assets_frontend/img/bg-img/event-1.jpg') }}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
+                <div class="col-lg-5">
+                    <div class="newsletter_content">
+                        <div class="section_title_container">
+                            <div class="section_subtitle">luxury resort</div>
+                            <div class="section_title"><h2>Our Newsletter</h2></div>
                         </div>
-                        <div class="feature-events-content">
-                            <h5>Jazz Concert</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
+                        <div class="newsletter_text">
+                            <p>Praesent fermentum ligula in dui imperdiet, vel tempus nulla ultricies. Phasellus at commodo ligula. Nullam molestie volutp at sapien.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.3s">
-                        <div class="feature-events-thumb">
-                            <img src="{{ asset('assets_frontend/img/bg-img/event-2.jpg') }}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>DeeJay in the house</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.4s">
-                        <div class="feature-events-thumb">
-                            <img src="{{ asset('assets_frontend/img/bg-img/event-3.jpg') }}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Theatre Night outside</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.5s">
-                        <div class="feature-events-thumb">
-                            <img src="{{ asset('assets_frontend/img/bg-img/event-4.jpg') }}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Wine tasting</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.6s">
-                        <div class="feature-events-thumb">
-                            <img src="{{ asset('assets_frontend/img/bg-img/event-5.jpg') }}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>New Moon Party</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.7s">
-                        <div class="feature-events-thumb">
-                            <img src="{{ asset('assets_frontend/img/bg-img/event-6.jpg') }}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{ asset('assets_frontend/img/core-img/map.png') }}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Happy hour at pub</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
+                <div class="col-lg-7">
+                    <div class="newsletter_form_container">
+                        <form action="#" id="newsletter_form" class="newsletter_form">
+                            <input type="email" class="newsletter_input" placeholder="Your e-mail" required="required">
+                            <button class="newsletter_button"><span>Subscribe</span></button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="newsletter_border_container"><div class="container"><div class="row border_row"><div class="col"><div class="newsetter_border"></div></div></div></div></div>
+    </div>
 @endsection
 
 
