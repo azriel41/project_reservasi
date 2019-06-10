@@ -13,10 +13,10 @@
 
 
 // Route::group(['middleware' => 'guest'], function () {
-   Route::get('/', 'Auth\loginController@index')->name('welcome');
-   Route::get('/welcome', 'Auth\loginController@index')->name('welcome_1');
-   Route::get('/login', 'Auth\loginController@index')->name('login');
-   Route::post('login', 'Auth\loginController@authenticate');
+   Route::get('/', 'Auth\LoginController@index')->name('welcome');
+   Route::get('/welcome', 'Auth\LoginController@index')->name('welcome_1');
+   Route::get('/login', 'Auth\LoginController@index')->name('login');
+   Route::post('login', 'Auth\LoginController@authenticate');
  // });
    Route::get('/home', 'rumahController@index')->name('home');
    Auth::routes();

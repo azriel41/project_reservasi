@@ -60,19 +60,19 @@
                             <!-- Slide -->
                             <div class="owl-item">
                                 <!-- Image credit: https://unsplash.com/@jbriscoe -->
-                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/img_1.jpg') }})"></div>
+                                <div class="background_image" style="background-image:url('/assets_frontend/images/intro_3.jpg')"></div>
                             </div>
 
                             <!-- Slide -->
                             <div class="owl-item">
                                 <!-- Image credit: https://unsplash.com/@jbriscoe -->
-                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/img_1.jpg') }})"></div>
+                                <div class="background_image" style="background-image:url('/assets_frontend/images/intro_3.jpg')"></div>
                             </div>
 
                             <!-- Slide -->
                             <div class="owl-item">
                                 <!-- Image credit: https://unsplash.com/@jbriscoe -->
-                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/img_1.jpg') }})"></div>
+                                <div class="background_image" style="background-image:url('/assets_frontend/images/intro_3.jpg')"></div>
                             </div>
 
                         </div>
