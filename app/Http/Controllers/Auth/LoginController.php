@@ -10,7 +10,7 @@ use DB;
 use App\d_mem;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 // use Illuminate\Support\Facades\Auth;
-class LoginController extends Controller
+class loginController extends Controller
 {
     /*
     |--------------------------------------------------------------------------

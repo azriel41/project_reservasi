@@ -13,10 +13,10 @@
 
 
 // Route::group(['middleware' => 'guest'], function () {
-   Route::get('/', 'Auth\loginController@index')->name('welcome');
-   Route::get('/welcome', 'Auth\loginController@index')->name('welcome_1');
-   Route::get('/login', 'Auth\loginController@index')->name('login');
-   Route::post('login', 'Auth\loginController@authenticate');
+   Route::get('/', 'Auth\LoginController@index')->name('welcome');
+   Route::get('/welcome', 'Auth\LoginController@index')->name('welcome_1');
+   Route::get('/login', 'Auth\LoginController@index')->name('login');
+   Route::post('login', 'Auth\LoginController@authenticate');
  // });
    Route::get('/home', 'rumahController@index')->name('home');
    Auth::routes();
@@ -65,6 +65,13 @@
 
 
 // CATALOG --------------------------------------   
+   //CATALOG categories
+   Route::get('/catalog/catalog_categories', 'catalog\catalog_categoriesController@index')->name('catalog_categories');
+   Route::get('/catalog/catalog_categories/create', 'catalog\catalog_categoriesController@create')->name('catalog_categories_create');
+   Route::get('/catalog/catalog_categories/save', 'catalog\catalog_categoriesController@save')->name('catalog_categories_save');
+   Route::get('/catalog/catalog_categories/edit/{id}', 'catalog\catalog_categoriesController@edit')->name('catalog_categories_edit');
+   Route::get('/catalog/catalog_categories/update/{id}', 'catalog\catalog_categoriesController@update')->name('catalog_categories_update');
+   Route::get('/catalog/catalog_categories/delete/{id}', 'catalog\catalog_categoriesController@delete')->name('catalog_categories_delete');
    //CATALOG room
    Route::get('/catalog/catalog_room', 'catalog\catalog_roomController@index')->name('catalog_room');
    Route::get('/catalog/catalog_room/create', 'catalog\catalog_roomController@create')->name('catalog_room_create');
@@ -73,13 +80,7 @@
    Route::get('/catalog/catalog_room/update', 'catalog\catalog_roomController@update')->name('catalog_room_update');
    Route::get('/catalog/catalog_room/delete/{id}', 'catalog\catalog_roomController@delete')->name('catalog_room_delete');
 
-   //CATALOG categories
-   Route::get('/catalog/catalog_categories', 'catalog\catalog_categoriesController@index')->name('catalog_categories');
-   Route::get('/catalog/catalog_categories/create', 'catalog\catalog_categoriesController@create')->name('catalog_categories_create');
-   Route::get('/catalog/catalog_categories/save', 'catalog\catalog_categoriesController@save')->name('catalog_categories_save');
-   Route::get('/catalog/catalog_categories/edit/{id}', 'catalog\catalog_categoriesController@edit')->name('catalog_categories_edit');
-   Route::get('/catalog/catalog_categories/update/{id}', 'catalog\catalog_categoriesController@update')->name('catalog_categories_update');
-   Route::get('/catalog/catalog_categories/delete/{id}', 'catalog\catalog_categoriesController@delete')->name('catalog_categories_delete');
+   
 
    
 
