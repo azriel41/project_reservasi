@@ -1,3 +1,29 @@
+    <div class="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="newsletter_content">
+                        <div class="section_title_container">
+                            <div class="section_subtitle">luxury resort</div>
+                            <div class="section_title"><h2>Our Newsletter</h2></div>
+                        </div>
+                        <div class="newsletter_text">
+                            <p>Praesent fermentum ligula in dui imperdiet, vel tempus nulla ultricies. Phasellus at commodo ligula. Nullam molestie volutp at sapien.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="newsletter_form_container">
+                        <form action="#" id="newsletter_form" class="newsletter_form">
+                            <input type="email" class="newsletter_input" placeholder="Your e-mail" required="required">
+                            <button class="newsletter_button"><span>Subscribe</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="newsletter_border_container"><div class="container"><div class="row border_row"><div class="col"><div class="newsetter_border"></div></div></div></div></div>
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="row">

@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\catalog;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
 
-class HomeController extends Controller
+class catalog_roomController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +25,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = DB::table('c_room')->get();
+        return view('catalog.catalog_room.index',compact('data'));
+    }
+    public function create()
+    {
+        $type = DB::table('m_type_room')->get();
+        return view('catalog.catalog_room.create',compact('type'));
+    }
+    public function save()
+    {
+    }
+    public function edit()
+    {
+        return view('catalog.catalog_room.create');
+    }
+    public function update()
+    {
+    }
+    public function delete()
+    {
     }
 }

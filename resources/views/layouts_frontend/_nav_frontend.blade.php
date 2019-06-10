@@ -45,7 +45,7 @@
     <!-- Menu -->
 
     <div class="menu">
-        <div class="background_image" style="background-image:url({{ url('assets_frontend/images/menu.jpg') }})"></div>
+        <div class="background_image" style="background-image:url('../project_reservasi/assets_frontend/images/menu.jpg')"></div>
         <div class="menu_content d-flex flex-column align-items-center justify-content-center">
             <ul class="menu_nav_list text-center">
                 <li><a href="index.html">Home</a></li>
@@ -86,7 +86,7 @@
                 <!-- Slide -->
                 <div class="owl-item">
                     <!-- Image credit: https://unsplash.com/@santtd -->
-                    <div class="background_image" style="background-image:url({{ url('assets_frontend/images/home_slider_1.jpg') }})"></div>
+                    <div class="background_image" style="background-image:url('../project_reservasi/assets_frontend/images/home_slider_1.jpg')"></div>
                     <div class="home_content_container">
                         <div class="container">
                             <div class="row">
@@ -105,7 +105,7 @@
                 <!-- Slide -->
                 <div class="owl-item">
                     <!-- Image credit: https://unsplash.com/@santtd -->
-                    <div class="background_image" style="background-image:url({{ url('assets_frontend/images/home_slider_1.jpg') }})"></div>
+                    <div class="background_image" style="background-image:url('../project_reservasi/assets_frontend/images/home_slider_1.jpg')"></div>
                     <div class="home_content_container">
                         <div class="container">
                             <div class="row">
@@ -132,7 +132,6 @@
                     <li class="home_slider_custom_dot">03</li>
                 </ul>
             </div>
-
         </div>
     </div>
 
