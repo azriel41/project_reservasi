@@ -25,6 +25,8 @@ class loginController extends Controller
     public function index()
     {
         return view('welcome');
+
+        
     }
     // use AuthenticatesUsers;
     public function login(Request $req)

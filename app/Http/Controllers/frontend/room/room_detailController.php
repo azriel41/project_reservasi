@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\frontend\room;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class rumahController extends Controller
+class room_detailController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,6 +20,6 @@ class rumahController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('frontend.room.room_detail');
     }
 }

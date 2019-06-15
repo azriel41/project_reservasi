@@ -408,8 +408,8 @@ section
 .main_nav ul li
 {
 	height: 100%;
-	padding-left: 34px;
-	padding-right: 32px;
+	padding-left: 37px;
+	padding-right: 37px;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -1188,8 +1188,8 @@ section
 {
 	width: 100%;
 	background: #282428;
-	padding-top: 132px;
-	padding-bottom: 135px;
+	padding-top: 130px;
+	height: 35rem;
 }
 .gallery_slider_container
 {

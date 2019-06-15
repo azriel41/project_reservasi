@@ -9,7 +9,8 @@
         @yield('content')
         @include('layouts_frontend._footer_frontend') 
 		@include('layouts_frontend._scripts_frontend')
-    	@yield('extra_scripts')
     </div>
 </body>
+    	@yield('extra_scripts')
+
 </html>

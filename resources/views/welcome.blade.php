@@ -1,5 +1,4 @@
 @extends('layouts_frontend._main_frontend')  
-
 @section('extra_style')
 <style type="text/css">
   .room_col {
@@ -10,6 +9,10 @@
 
 
 @section('content')
+@extends('layouts_frontend._search_frontend')
+@extends('layouts_frontend._slider_frontend')
+
+
     <div class="intro">
         <div class="container">
             <div class="row row-lg-eq-height">
@@ -35,11 +38,11 @@
                 <div class="col-lg-7 intro_col">
                     <div class="intro_images magic_up">
                         <!-- Image credit: https://unsplash.com/@yuni_ladyday2 -->
-                        <div class="intro_1 intro_img"><img src="{{ asset('assets_frontend/images/intro_1.jpg') }}" alt=""></div>
+                        <div class="intro_1 intro_img"><img src="{{asset('assets_frontend/images/intro_1.jpg')}}" alt=""></div>
                         <!-- Image credit: https://unsplash.com/@liliane -->
-                        <div class="intro_2 intro_img"><img src="{{ asset('assets_frontend/images/intro_2.jpg') }}" alt=""></div>
+                        <div class="intro_2 intro_img"><img src="{{asset('assets_frontend/images/intro_2.jpg')}}" alt=""></div>
                         <!-- Image credit: https://unsplash.com/@brucemars -->
-                        <div class="intro_3 intro_img"><img src="{{ asset('assets_frontend/images/intro_3.jpg') }}" alt=""></div>
+                        <div class="intro_3 intro_img"><img src="{{asset('assets_frontend/images/intro_3.jpg')}}" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -51,7 +54,7 @@
     <div class="big_room">
         <div class="container-fluid">
             <div class="row row-xl-eq-height">
-                <div class="col-xl-6 order-xl-1 order-2">
+                <div class="col-xl-6 order-xl-1 order-1">
                     <div class="big_room_slider_container">
 
                         <!-- Big Room SLider -->
@@ -59,20 +62,18 @@
                             
                             <!-- Slide -->
                             <div class="owl-item">
-                                <!-- Image credit: https://unsplash.com/@jbriscoe -->
-                                <div class="background_image" style="background-image:url('/assets_frontend/images/intro_3.jpg')"></div>
+                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/home_slider_1.jpg') }})"></div>
+                            </div>
+
+                            <!-- Slide -->
+                            <div class="owl-item">
+                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/home_slider_1.jpg') }})"></div>
                             </div>
 
                             <!-- Slide -->
                             <div class="owl-item">
                                 <!-- Image credit: https://unsplash.com/@jbriscoe -->
-                                <div class="background_image" style="background-image:url('/assets_frontend/images/intro_3.jpg')"></div>
-                            </div>
-
-                            <!-- Slide -->
-                            <div class="owl-item">
-                                <!-- Image credit: https://unsplash.com/@jbriscoe -->
-                                <div class="background_image" style="background-image:url('/assets_frontend/images/intro_3.jpg')"></div>
+                                <div class="background_image" style="background-image:url({{ url('assets_frontend/images/home_slider_1.jpg') }})"></div>
                             </div>
 
                         </div>
@@ -83,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 order-xl-2 order-1">
+                <div class="col-xl-6 order-xl-2 order-2">
                     <div class="big_room_content">
                         <div class="big_room_content_inner magic_up">
                             <div class="section_title_container">
@@ -105,7 +106,7 @@
                                 </div>
                                 <div class="testimonial_text">“ Praesent fermentum ligula in dui imperdiet, vel tempus nulla ultricies. Phasellus at commodo ligula. Nullam molestie volutpat sapien, a dignissim tortor laoreet quis.</div>
                                 <div class="testimonial_author d-flex flex-row align-items-center justify-content-start">
-                                    <div class="testimonial_author_image"><img src="{{ asset('assets_frontend/images/testimonial.png') }}" alt=""></div>
+                                    <div class="testimonial_author_image"><img src="{{asset('assets_frontend/images/testimonial.png')}}" alt=""></div>
                                     <div class="testimonial_author_name"><a href="#">Michael Smith</a><span>, Client</span></div>
                                 </div>
                             </div>
@@ -134,7 +135,7 @@
                 <!-- Room -->
                 <div class="col-lg-4 room_col">
                     <div class="room">
-                        <div class="room_image"><img src="{{ asset('assets_frontend/images/room_1.jpg') }}" alt="https://unsplash.com/@jonathan_percy"></div>
+                        <div class="room_image"><img src="{{asset('assets_frontend/images/room_1.jpg')}}" alt="https://unsplash.com/@jonathan_percy"></div>
                         <div class="room_content text-center">
                             <div class="room_price">From $90 / <span>Night</span></div>
                             <div class="room_type">double</div>
@@ -150,7 +151,7 @@
                 <!-- Room -->
                 <div class="col-lg-4 room_col">
                     <div class="room">
-                        <div class="room_image"><img src="{{ asset('assets_frontend/images/room_2.jpg') }}" alt="https://unsplash.com/@ultralinx"></div>
+                        <div class="room_image"><img src="{{asset('assets_frontend/images/room_2.jpg')}}" alt="https://unsplash.com/@ultralinx"></div>
                         <div class="room_content text-center">
                             <div class="room_price">From $90 / <span>Night</span></div>
                             <div class="room_type">single</div>
@@ -166,37 +167,7 @@
                 <!-- Room -->
                 <div class="col-lg-4 room_col">
                     <div class="room">
-                        <div class="room_image"><img src="{{ asset('assets_frontend/images/room_3.jpg') }}" alt="https://unsplash.com/@rhemakallianpur"></div>
-                        <div class="room_content text-center">
-                            <div class="room_price">From $90 / <span>Night</span></div>
-                            <div class="room_type">double</div>
-                            <div class="room_title"><a href="rooms.html">Deluxe Suite</a></div>
-                            <div class="room_text">
-                                <p>Praesent fermentum ligula in dui imper diet, vel tempus nulla ultricies. Phasellus at commodo ligula.</p>
-                            </div>
-                            <a href="#" class="button_container room_button"><div class="button text-center"><span>Book Now</span></div></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 room_col">
-                    <div class="room">
-                        <div class="room_image"><img src="{{ asset('assets_frontend/images/room_3.jpg') }}" alt="https://unsplash.com/@rhemakallianpur"></div>
-                        <div class="room_content text-center">
-                            <div class="room_price">From $90 / <span>Night</span></div>
-                            <div class="room_type">double</div>
-                            <div class="room_title"><a href="rooms.html">Deluxe Suite</a></div>
-                            <div class="room_text">
-                                <p>Praesent fermentum ligula in dui imper diet, vel tempus nulla ultricies. Phasellus at commodo ligula.</p>
-                            </div>
-                            <a href="#" class="button_container room_button"><div class="button text-center"><span>Book Now</span></div></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 room_col">
-                    <div class="room">
-                        <div class="room_image"><img src="{{ asset('assets_frontend/images/room_3.jpg') }}" alt="https://unsplash.com/@rhemakallianpur"></div>
+                        <div class="room_image"><img src="{{asset('assets_frontend/images/room_3.jpg')}}" alt="https://unsplash.com/@rhemakallianpur"></div>
                         <div class="room_content text-center">
                             <div class="room_price">From $90 / <span>Night</span></div>
                             <div class="room_type">double</div>
@@ -222,23 +193,23 @@
             <div class="owl-carousel owl-theme gallery_slider magic_up">
                 <div class="owl-item gallery_item">
                     <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
-                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_1.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_1.jpg') }}" alt=""></a>
+                    <a class="colorbox" href="{{url('assets_frontend/images/gallery_1.jpg')}}"><img src="{{asset('assets_frontend/images/gallery_1.jpg')}}" alt=""></a>
                 </div>
                 <div class="owl-item gallery_item">
                     <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
-                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_2.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_2.jpg') }}" alt=""></a>
+                    <a class="colorbox" href="{{url('assets_frontend/images/gallery_2.jpg')}}"><img src="{{asset('assets_frontend/images/gallery_2.jpg')}}" alt=""></a>
                 </div>
                 <div class="owl-item gallery_item">
                     <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
-                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_3.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_3.jpg') }}" alt=""></a>
+                    <a class="colorbox" href="{{url('assets_frontend/images/gallery_3.jpg')}}"><img src="{{asset('assets_frontend/images/gallery_3.jpg')}}" alt=""></a>
                 </div>
                 <div class="owl-item gallery_item">
                     <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
-                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_4.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_4.jpg') }}" alt=""></a>
+                    <a class="colorbox" href="{{url('assets_frontend/images/gallery_4.jpg')}}"><img src="{{asset('assets_frontend/images/gallery_4.jpg')}}" alt=""></a>
                 </div>
                 <div class="owl-item gallery_item">
                     <div class="gallery_select d-flex flex-column align-items-center justify-content-center"><div>+</div></div>
-                    <a class="colorbox" href="{{ asset('assets_frontend/images/gallery_5.jpg') }}"><img src="{{ asset('assets_frontend/images/gallery_5.jpg') }}" alt=""></a>
+                    <a class="colorbox" href="{{url('assets_frontend/images/gallery_5.jpg')}}"><img src="{{asset('assets_frontend/images/gallery_5.jpg')}}" alt=""></a>
                 </div>
             </div>
 
@@ -260,9 +231,6 @@
 
     </div>
 
-    <!-- Newsletter -->
-
-    
 @endsection
 
 

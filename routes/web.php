@@ -11,7 +11,7 @@
 |
 */
 
-
+// INDEX
 // Route::group(['middleware' => 'guest'], function () {
    Route::get('/', 'Auth\LoginController@index')->name('welcome');
    Route::get('/welcome', 'Auth\LoginController@index')->name('welcome_1');
@@ -19,14 +19,16 @@
    Route::post('login', 'Auth\LoginController@authenticate');
  // });
    Route::get('/home', 'rumahController@index')->name('home');
+
+// ROOM DETAIL------------------------------------
+   
+   Route::get('/room_detail', 'frontend\room\room_detailController@index')->name('room_detail');
+
    Auth::routes();
 
 // Route::group(['middleware' => 'auth'], function () {
    
    $data = App\d_mem::all();
-
-//HOME
-
 
 
 //MASTER------------------------------------------
