@@ -1,4 +1,6 @@
+
 @yield('down')
+
     <div class="newsletter">
         <div class="container">
             <div class="row">
