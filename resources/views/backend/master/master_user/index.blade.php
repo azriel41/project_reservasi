@@ -35,8 +35,7 @@
                     <h4 class="m-b-0 text-white">Card Title</h4></div>
                 <div class="card-body">
                      <div class="text-right mb-3">
-                    <a href="{{ route('master_role_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus
-    "></i> Add Data</a>
+                    <a href="{{ route('master_user_create') }}" class="btn waves-effect waves-light btn-md btn-success"><i class="fas fa-plus"></i> Add Data</a>
                 </div>
                    <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
@@ -61,7 +60,7 @@
                                         <td>{{ $element->m_last_login }}</td>
                                         <td>{{ $element->m_last_logout }}</td>
                                         <td>
-                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('master_role_edit', ['id' => $element->m_code]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('master_user_edit', ['id' => $element->m_code]) }}"><i class="fas fa-pencil-alt"></i></a>
                                             <button type="button" class="btn waves-effect waves-light btn-sm btn-danger delete" value="{{ $element->m_code }}" ><i class="fas fa-times"></i></button>
                                         </td>
                                     </tr>
@@ -102,12 +101,12 @@
                     ['<button style="background-color:red;"> Delete </button>', function (instance, toast) {
 
                         $.ajax({
-                            url  : baseUrl+'/master'+'/master_role/delete/'+this_val,
+                            url  : baseUrl+'/master'+'/master_user/delete/'+this_val,
                             type :'get',
                             success:function(data){
                                 if (data.status == 'sukses') {
                                     iziToast.success({position: 'topRight',message: 'Successfully Deleted!'});
-                                    window.location=('{{ route('master_role') }}')
+                                    window.location=('{{ route('master_user') }}')
                                 }else{
                                     iziToast.error({position: 'topRight',message: 'Error Check your data! '});
                                 }

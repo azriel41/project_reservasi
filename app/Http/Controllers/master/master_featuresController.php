@@ -17,11 +17,11 @@ class master_featuresController extends Controller
 
     	$data = DB::table('m_features')->get();
 
-        return view('master.master_features.index',compact('data'));
+        return view('backend.master.master_features.index',compact('data'));
     }
     public function create()
     {
-        return view('master.master_features.create');
+        return view('backend.master.master_features.create');
     }
     public function save(Request $request)
     {
@@ -48,7 +48,7 @@ class master_featuresController extends Controller
     {
     	$data = DB::table('m_features')->where('mf_id',$id)->first();
 
-        return view('master.master_features.edit',compact('data'));
+        return view('backend.master.master_features.edit',compact('data'));
     }
     public function update(Request $request)
     {

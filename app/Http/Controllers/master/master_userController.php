@@ -9,7 +9,7 @@ use Validator;
 use DB;
 use App\d_role;
 
-class master_adminController extends Controller
+class master_userController extends Controller
 {
 
     public function index()
@@ -17,11 +17,11 @@ class master_adminController extends Controller
 
         $data = DB::table('d_mem')->where('m_role','!=','10')->where('m_role','!=','11')->get();
 
-        return view('master.master_admin.index',compact('data'));
+        return view('backend.master.master_user.index',compact('data'));
     }
     public function create()
     {
-        return view('master.master_admin.create');
+        return view('backend.master.master_user.create');
     }
     public function save(Request $request)
     {
@@ -48,7 +48,7 @@ class master_adminController extends Controller
     {
         $data = DB::table('d_role')->where('r_id',$id)->first();
 
-        return view('master.master_admin.edit',compact('data'));
+        return view('backend.master.master_user.edit',compact('data'));
     }
     public function update(Request $request)
     {
