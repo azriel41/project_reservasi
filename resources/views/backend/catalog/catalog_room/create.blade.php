@@ -248,12 +248,12 @@
                                                         <th>Feature</th>
                                                         <th>Feature Icon</th>
                                                     </tr>
-                                                    @foreach ($features as $element)
+                                                    @foreach ($features as $index => $element)
                                                     <tr>
                                                         <td>
                                                             <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                                <label class="custom-control-label" for="customCheck2"></label>
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck{{ $index }}">
+                                                                <label class="custom-control-label" for="customCheck{{ $index }}">I am checked Checkbox</label>
                                                             </div>
                                                         </td>
                                                         <td>{{ $element->mf_name }}</td>
