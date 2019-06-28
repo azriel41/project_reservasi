@@ -70,6 +70,17 @@
   {
     color: black;
   }
+  .prc
+  {
+  font-family: 'Monstserrat', serif;
+  font-weight: 550;
+  color: #333333;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+  }
 </style>
 @endsection
 
@@ -81,6 +92,13 @@
         <div class="container">
             <div class="row row-lg-eq-height">
 
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      ...
+                    </div>
+                  </div>
+                </div>
                 <!-- Intro Content -->
                 <div class="col-lg-8 intro_col">
  
@@ -120,10 +138,6 @@
 
                             	</ul>
                             </div>
-
-                            <!-- Bootstrap CSS -->
-                            <!-- jQuery first, then Bootstrap JS. -->
-                            <!-- Nav tabs -->
 
                             <ul class="nav nav-tabs panels" role="tablist">
                               <li class="nav-item active">
@@ -171,28 +185,43 @@
                 <div class="col-lg-4 intro_col">
 
                    <div class="d-flex flex-column align-items-start justify-content-center magic_up" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); padding-top: 80px;">
+                        
                         <div class="intro_content">
+
                             <div class="frm">
+                        
                             	<form action="" method="">
+                        
                             		<div class="form-group">
                             			<label for="" class="control-label">Hotel Location</label>
                             			<input type="text" name="" class="form-control" value="hotel-california">
                             		</div>
                             		<div class="form-group">
                             			<label for="" class="control-label">Check In Date</label>
-                            			<input type="date" class="form-control" name="today" placeholder="{{ date('m-d-Y') }}">
+                            			<input type="text" class="form-control" id="tgl1" name="today" placeholder="Check In Date" readonly>
                             		</div>
                             		<div class="form-group">
                             			<label for="" class="control-label">Check Out Date</label>
-                                  <input type="date" class="form-control" name="gohome" placeholder="{{ date('m-d-Y', strtotime('+1 day')) }}">
+                                  <input type="text" class="form-control" id="tgl2" name="gohome" placeholder="check Out Date" readonly>
                             		</div>
                             		<div class="form-group">
                               			<label for="" class="control-label">Number of Rooms</label>
-                                    <input type="number" class="form-control" name="qty" value="1">
+                                    <input type="text" class="form-control qty" name="qty" value="1">
                                 </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label">Price Room</label>
+                                    <h4 class="prc">Rp.100.000</h4>
+                                    <input type="hidden" value="100000" class="hrg" name="">
+                                </div>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
                             	</form>
+                        
                             </div>
-                            <a href="#" class="button_container intro_button"><div class="button text-center"><span>Book Your Stay</span></div></a>
+
                         </div>
                     </div>
 
@@ -212,6 +241,24 @@
             $("<img>", {src: this.href})
         );
     });
+
+    $("#tgl1").datepicker({
+      startDate: new Date(),
+      format: 'mm-dd-yyyy',
+      autoclose: true,
+    });
+
+    $("#tgl2").datepicker({
+      startDate: new Date(),
+      format:'mm-dd-yyyy',
+      autoclose: true
+    });
+
+    $('.qty').keyup(function(){
+
+      $('.prc').text(accounting.formatMoney($(this).val()*$('.hrg').val(),"Rp. ",2,'.',','));
+    });
+
 </script>
 
 @endsection
