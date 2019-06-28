@@ -1,4 +1,5 @@
 <script src="{{ asset('assets_frontend/js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('assets_frontend/plugins/datepicker/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('assets_frontend/styles/bootstrap-4.1.2/popper.js') }}"></script>
 <script src="{{ asset('assets_frontend/styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets_frontend/plugins/greensock/TweenMax.min.js') }}"></script>
