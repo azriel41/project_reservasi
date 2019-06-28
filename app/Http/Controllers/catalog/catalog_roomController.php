@@ -26,12 +26,13 @@ class catalog_roomController extends Controller
     public function index()
     {
         $data = DB::table('c_room')->get();
-        return view('catalog.catalog_room.index',compact('data'));
+        return view('backend.catalog.catalog_room.index',compact('data'));
     }
     public function create()
     {
         $type = DB::table('m_type_room')->get();
-        return view('catalog.catalog_room.create',compact('type'));
+        $features = DB::table('m_features')->get();
+        return view('backend.catalog.catalog_room.create',compact('type','features'));
     }
     public function save()
     {

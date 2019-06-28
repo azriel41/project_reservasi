@@ -63,9 +63,9 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('master_admin') }}" class="sidebar-link">
+                                    <a href="{{ route('master_user') }}" class="sidebar-link">
                                         <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Master Admin</span>
+                                        <span class="hide-menu"> Master User</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
@@ -85,16 +85,9 @@
                                 <li class="sidebar-item">
                                     <a href="{{ route('catalog_room') }}" class="sidebar-link">
                                         <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Manage Room Types </span>
+                                        <span class="hide-menu"> Manage Room</span>
                                     </a>
                                 </li>
-                                <li class="sidebar-item">
-                                    <a href="{{ route('catalog_categories') }}" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Categories</span>
-                                    </a>
-                                </li>
-
                             </ul>
                               <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">

@@ -41,12 +41,12 @@
    Route::get('/master/master_role/delete/{id}', 'master\master_roleController@delete')->name('master_role_delete');
 
    //MASTER admin
-   Route::get('/master/master_admin', 'master\master_adminController@index')->name('master_admin');
-   Route::get('/master/master_admin/create', 'master\master_adminController@create')->name('master_admin_create');
-   Route::get('/master/master_admin/save', 'master\master_adminController@save')->name('master_admin_save');
-   Route::get('/master/master_admin/edit/{id}', 'master\master_adminController@edit')->name('master_admin_edit');
-   Route::get('/master/master_admin/update/{id}', 'master\master_adminController@update')->name('master_admin_update');
-   Route::get('/master/master_admin/delete/{id}', 'master\master_adminController@delete')->name('master_admin_delete');
+   Route::get('/master/master_user', 'master\master_userController@index')->name('master_user');
+   Route::get('/master/master_user/create', 'master\master_userController@create')->name('master_user_create');
+   Route::get('/master/master_user/save', 'master\master_userController@save')->name('master_user_save');
+   Route::get('/master/master_user/edit/{id}', 'master\master_userController@edit')->name('master_user_edit');
+   Route::get('/master/master_user/update/{id}', 'master\master_userController@update')->name('master_user_update');
+   Route::get('/master/master_user/delete/{id}', 'master\master_userController@delete')->name('master_user_delete');
 
    //MASTER customer
    Route::get('/master/master_customer', 'master\master_customerController@index')->name('master_customer');

@@ -17,11 +17,11 @@ class master_customerController extends Controller
 
         $data = DB::table('d_mem')->where('m_role','!=','10')->where('m_role','!=','11')->get();
 
-        return view('master.master_customer.index',compact('data'));
+        return view('backend.master.master_customer.index',compact('data'));
     }
     public function create()
     {
-        return view('master.master_customer.create');
+        return view('backend.master.master_customer.create');
     }
     public function save(Request $request)
     {
@@ -48,7 +48,7 @@ class master_customerController extends Controller
     {
         $data = DB::table('d_role')->where('r_id',$id)->first();
 
-        return view('master.master_admin.edit',compact('data'));
+        return view('backend.master.master_admin.edit',compact('data'));
     }
     public function update(Request $request)
     {
