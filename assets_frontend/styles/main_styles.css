@@ -143,7 +143,7 @@ h6::selection
 }
 .form-control
 {
-	color: #db5246;
+	color: #000;
 }
 section
 {
@@ -1510,4 +1510,34 @@ section
 .footer_contact_content ul li:not(:last-child)
 {
 	margin-bottom: 14px;
+}
+.mods
+{
+	padding: 20px;
+	border: 1px solid #eaeaea;
+	border-top: none;
+	border-bottom-left-radius: .25rem;
+	border-bottom-right-radius: .25rem; 
+}
+.panels
+{
+	padding-left: 10px;
+}
+.nli
+{
+	font-size: 20px;
+	border: none!important;
+	color: #000;
+}
+.nli:hover
+{
+	color: purple;
+}
+li.nav-item.active:after
+{
+    content:"";
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+    border-top: 5px solid purple;
 }
