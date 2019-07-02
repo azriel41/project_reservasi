@@ -1,7 +1,6 @@
 @extends('layouts_frontend._main_frontend')  
 @section('extra_style')
 <style type="text/css">
-
   .room_col {
     margin-top: 100px;
   }
@@ -79,8 +78,90 @@
   -webkit-font-smoothing: antialiased;
   -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
   text-shadow: rgba(0,0,0,.01) 0 0 1px;
-}
   }
+  .moc
+  {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mdl{
+    padding:30px;
+  }
+  .mdl h2
+  {
+    margin :10px 0 30px 0;
+  }
+  .mdr
+  {
+    border-left: 1px solid;
+    position: relative;
+  }
+  .mgb
+  {
+    max-width: 180px;
+    border: 1px solid #d6d4d4;
+    padding: 5px;
+    float: left;
+    margin-right: 30px;
+  }
+  .mpi
+  {
+    display: inline-block;
+  }
+  .prodname
+  {
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 1px solid;
+  }
+  .sub
+  {
+    margin-bottom: 5px;
+  }
+  .st
+  {
+    display: table;
+    padding: 5px 0;
+  }
+  .payinf
+  {
+    padding-top: 20px;
+    padding-bottom: 65px;
+  }
+  .paytit
+  {
+    padding: 10px 0;
+    margin-bottom: 10px 0;
+    border-bottom: 1px solid;
+  }
+  .tutup
+  {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    color: #333;
+    z-index: 2;
+  }
+  .tutup:before
+  {
+    content: "\f057";
+    display: block;
+    font-family: fontawesome;
+    font-size: 25px;
+    line-height: 25px;
+  }
+  .lee
+  {
+    position: static;
+  }
+  .boti
+  {
+    padding: 10px 0;
+  }
+
 </style>
 @endsection
 
@@ -95,7 +176,62 @@
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                      ...
+                      <div class="moc">
+                        <div class="col-xs-12 col-sm-6 mdl lee">
+                          <span class="tutup" title="close window"></span>
+                          <h2 class="text-center" style="font-size: large;"><i class="fa fa-check"></i>Room Succesfully added to your cart</h2>
+                          <h5 class="text-center prodname">Hotel California</h5>
+
+                          <div class="mgb">
+                            <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">     
+                          </div>
+                          <div class="mpi">
+                            <div class="sub">
+                              <strong>Time Duration</strong>
+                              <span class="st" id="">02-06-2019</span>
+                              <span class="st">till</span>
+                              <span class="st" id="">03-06-2019</span>
+                            </div>
+                            <div class="sub">
+                              <strong>Rooms Quantity</strong>
+                              <span class="st" id="">3</span>
+                            </div>
+                            <div class="sub">
+                              <strong>Total Cost</strong>
+                              <span class="st" id="">Rp.3.000.000</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 mdl mdr">
+                          <h4 class="text-center paytit">There are 1 room(s) in your cart.</h4>
+                          <div class="payinf">
+                            <div class="sub">
+                              <strong>Total Room Cost</strong>
+                              <span class="st" id="">Rp.2.000.000</span>
+                            </div>
+                            <div class="sub">
+                              <strong>Total Additional</strong>
+                              <span class="st" id="">Rp.3.000.000</span>
+                            </div>
+                            <div class="sub">
+                              <strong>Total Cost</strong>
+                              <span class="st" id="">Rp.5.000.000</span>
+                            </div>
+                          </div>
+                          <div class="moc">
+                            <div class="col-xs-12 col-sm-6 boti">
+                              <button class="btn btn-secondary">
+                                <i class="fa fa-chevron-left"></i> Continue Shopping
+                              </button>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 boti">
+                              <button class="btn btn-primary">
+                                Proceed to Checkout <i class="fa fa-chevron-right"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -259,6 +395,9 @@
       $('.prc').text(accounting.formatMoney($(this).val()*$('.hrg').val(),"Rp. ",2,'.',','));
     });
 
+    $('.tutup').click(function(eve) {
+      $('.modal').modal('hide');
+    });
 </script>
 
 @endsection
