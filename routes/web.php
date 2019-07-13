@@ -23,6 +23,7 @@
 // ROOM DETAIL------------------------------------
    
    Route::get('/room_detail', 'frontend\room\room_detailController@index')->name('room_detail');
+   Route::get('/room_detail/invoice', 'frontend\room\room_invoiceController@index')->name('invoice');
 
    Auth::routes();
 

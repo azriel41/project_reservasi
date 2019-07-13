@@ -167,7 +167,6 @@
 
 
 @section('content')
-<div class="blank">
 <div class="intro">
 @include('layouts_frontend._search_frontend')  
         <div class="container">
@@ -220,12 +219,12 @@
                           </div>
                           <div class="moc">
                             <div class="col-xs-12 col-sm-6 boti">
-                              <button class="btn btn-secondary">
+                              <button class="klos btn btn-secondary">
                                 <i class="fa fa-chevron-left"></i> Continue Shopping
                               </button>
                             </div>
                             <div class="col-xs-12 col-sm-6 boti">
-                              <button class="btn btn-primary">
+                              <button class="lanjot btn btn-primary">
                                 Proceed to Checkout <i class="fa fa-chevron-right"></i>
                               </button>
                             </div>
@@ -395,9 +394,14 @@
       $('.prc').text(accounting.formatMoney($(this).val()*$('.hrg').val(),"Rp. ",2,'.',','));
     });
 
-    $('.tutup').click(function(eve) {
+    $('.tutup,.klos').click(function(eve) {
       $('.modal').modal('hide');
     });
+    $('.lanjot').click(function(eve){
+      window.location.href = '{{route('invoice')}}';
+    });
+
+    
 </script>
 
 @endsection
