@@ -24,6 +24,7 @@
 <!--c3 charts -->
 <script src="{{ asset('assets_backend/extra-libs/c3/d3.min.js') }}"></script>
 <script src="{{ asset('assets_backend/extra-libs/c3/c3.min.js') }}"></script>
+<script src="{{ asset('assets_backend/extra-libs/dropzone/dropzone.js') }}"></script>
 <!--chartjs -->
 <script src="{{ asset('assets_backend/libs/raphael/raphael.min.js') }}"></script>
 <script src="{{ asset('assets_backend/libs/morris.js/morris.min.js') }}"></script>

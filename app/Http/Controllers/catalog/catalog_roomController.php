@@ -34,8 +34,9 @@ class catalog_roomController extends Controller
         $features = DB::table('m_features')->get();
         return view('backend.catalog.catalog_room.create',compact('type','features'));
     }
-    public function save()
+    public function save(Request $req)
     {
+        dd($req->all());
     }
     public function edit()
     {

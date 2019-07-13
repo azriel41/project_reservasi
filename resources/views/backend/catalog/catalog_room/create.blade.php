@@ -28,101 +28,11 @@
     </div>
 
     <div class="container-fluid">
-                {{-- <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <br>
-                                <form id="save">
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Name</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="text" name="cr_name" id="cr_name">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Desc</label>
-                                        <div class="col-10">
-                                            <textarea class="form-control" name="cr_desc"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">type</label>
-                                        <div class="col-10">
-                                            <select class="form-control">
-                                                <option value="">- Chose -</option>
-                                                @foreach ($type as $element)
-                                                    <option value="{{ $element->tr_id }}">{{ $element->tr_name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Price</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="text" name="cr_price" id="cr_price">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Features</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="text" name="cr_features" id="cr_features">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Image Cover / Img 1</label>
-                                        <div class="col-10">
-                                        <img id="cr_img_0"  width="200" height="200" />
-                                            <input type="file" name="cr_img_0"
-                                        onchange="document.getElementById('cr_img_0').src = window.URL.createObjectURL(this.files[0])">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Img 2</label>
-                                        <div class="col-10">
-                                        <img id="cr_img_1"  width="200" height="200" />
-                                            <input type="file" name="cr_img_1"
-                                        onchange="document.getElementById('cr_img_1').src = window.URL.createObjectURL(this.files[0])">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Img 3</label>
-                                        <div class="col-10">
-                                        <img id="cr_img_2"  width="200" height="200" />
-                                            <input type="file" name="cr_img_2"
-                                        onchange="document.getElementById('cr_img_2').src = window.URL.createObjectURL(this.files[0])">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Img 4</label>
-                                        <div class="col-10">
-                                        <img id="cr_img_3"  width="200" height="200" />
-                                            <input type="file" name="cr_img_3"
-                                        onchange="document.getElementById('cr_img_3').src = window.URL.createObjectURL(this.files[0])">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="r_level" class="col-2 col-form-label">Img 5</label>
-                                        <div class="col-10">
-                                        <img id="cr_img_4"  width="200" height="200" />
-                                            <input type="file" name="cr_img_4"
-                                        onchange="document.getElementById('cr_img_4').src = window.URL.createObjectURL(this.files[0])">
-                                        </div>
-                                    </div>
-                                    <div class="text-right">
-                                        <button class="btn btn-primary" type="button" onclick="save()"><i class="fas fa-share"> </i> Save</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-    
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form_save">
+                                <form class="form_save" enctype="multipart/form-data">
                                 <h4 class="card-title">Manage Room</h4>
                                 <h6 class="card-subtitle">manage your room from here</h6>
                                 <div class="row">
@@ -153,7 +63,7 @@
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">type</label>
                                                     <div class="col-10">
-                                                        <select class="form-control">
+                                                        <select class="form-control" name="cr_type">
                                                             <option value="">- Chose -</option>
                                                             @foreach ($type as $element)
                                                                 <option value="{{ $element->tr_id }}">{{ $element->tr_name }}</option>
@@ -172,29 +82,29 @@
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Tax Price</label>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="cr_price" id="cr_price">
+                                                        <input class="form-control" type="text" name="cr_tax_price" id="cr_tax_price">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Serve Price</label>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="cr_price" id="cr_price">
+                                                        <input class="form-control" type="text" name="cr_serve_price" id="cr_serve_price">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Additional Price</label>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="cr_price" id="cr_price">
+                                                        <input class="form-control" type="text" name="cr_additional_price" id="cr_additional_price">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Payment Method</label>
                                                     <div class="custom-control custom-radio">
-                                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                        <input type="radio" id="customRadio1" name="payment" value="Down Payment" class="custom-control-input">
                                                         <label class="custom-control-label" for="customRadio1">Down Payment</label>
                                                     </div>
                                                     <div class="custom-control custom-radio">
-                                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                        <input type="radio" id="customRadio2" name="payment" value="Full Payment" class="custom-control-input">
                                                         <label class="custom-control-label" for="customRadio2">Full Payment</label>
                                                     </div>
                                                 </div>
@@ -204,7 +114,7 @@
                                                     <label for="r_level" class="col-2 col-form-label">Image Cover / Img 1</label>
                                                     <div class="col-10">
                                                     <img id="cr_img_0"  width="200" height="200" />
-                                                        <input type="file" name="cr_img_0"
+                                                        <input type="file" name="crd_img[]"
                                                     onchange="document.getElementById('cr_img_0').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                 </div>
@@ -212,7 +122,7 @@
                                                     <label for="r_level" class="col-2 col-form-label">Img 2</label>
                                                     <div class="col-10">
                                                     <img id="cr_img_1"  width="200" height="200" />
-                                                        <input type="file" name="cr_img_1"
+                                                        <input type="file" name="crd_img[]"
                                                     onchange="document.getElementById('cr_img_1').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                 </div>
@@ -220,7 +130,7 @@
                                                     <label for="r_level" class="col-2 col-form-label">Img 3</label>
                                                     <div class="col-10">
                                                     <img id="cr_img_2"  width="200" height="200" />
-                                                        <input type="file" name="cr_img_2"
+                                                        <input type="file" name="crd_img[]"
                                                     onchange="document.getElementById('cr_img_2').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                 </div>
@@ -228,7 +138,7 @@
                                                     <label for="r_level" class="col-2 col-form-label">Img 4</label>
                                                     <div class="col-10">
                                                     <img id="cr_img_3"  width="200" height="200" />
-                                                        <input type="file" name="cr_img_3"
+                                                        <input type="file" name="crd_img[]"
                                                     onchange="document.getElementById('cr_img_3').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                 </div>
@@ -236,7 +146,7 @@
                                                     <label for="r_level" class="col-2 col-form-label">Img 5</label>
                                                     <div class="col-10">
                                                     <img id="cr_img_4"  width="200" height="200" />
-                                                        <input type="file" name="cr_img_4"
+                                                        <input type="file" name="crd_img[]"
                                                     onchange="document.getElementById('cr_img_4').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                 </div>
@@ -252,8 +162,8 @@
                                                     <tr>
                                                         <td>
                                                             <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck{{ $index }}">
-                                                                <label class="custom-control-label" for="customCheck{{ $index }}">I am checked Checkbox</label>
+                                                                <input type="checkbox" class="custom-control-input" value="{{ $element->mf_id }}" name="features[]" id="customCheck{{ $index }}">
+                                                                <label class="custom-control-label" for="customCheck{{ $index }}"></label>
                                                             </div>
                                                         </td>
                                                         <td>{{ $element->mf_name }}</td>
@@ -264,9 +174,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="offset-md-11 col-sm-12">
-                                        <button class="btn btn-primary">Save</button>
-                                        <button class="btn btn-danger">Back</button>
+                                    <div class="offset-md-10 col-sm-12">
+                                        <button type="button" onclick="save()" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-danger">Back</button>
                                     </div>
                                 </div>
                                 </form>
@@ -298,6 +208,9 @@
             [
                 '<button style="background-color:#17a991;color:white;">Save</button>',
                 function (instance, toast) {
+                    var form  = $('.form_save');
+                    formdata = new FormData(form[0]);
+                    // formdata.append('k_status_id',$id);
 
                   $.ajaxSetup({
                       headers: {
@@ -308,7 +221,7 @@
                     $.ajax({
                         type: "post",
                         url:'{{ route('catalog_room_save') }}',
-                        data: $('#save').serialize(),
+                        data: formdata ? formdata : form.serialize(),
                         processData: false,
                         contentType: false,
                       success:function(data){
