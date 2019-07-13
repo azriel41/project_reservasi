@@ -5,7 +5,7 @@ namespace App\Http\Controllers\frontend\room;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class room_detailController extends Controller
+class room_invoiceController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -20,6 +20,6 @@ class room_detailController extends Controller
      */
     public function index()
     {
-        return view('frontend.room.room_detail');
+        return view('frontend.room.room_invoice');
     }
 }
