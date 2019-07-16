@@ -330,7 +330,7 @@
                                 
                                 <div class="form-group">
                                     <label class="control-label">Price Room</label>
-                                    <h4 class="prc">Rp.100.000</h4>
+                                    <h4 class="prc">{{ number_format('',',','.') }}</h4>
                                     <input type="hidden" value="100000" class="hrg" name="">
                                 </div>
 
@@ -376,7 +376,6 @@
     });
 
     $('.qty').keyup(function(){
-
       $('.prc').text(accounting.formatMoney($(this).val()*$('.hrg').val(),"Rp. ",2,'.',','));
     });
 
