@@ -364,14 +364,14 @@
 
     $("#tgl1").datepicker({
       startDate: new Date(),
-      format: 'mm-dd-yyyy',
+      format: 'dd-MM-yyyy',
       autoclose: true,
     });
-    
+
 
     $("#tgl2").datepicker({
       startDate: new Date(),
-      format:'mm-dd-yyyy',
+      format:'dd-MM-yyyy',
       autoclose: true
     });
 
