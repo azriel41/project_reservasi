@@ -13,8 +13,8 @@
 
 // INDEX
 // Route::group(['middleware' => 'guest'], function () {
-   Route::get('/', 'Auth\LoginController@index')->name('welcome');
-   Route::get('/welcome', 'Auth\LoginController@index')->name('welcome_1');
+   // Route::get('/', 'Auth\LoginController@index')->name('welcome');
+   Route::get('/', 'homeController@index')->name('welcome');
    Route::get('/login', 'Auth\LoginController@index')->name('login');
    Route::post('login', 'Auth\LoginController@authenticate');
  // });
@@ -78,10 +78,16 @@
    //CATALOG room
    Route::get('/catalog/catalog_room', 'catalog\catalog_roomController@index')->name('catalog_room');
    Route::get('/catalog/catalog_room/create', 'catalog\catalog_roomController@create')->name('catalog_room_create');
-   Route::get('/catalog/catalog_room/save', 'catalog\catalog_roomController@save')->name('catalog_room_save');
+   Route::post('/catalog/catalog_room/save', 'catalog\catalog_roomController@save')->name('catalog_room_save');
    Route::get('/catalog/catalog_room/edit/{id}', 'catalog\catalog_roomController@edit')->name('catalog_room_edit');
    Route::get('/catalog/catalog_room/update', 'catalog\catalog_roomController@update')->name('catalog_room_update');
    Route::get('/catalog/catalog_room/delete/{id}', 'catalog\catalog_roomController@delete')->name('catalog_room_delete');
+
+
+
+   // BOOK
+   Route::get('/book/book_room/detail/{id}', 'backend\book\book_roomController@room_detail')->name('room_detail');
+
 
    
 

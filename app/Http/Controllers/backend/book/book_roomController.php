@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backend\book;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\models;
-
-class homeController extends Controller
+class book_roomController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,9 +23,9 @@ class homeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function room_detail($id)
     {
-        $dt = $this->models->c_room()->get();
+        $dt = $this->models->c_room()->where('cr_id',$id)->get();
         $data = [];
         foreach ($dt as $key => $value) {
            $data[$key] = $value;
@@ -33,7 +33,7 @@ class homeController extends Controller
            $data[$key]->c_room_image;
            $data[$key]->c_room_features;
         }
-        // return $data;
-        return view('welcome',compact('data'));
+        $type_room = $this->models->m_type_room()->get();
+        return view('frontend.room.room_detail',compact('data','type_room'));
     }
 }
