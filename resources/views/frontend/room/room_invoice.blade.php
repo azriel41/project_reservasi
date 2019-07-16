@@ -108,7 +108,7 @@
 <div class="intro">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-sm-9">
+			<div class="col-xs-12 col-sm-9" id="kemps">
 				<div class="romps">
 					<div class="subttl">
 						<h4>Room & Price Summary</h4>
@@ -169,7 +169,7 @@
 						<button class="prosbut"><span>Proceed</span></button>
 					</div>
 				</div>
-				<div class="romps">
+				<div class="romps1">
 					<div class="subttl">
 						<h4>Room & Price Summary</h4>
 					</div>
@@ -247,4 +247,10 @@
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('extra_scripts')
+
+
+
 @endsection
