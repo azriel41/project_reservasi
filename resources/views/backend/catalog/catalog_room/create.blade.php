@@ -35,8 +35,11 @@
                                 <form class="form_save" enctype="multipart/form-data">
                                 <h4 class="card-title">Manage Room</h4>
                                 <h6 class="card-subtitle">manage your room from here</h6>
+                                <div style="border-bottom: 2px solid #e5e5e5;margin: 0px -20px 30px -20px;">
+                                    
+                                </div>
                                 <div class="row">
-                                    <div class="col-lg-4 col-xl-3">
+                                    <div class="col-lg-3 col-xl-2">
                                         <!-- Nav tabs -->
                                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                             <a class="nav-link active" id="information-tab" data-toggle="pill" href="#information" role="tab" aria-controls="information" aria-selected="true">Information</a>
@@ -45,7 +48,7 @@
                                             <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Features</a>
                                         </div>
                                     </div>
-                                    <div class="col-lg-8 col-xl-9">
+                                    <div class="col-lg-9 col-xl-10">
                                         <div class="tab-content" id="v-pills-tabContent">
                                             <div class="tab-pane fade show active" id="information" role="tabpanel" aria-labelledby="information-tab">
                                                 <div class="form-group row">
@@ -76,30 +79,30 @@
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Price</label>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="cr_price" id="cr_price">
+                                                        <input class="form-control mask_money_dn text-right" type="text" name="cr_price" id="cr_price">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Tax Price</label>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="cr_tax_price" id="cr_tax_price">
+                                                        <input class="form-control mask_money_dn text-right" type="text" name="cr_tax" id="cr_tax">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Serve Price</label>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="cr_serve_price" id="cr_serve_price">
+                                                        <input class="form-control mask_money_dn text-right" type="text" name="cr_serve" id="cr_serve">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Additional Price</label>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="cr_additional_price" id="cr_additional_price">
+                                                        <input class="form-control mask_money_dn text-right" type="text" name="cr_additional" id="cr_additional">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="r_level" class="col-2 col-form-label">Payment Method</label>
-                                                    <div class="custom-control custom-radio">
+                                                    <div class="custom-control custom-radio col-3">
                                                         <input type="radio" id="customRadio1" name="payment" value="Down Payment" class="custom-control-input">
                                                         <label class="custom-control-label" for="customRadio1">Down Payment</label>
                                                     </div>

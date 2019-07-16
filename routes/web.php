@@ -13,8 +13,8 @@
 
 // INDEX
 // Route::group(['middleware' => 'guest'], function () {
-   Route::get('/', 'Auth\LoginController@index')->name('welcome');
-   Route::get('/welcome', 'Auth\LoginController@index')->name('welcome_1');
+   // Route::get('/', 'Auth\LoginController@index')->name('welcome');
+   Route::get('/', 'homeController@index')->name('welcome');
    Route::get('/login', 'Auth\LoginController@index')->name('login');
    Route::post('login', 'Auth\LoginController@authenticate');
  // });
@@ -82,6 +82,12 @@
    Route::get('/catalog/catalog_room/edit/{id}', 'catalog\catalog_roomController@edit')->name('catalog_room_edit');
    Route::get('/catalog/catalog_room/update', 'catalog\catalog_roomController@update')->name('catalog_room_update');
    Route::get('/catalog/catalog_room/delete/{id}', 'catalog\catalog_roomController@delete')->name('catalog_room_delete');
+
+
+
+   // BOOK
+   Route::get('/book/book_room/detail/{id}', 'backend\book\book_roomController@room_detail')->name('room_detail');
+
 
    
 

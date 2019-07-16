@@ -24,7 +24,7 @@
 <!--c3 charts -->
 <script src="{{ asset('assets_backend/extra-libs/c3/d3.min.js') }}"></script>
 <script src="{{ asset('assets_backend/extra-libs/c3/c3.min.js') }}"></script>
-<script src="{{ asset('assets_backend/extra-libs/dropzone/dropzone.js') }}"></script>
+
 <!--chartjs -->
 <script src="{{ asset('assets_backend/libs/raphael/raphael.min.js') }}"></script>
 <script src="{{ asset('assets_backend/libs/morris.js/morris.min.js') }}"></script>
@@ -33,9 +33,12 @@
 <script src="{{ asset('assets_backend/libs/dragula/dist/dragula.min.js') }}"></script>
 <script src="{{ asset('assets_backend/libs/iziToast-master/dist/js/iziToast.min.js') }}"></script>
 
+<script src="{{ asset('assets_backend/extra-libs/dropzone/dropzone.js') }}"></script>
+<script src="{{ asset('assets_backend/extra-libs/maskmoney/src/jquery.maskMoney.js') }}"></script>
 
 <script type="text/javascript">
     $(".preloader").fadeOut();
+    $(".mask_money_dn").maskMoney({thousands:'.', decimal:',', precision:-1});
 
     var baseUrl = '{{ url('/') }}';
     $(function() {

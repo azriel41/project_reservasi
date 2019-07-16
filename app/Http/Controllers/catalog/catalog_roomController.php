@@ -5,7 +5,8 @@ namespace App\Http\Controllers\catalog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
-
+use App\models;
+use Storage;
 class catalog_roomController extends Controller
 {
     /**
@@ -13,11 +14,12 @@ class catalog_roomController extends Controller
      *
      * @return void
      */
+    protected $models;
     public function __construct()
     {
         $this->middleware('auth');
+        $this->models = new models();
     }
-
     /**
      * Show the application dashboard.
      *
@@ -25,7 +27,7 @@ class catalog_roomController extends Controller
      */
     public function index()
     {
-        $data = DB::table('c_room')->get();
+        $data = $this->models->c_room()->get();
         return view('backend.catalog.catalog_room.index',compact('data'));
     }
     public function create()
@@ -36,7 +38,40 @@ class catalog_roomController extends Controller
     }
     public function save(Request $req)
     {
-        dd($req->all());
+
+        $maxid = $this->models->c_room()->max('cr_id');
+        $id = ($maxid == 0 ? 1 : $maxid+1);
+        $save = $this->models->c_room()->create([
+            'cr_id'=>$id,
+            'cr_name'=>$req->cr_name,
+            'cr_desc'=>$req->cr_desc,
+            'cr_type'=>$req->cr_type,
+            'cr_price'=>filter_var($req->cr_price,FILTER_SANITIZE_NUMBER_INT)/1,
+            'cr_tax'=>filter_var($req->cr_tax,FILTER_SANITIZE_NUMBER_INT)/1,
+            'cr_serve'=>filter_var($req->cr_serve,FILTER_SANITIZE_NUMBER_INT)/1,
+            'cr_additional'=>filter_var($req->cr_additional,FILTER_SANITIZE_NUMBER_INT)/1,
+            'cr_payment'=>$req->payment,
+        ]);
+     
+        for ($i=0; $i <count($req->features) ; $i++) { 
+            $save_features = $this->models->c_room_features()->create([
+                'crf_id'=>$id,
+                'crf_features'=>$req->features[$i],
+            ]); 
+        }
+
+        if($req->hasfile('crd_img')){
+            foreach($req->file('crd_img') as $index => $image )
+            {
+                $photo = 'room/room_'.$id.'_'.$index.'.png';
+                Storage::put($photo,file_get_contents($image));
+                $save_image = $this->models->c_room_image()->create([
+                    'cri_id'=>$id,
+                    'cri_image'=>$photo,
+                ]); 
+            }
+        }
+        return 'a';
     }
     public function edit()
     {

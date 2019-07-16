@@ -171,6 +171,7 @@
 @include('layouts_frontend._search_frontend')  
         <div class="container">
             <div class="row row-lg-eq-height">
+              @foreach ($data as $index => $element)
 
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
@@ -245,32 +246,16 @@
                             <div class="ner">
                             	
                             	<div class="comn">
-                            		<img src="{{asset('assets_frontend/images/intro_1.jpg')}}">
+                            		<img src="{{asset('storage/app/'.$data[0]->c_room_image[0]->cri_image)}}">
                             	</div>
                             	<ul class="tbl">
-                            		
-                            		<li class="ggb">
-                            			<a href="{{url('assets_frontend/images/intro_2.jpg')}}">
-                            				<img src="{{asset('assets_frontend/images/intro_2.jpg')}}">
-                            			</a>
-                            		</li>
-
-                            		<li class="ggb">
-                            			<a href="{{url('assets_frontend/images/intro_3.jpg')}}">
-                            				<img src="{{asset('assets_frontend/images/intro_3.jpg')}}">
-                            			</a>
-                            		</li>
-                            		<li class="ggb">
-                            			<a href="{{url('assets_frontend/images/intro_1.jpg')}}">
-                            				<img src="{{asset('assets_frontend/images/intro_1.jpg')}}">
-                            			</a>
-                            		</li>
-                            		<li class="ggb">
-                            			<a href="{{url('assets_frontend/images/intro_1.jpg')}}">
-                            				<img src="{{asset('assets_frontend/images/intro_1.jpg')}}">
-                            			</a>
-                            		</li>
-
+                                @foreach ($element->c_room_image as $index1 => $element1)
+                              		<li class="ggb">
+                              			<a href="{{url('storage/app/'.$data[0]->c_room_image[$index1]->cri_image)}}">
+                              				<img src="{{asset('storage/app/'.$data[0]->c_room_image[$index1]->cri_image)}}">
+                              			</a>
+                              		</li>
+                                @endforeach
                             	</ul>
                             </div>
 
@@ -289,15 +274,13 @@
                               
                                 <div class="desc">
                                   <p>
-                                    Fashion axe kogi yuccie, ramps shabby chic direct trade before they sold out distillery bicycle rights. Slow-carb +1 quinoa VHS. +1 brunch trust fund, meggings chartreuse sustainable everyday carry tumblr hoodie tacos tilde ramps post-ironic fixie.
+                                    {{ $data[0]->cr_desc }}
                                   </p>
 
                                   <strong>Room Features - </strong>
-                                  <i class="fa fa-wifi"></i>
-                                  <i class="fa fa-newspaper-o"></i>
-                                  <i class="fa fa-bed"></i>
-                                  <i class="fa fa-television"></i>
-                                  <i class="fa fa-bath"></i>
+                                  @foreach ($data[0]->c_room_features as $index2 => $element2)
+                                    <i class="{{ $data[0]->c_room_features[$index2]->m_features->mf_icon }}">{{-- {{ $data[0]->c_room_features[$index2]->m_features->mf_name }} --}}</i>
+                                  @endforeach
                                 </div>
                               </div>
                               <div role="tabpanel" class="tab-pane fade" id="reviews">
@@ -328,8 +311,9 @@
                             	<form action="" method="">
                         
                             		<div class="form-group">
-                            			<label for="" class="control-label">Hotel Location</label>
-                            			<input type="text" name="" class="form-control" value="hotel-california">
+                            			<label for="" class="control-label">Type Bed</label>
+                                      <input type="hidden" class="form-control" value="{{ $data[0]->m_type_room->tr_id }}" readonly="" name="type_room_id">
+                                      <input type="text" class="form-control" value="{{ $data[0]->m_type_room->tr_name }}" readonly="" name="type_room_name">
                             		</div>
                             		<div class="form-group">
                             			<label for="" class="control-label">Check In Date</label>
@@ -362,6 +346,7 @@
 
                 </div>
             </div>
+          @endforeach
         </div>
     </div>
 
@@ -382,6 +367,7 @@
       format: 'mm-dd-yyyy',
       autoclose: true,
     });
+    
 
     $("#tgl2").datepicker({
       startDate: new Date(),
