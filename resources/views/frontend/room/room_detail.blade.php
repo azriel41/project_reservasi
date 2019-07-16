@@ -123,11 +123,6 @@
     display: table;
     padding: 5px 0;
   }
-  .payinf
-  {
-    padding-top: 20px;
-    padding-bottom: 65px;
-  }
   .paytit
   {
     padding: 10px 0;
@@ -161,6 +156,9 @@
   {
     padding: 10px 0;
   }
+  .table td, .table th{
+    border-top:0px solid white !important;
+  }
 
 </style>
 @endsection
@@ -173,68 +171,7 @@
             <div class="row row-lg-eq-height">
               @foreach ($data as $index => $element)
 
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="moc">
-                        <div class="col-xs-12 col-sm-6 mdl lee">
-                          <span class="tutup" title="close window"></span>
-                          <h2 class="text-center" style="font-size: large;"><i class="fa fa-check"></i>Room Succesfully added to your cart</h2>
-                          <h5 class="text-center prodname">Hotel California</h5>
-
-                          <div class="mgb">
-                            <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">     
-                          </div>
-                          <div class="mpi">
-                            <div class="sub">
-                              <strong>Time Duration</strong>
-                              <span class="st" id="">02-06-2019</span>
-                              <span class="st">till</span>
-                              <span class="st" id="">03-06-2019</span>
-                            </div>
-                            <div class="sub">
-                              <strong>Rooms Quantity</strong>
-                              <span class="st" id="">3</span>
-                            </div>
-                            <div class="sub">
-                              <strong>Total Cost</strong>
-                              <span class="st" id="">Rp.3.000.000</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 mdl mdr">
-                          <h4 class="text-center paytit">There are 1 room(s) in your cart.</h4>
-                          <div class="payinf">
-                            <div class="sub">
-                              <strong>Total Room Cost</strong>
-                              <span class="st" id="">Rp.2.000.000</span>
-                            </div>
-                            <div class="sub">
-                              <strong>Total Additional</strong>
-                              <span class="st" id="">Rp.3.000.000</span>
-                            </div>
-                            <div class="sub">
-                              <strong>Total Cost</strong>
-                              <span class="st" id="">Rp.5.000.000</span>
-                            </div>
-                          </div>
-                          <div class="moc">
-                            <div class="col-xs-12 col-sm-6 boti">
-                              <button class="klos btn btn-secondary">
-                                <i class="fa fa-chevron-left"></i> Continue Shopping
-                              </button>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 boti">
-                              <button class="lanjot btn btn-primary">
-                                Proceed to Checkout <i class="fa fa-chevron-right"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                
                 <!-- Intro Content -->
                 <div class="col-lg-8 intro_col">
  
@@ -274,7 +211,7 @@
                               
                                 <div class="desc">
                                   <p>
-                                    {{ $data[0]->cr_desc }}
+                                    {!! $data[0]->cr_desc !!}
                                   </p>
 
                                   <strong>Room Features - </strong>
@@ -317,11 +254,11 @@
                             		</div>
                             		<div class="form-group">
                             			<label for="" class="control-label">Check In Date</label>
-                            			<input type="text" class="form-control" id="tgl1" name="today" placeholder="Check In Date" readonly>
+                            			<input type="text" class="form-control start_date" id="tgl1" name="today" placeholder="Check In Date" readonly>
                             		</div>
                             		<div class="form-group">
                             			<label for="" class="control-label">Check Out Date</label>
-                                  <input type="text" class="form-control" id="tgl2" name="gohome" placeholder="check Out Date" readonly>
+                                  <input type="text" class="form-control end_date" id="tgl2" name="gohome" placeholder="check Out Date" readonly>
                             		</div>
                             		<div class="form-group">
                               			<label for="" class="control-label">Number of Rooms</label>
@@ -330,12 +267,12 @@
                                 
                                 <div class="form-group">
                                     <label class="control-label">Price Room</label>
-                                    <h4 class="prc">Rp. {{ number_format($data[0]->cr_total,0,',','.') }}</h4>
-                                    <input type="hidden" value="100000" class="hrg" name="">
+                                    <h4 class="prc room_price_txt">Rp. {{ number_format($data[0]->cr_price,0,',','.') }}</h4>
+                                    <input type="hidden" value="{{ $data[0]->cr_price }}" class="hrg room_price" name="">
                                 </div>
 
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+                                <button type="button" onclick="book_now()" class="btn btn-primary" data-toggle="modal">Book Now</button>
 
                             	</form>
                         
@@ -348,6 +285,83 @@
             </div>
           @endforeach
         </div>
+    </div>
+
+
+
+
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="moc">
+            <div class="col-xs-12 col-sm-6 mdl lee">
+              <span class="tutup" title="close window"></span>
+              <h2 class="text-center" style="font-size: large;"><i class="fa fa-check"></i>Room Succesfully added to your cart</h2>
+              <h5 class="text-center prodname">{{$data[0]->cr_name}}</h5>
+
+              <div class="mgb">
+                <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">     
+              </div>
+              <div class="mpi">
+                <div class="sub">
+                  <strong>Time Duration</strong>
+                  <span class="st start_date_txt" id=""></span>
+                  <span class="st">till</span>
+                  <span class="st end_date_txt" id=""></span>
+                </div>
+                <div class="sub">
+                  <strong>Rooms Quantity</strong>
+                  <span class="st qty_txt" id=""></span>
+                </div>
+                <div class="sub">
+                  <strong>Total Room Cost</strong>
+                  <span class="st room_price_txt" id=""></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 mdl mdr">
+              <h4 class="text-center paytit">There are 1 room(s) in your cart.</h4>
+              <div class="payinf">
+                <table class="table" style="font-size: 14px">
+                  <tr>
+                    <th>Total Room Cost</th>
+                    <td align="right"><span class="st room_price_txt" id=""></span></td>
+                  </tr>
+                  <tr>
+                    <th>Total Tax</th>
+                    <td align="right"><span class="st tax_price_txt" id=""></span></td>
+                  </tr>
+                  <tr>
+                    <th>Total Serve</th>
+                    <td align="right"><span class="st serve_price_txt" id=""></span></td>
+                  </tr>
+                  <tr>
+                    <th>Total Additional</th>
+                    <td align="right"><span class="st additional_price_txt" id=""></span></td>
+                  </tr>
+                  <tr style="background-color: #f5f5f5">
+                    <th>Total Cost</th>
+                    <td align="right"><span class="st total_price_txt" id=""></span></td>
+                  </tr>
+                </table>
+              </div>
+              <div class="moc">
+                <div class="col-xs-12 col-sm-6 boti">
+                  <button class="klos btn btn-secondary">
+                    <i class="fa fa-chevron-left"></i> Continue Shopping
+                  </button>
+                </div>
+                <div class="col-xs-12 col-sm-6 boti">
+                  <button class="lanjot btn btn-primary">
+                    Proceed to Checkout <i class="fa fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 @endsection
@@ -376,8 +390,23 @@
     });
 
     $('.qty').keyup(function(){
-      $('.prc').text(accounting.formatMoney($(this).val()*$('.hrg').val(),"Rp. ",2,'.',','));
+      hitung();
     });
+
+    function hitung(argument) {
+      var qty = $('.qty').val();
+      var room_price = $('.room_price').val();
+      var tax_price = '{{ $data[0]->cr_tax }}'; 
+      var serve_price = '{{ $data[0]->cr_serve }}'; 
+      var additional_price = '{{ $data[0]->cr_additional }}'; 
+
+      var total_room_price = parseFloat(qty)*parseFloat(room_price);
+      $('.room_price_txt').text(accounting.formatMoney(total_room_price,"Rp. ",0,'.',','));
+
+      var total_price = total_room_price+parseFloat(tax_price)+parseFloat(serve_price)+parseFloat(additional_price);
+      $('.total_price_txt').text(accounting.formatMoney(total_price,"Rp. ",0,'.',','));
+
+    }
 
     $('.tutup,.klos').click(function(eve) {
       $('.modal').modal('hide');
@@ -385,6 +414,17 @@
     $('.lanjot').click(function(eve){
       window.location.href = '{{route('invoice')}}';
     });
+
+    function book_now(argument) {
+      $('.bd-example-modal-lg').modal('show');
+      $('.start_date_txt').text($('.start_date').val());
+      $('.end_date_txt').text($('.end_date').val());
+      $('.qty_txt').text($('.qty').val());
+      $('.tax_price_txt').text('Rp. '+'{{ number_format($data[0]->cr_tax,0,',','.') }}');
+      $('.serve_price_txt').text('Rp. '+'{{ number_format($data[0]->cr_serve,0,',','.') }}');
+      $('.additional_price_txt').text('Rp. '+'{{ number_format($data[0]->cr_additional,0,',','.') }}');
+      hitung();
+    }
 
     
 </script>
