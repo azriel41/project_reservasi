@@ -330,7 +330,7 @@
                                 
                                 <div class="form-group">
                                     <label class="control-label">Price Room</label>
-                                    <h4 class="prc">{{ number_format('',',','.') }}</h4>
+                                    <h4 class="prc">Rp. {{ number_format($data[0]->cr_total,0,',','.') }}</h4>
                                     <input type="hidden" value="100000" class="hrg" name="">
                                 </div>
 
