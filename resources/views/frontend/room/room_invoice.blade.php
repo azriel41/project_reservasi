@@ -1,4 +1,4 @@
-@extends('layouts_frontend._main_frontend')  
+@extends('layouts_frontend._main_frontend')
 @section('extra_style')
 <style type="text/css">
 .nulls
@@ -118,7 +118,7 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-3">
 								<div class="gab">
-		                    		<img src="{{asset('assets_frontend/images/intro_1.jpg')}}">	
+		                    		<img src="{{asset('assets_frontend/images/intro_1.jpg')}}">
 								</div>
 								<div class="sampah">
 									<span class="fa fa-trash"> Remove</span>
@@ -141,19 +141,19 @@
 								<div class="row infor">
 									<div class="col-xs-12 col-sm-3">
 										<h5>Check In</h5>
-										<span>03 Jul 2019</span>					
+										<span>03 Jul 2019</span>
 									</div>
 									<div class="col-xs-12 col-sm-3">
 										<h5>Check Out</h5>
-										<span>05 Jul 2019</span>					
+										<span>05 Jul 2019</span>
 									</div>
 									<div class="col-xs-12 col-sm-3">
 										<h5>Rooms</h5>
-										<span>01</span>					
+										<span>01</span>
 									</div>
 									<div class="col-xs-12 col-sm-3">
 										<h5>No. of Guests</h5>
-										<span>2 adults, 2 child</span>					
+										<span>2 adults, 2 child</span>
 									</div>
 								</div>
 								<div class="prai">
@@ -169,66 +169,47 @@
 						<button class="prosbut"><span>Proceed</span></button>
 					</div>
 				</div>
-				<div class="romps1">
+				<div class="romps">
 					<div class="subttl">
-						<h4>Room & Price Summary</h4>
+						<h4>Guest Information</h4>
 					</div>
 					<div class="rinf">
-						<span class="roi">Room Information</span>
 						<div class="row">
-							<div class="col-xs-12 col-sm-3">
-								<div class="gab">
-		                    		<img src="{{asset('assets_frontend/images/intro_1.jpg')}}">	
-								</div>
-								<div class="sampah">
-									<span class="fa fa-trash"> Remove</span>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-9">
-								<div class="hott">
-									<h5>Hotel California</h5>
-								</div>
-								<div class="lok">
-									<span class="fa fa-map-marker"> Jl. Gatot Oioi, Kota Surabaya , 60118</span>
-								</div>
-								<div class="feature">
-									<span class="icco fa fa-wifi"> Wifi</span>
-	                              	<span class="icco fa fa-newspaper-o"> News Paper</span>
-	                              	<span class="icco fa fa-bed"> Bed 2</span>
-	                              	<span class="icco fa fa-television"> Television</span>
-	                              	<span class="icco fa fa-bath"> Bath</span>
-								</div>
-								<div class="row infor">
-									<div class="col-xs-12 col-sm-3">
-										<h5>Check In</h5>
-										<span>03 Jul 2019</span>					
+							<div class="col-xs-12 col-sm-12">
+								<form class="" action="#" method="post">
+									<fieldset>
+										<p>Already have an account? <a href="#">Login now</a> to make check process faster and time saving.</p>
+										<br>
+										<p>Or</p>
+									</fieldset>
+								</form>
+								<form action="#" method="post">
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<span class="form-label">First Name</span>
+											<input class="form-control" type="text" name="" value="">
+											<span class="form-label">Last Name</span>
+											<input class="form-control" type="text" name="" value="">
+											<span class="form-label">Last Name</span>
+											<input class="form-control" type="text" name="" value="">
+										</div>
+										<div class="col-xs-12 col-sm-6">
+											<span class="form-label">First Name</span>
+											<input class="form-control" type="text" name="" value="">
+											<span class="form-label">Last Name</span>
+											<input class="form-control" type="text" name="" value="">
+											<span class="form-label">Last Name</span>
+											<input class="form-control" type="text" name="" value="">
+										</div>
 									</div>
-									<div class="col-xs-12 col-sm-3">
-										<h5>Check Out</h5>
-										<span>05 Jul 2019</span>					
-									</div>
-									<div class="col-xs-12 col-sm-3">
-										<h5>Rooms</h5>
-										<span>01</span>					
-									</div>
-									<div class="col-xs-12 col-sm-3">
-										<h5>No. of Guests</h5>
-										<span>2 adults, 2 child</span>					
-									</div>
-								</div>
-								<div class="prai">
-									<div class="tal2">
-										<h5>Total room price</h5>
-										<span>Rp. 250.000,00</span>
-									</div>
-								</div>
+								</form>
 							</div>
 						</div>
 					</div>
 					<div class="proceds">
 						<button class="prosbut"><span>Proceed</span></button>
 					</div>
-				</div>	
+				</div>
 			</div>
 
 			<div class="col-xs-12 col-sm-3">
@@ -240,7 +221,7 @@
 
 					<div class="det">
 						<h5>Total room price</h5>
-						<span>Rp. 250.000,00</span>						
+						<span>Rp. 250.000,00</span>
 					</div>
 				</div>
 			</div>
