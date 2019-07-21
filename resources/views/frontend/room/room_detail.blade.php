@@ -171,7 +171,6 @@
             <div class="row row-lg-eq-height">
               @foreach ($data as $index => $element)
 
-<<<<<<< HEAD
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -234,9 +233,6 @@
                     </div>
                   </div>
                 </div>
-=======
-                
->>>>>>> 89590c99427fceb4c6aac88a89822aaedbbea8b0
                 <!-- Intro Content -->
                 <div class="col-lg-8 intro_col">
 
@@ -250,7 +246,8 @@
                             	<div class="comn">
                             		<img src="{{asset('storage/app/'.$data[0]->c_room_image[0]->cri_image)}}">
                             	</div>
-                            	<ul class="tbl">
+                            	<u<<<<<<< HEAD
+l class="tbl">
                                 @foreach ($element->c_room_image as $index1 => $element1)
                               		<li class="ggb">
                               			<a href="{{url('storage/app/'.$data[0]->c_room_image[$index1]->cri_image)}}">
@@ -366,7 +363,7 @@
               <h5 class="text-center prodname">{{$data[0]->cr_name}}</h5>
 
               <div class="mgb">
-                <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">     
+                <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">
               </div>
               <div class="mpi">
                 <div class="sub">
@@ -461,9 +458,9 @@
     function hitung(argument) {
       var qty = $('.qty').val();
       var room_price = $('.room_price').val();
-      var tax_price = '{{ $data[0]->cr_tax }}'; 
-      var serve_price = '{{ $data[0]->cr_serve }}'; 
-      var additional_price = '{{ $data[0]->cr_additional }}'; 
+      var tax_price = '{{ $data[0]->cr_tax }}';
+      var serve_price = '{{ $data[0]->cr_serve }}';
+      var additional_price = '{{ $data[0]->cr_additional }}';
 
       var total_room_price = parseFloat(qty)*parseFloat(room_price);
       $('.room_price_txt').text(accounting.formatMoney(total_room_price,"Rp. ",0,'.',','));
@@ -480,9 +477,6 @@
       window.location.href = '{{route('invoice')}}';
     });
 
-<<<<<<< HEAD
-
-=======
     function book_now(argument) {
       $('.bd-example-modal-lg').modal('show');
       $('.start_date_txt').text($('.start_date').val());
@@ -494,8 +488,6 @@
       hitung();
     }
 
-    
->>>>>>> 89590c99427fceb4c6aac88a89822aaedbbea8b0
 </script>
 
 @endsection

@@ -115,7 +115,7 @@ p a:hover::after
 }
 p::selection
 {
-	
+
 }
 h1{font-size: 72px;}
 h2{font-size: 48px;}
@@ -132,14 +132,14 @@ h1, h2, h3, h4, h5, h6
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
-h1::selection, 
-h2::selection, 
-h3::selection, 
-h4::selection, 
-h5::selection, 
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
 h6::selection
 {
-	
+
 }
 .form-control
 {
@@ -1370,9 +1370,9 @@ section
 	font-weight: 500 !important;
 	font-style: italic;
 	color: #7e7e7e !important;
-} 
+}
 .newsletter_input:-ms-input-placeholder
-{ 
+{
 	font-size: 12px !important;
 	font-weight: 500 !important;
 	font-style: italic;
@@ -1415,7 +1415,7 @@ section
 }
 .footer_logo
 {
-	
+
 }
 .footer_logo a
 {
@@ -1517,7 +1517,7 @@ section
 	border: 1px solid #eaeaea;
 	border-top: none;
 	border-bottom-left-radius: .25rem;
-	border-bottom-right-radius: .25rem; 
+	border-bottom-right-radius: .25rem;
 }
 .panels
 {
@@ -1541,3 +1541,122 @@ li.nav-item.active:after
     width: 100%;
     border-top: 5px solid purple;
 }
+.actions {
+	position: relative;
+  display: inline-block;
+  float: right;
+}
+  .actions ul {
+    display: flex; }
+  .actions li a {
+		padding: 0;
+    border: none;
+    display: inline-flex;
+    height: 35px;
+    width: 120px;
+    align-items: center;
+    background: #e9e0cf;
+    font-family: "font-awesome";
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    padding-left: 23px;
+    border-radius: 20px;
+	}
+    .actions li a:after {
+      content: "\f061";
+      position: relative;
+      font-family: FontAwesome; }
+    .actions li a:hover {
+      background: #cfc7b8; }
+  .actions li:first-child a {
+		font-family: inherit;
+		width: 144px;
+    padding-left: 48px; }
+    .actions li:first-child a:before {
+      content: '\f060';
+      position: absolute;
+      left: 26px;
+      font-family: FontAwesome; }
+		.actions li:first-child a:after{
+			display: none;
+		}
+  .actions li:nth-child(2) a, .actions li:last-child a {
+    margin-left: 20px;
+		font-family: inherit;
+	 }
+  .actions li:last-child a {
+    width: 124px;
+    background: #6d7f52;
+    color: #fff; }
+    .actions li:last-child a:hover {
+      background: #849963; }
+    .actions li:last-child a:before {
+      content: '\f26b';
+      position: absolute;
+      top: 13px;
+      right: 28px;
+      font-family: Material-Design-Iconic-Font;
+		}
+		.actions li:last-child a:after{
+			display: none;
+		}
+  .actions li[aria-disabled="true"] a {
+		display: none;
+		opacity: 0;
+    transition: all 1s; }
+  .actions li[aria-disabled="false"] ~ li a {
+    background: #6d7f52;
+    color: #fff; }
+    .actions li[aria-disabled="false"] ~ li a:hover {
+      background: #849963; }
+
+
+			.wizard > .steps .current-info, .wizard > .steps .number {
+			  display: none; }
+
+			.wizard > .steps ul {
+			  display: flex;
+			  justify-content: center; }
+
+			.wizard > .steps li a {
+			  display: inline-block;
+			  width: 12px;
+			  height: 12px;
+			  border-radius: 50%;
+			  background: #e9e0cf;
+			  margin-right: 78px;
+			  position: relative; }
+			  .wizard > .steps li a:before {
+			    content: "";
+			    width: 58px;
+			    height: 2px;
+			    background: #e9e0cf;
+			    position: absolute;
+			    right: 22px;
+			    top: 5px; }
+			  .wizard > .steps li a:after {
+			    content: "";
+			    width: 0;
+			    height: 2px;
+			    background: #6d7f52;
+			    position: absolute;
+			    left: -68px;
+			    top: 5px;
+			    transition: all 0.6s ease; }
+			.wizard > .steps li.first a {
+			  background: #6d7f52; }
+			.wizard > .steps li.checked a {
+			  background: #6d7f52; }
+			  .wizard > .steps li.checked a:after {
+			    width: 58px; }
+			.wizard > .steps li:last-child a {
+			  margin-right: 0; }
+			.wizard > .steps li:first-child a:before {
+			  display: none; }
+			.wizard > .steps li:first-child a:after {
+			  display: none; }
+
+			.wizard > .content {
+			  position: relative; 
+			}

@@ -18,4 +18,4 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets_frontend/plugins/datepicker/datepicker.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets_frontend/styles/main_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets_frontend/styles/responsive.css') }}">
-
+<link rel="stylesheet" type="text/css" href="{{ asset('assets_frontend/styles/steps.css') }}">
