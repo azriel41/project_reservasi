@@ -246,8 +246,7 @@
                             	<div class="comn">
                             		<img src="{{asset('storage/app/'.$data[0]->c_room_image[0]->cri_image)}}">
                             	</div>
-                            	<u<<<<<<< HEAD
-l class="tbl">
+                            	<ul class="tbl">
                                 @foreach ($element->c_room_image as $index1 => $element1)
                               		<li class="ggb">
                               			<a href="{{url('storage/app/'.$data[0]->c_room_image[$index1]->cri_image)}}">

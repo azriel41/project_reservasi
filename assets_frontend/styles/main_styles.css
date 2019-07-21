@@ -1587,7 +1587,7 @@ li.nav-item.active:after
 	 }
   .actions li:last-child a {
     width: 124px;
-    background: #6d7f52;
+    background: #5a2a60;
     color: #fff; }
     .actions li:last-child a:hover {
       background: #849963; }
@@ -1606,7 +1606,7 @@ li.nav-item.active:after
 		opacity: 0;
     transition: all 1s; }
   .actions li[aria-disabled="false"] ~ li a {
-    background: #6d7f52;
+    background: #5a2a60;
     color: #fff; }
     .actions li[aria-disabled="false"] ~ li a:hover {
       background: #849963; }
@@ -1639,15 +1639,15 @@ li.nav-item.active:after
 			    content: "";
 			    width: 0;
 			    height: 2px;
-			    background: #6d7f52;
+			    background: #5a2a60;
 			    position: absolute;
 			    left: -68px;
 			    top: 5px;
 			    transition: all 0.6s ease; }
 			.wizard > .steps li.first a {
-			  background: #6d7f52; }
+			  background: #5a2a60; }
 			.wizard > .steps li.checked a {
-			  background: #6d7f52; }
+			  background: #5a2a60; }
 			  .wizard > .steps li.checked a:after {
 			    width: 58px; }
 			.wizard > .steps li:last-child a {
@@ -1658,5 +1658,5 @@ li.nav-item.active:after
 			  display: none; }
 
 			.wizard > .content {
-			  position: relative; 
+			  position: relative;
 			}
