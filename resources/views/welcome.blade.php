@@ -9,9 +9,10 @@
 
 
 @section('content')
-@extends('layouts_frontend._search_frontend')
-@extends('layouts_frontend._slider_frontend')
-
+@include('layouts_frontend._slider_frontend')
+{{-- @include('layouts_frontend._search_frontend') --}}
+    
+   
 
     <div class="intro">
         <div class="container">
@@ -140,7 +141,7 @@
                                 <div class="room_type">{{ $element->m_type_room->tr_name }}</div>
                                 <div class="room_title"><a href="rooms.html">{{ $element->cr_name }}</a></div>
                                 <div class="room_text">
-                                    <p>{{ $element->cr_desc }}</p>
+                                    <p>{{ $element->cr_desc_short }}</p>
                                 </div>
                                 <a href="{{ route('room_detail',['id'=>'1']) }}" class="button_container room_button"><div class="button text-center"><span>Book Now</span></div></a>
                             </div>

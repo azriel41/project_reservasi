@@ -19,6 +19,7 @@ class c_room extends Model
                             'cr_kode',
                             'cr_name',
                             'cr_desc',
+                            'cr_desc_short',
                             'cr_price',
                             'cr_tax',
                             'cr_additional',
