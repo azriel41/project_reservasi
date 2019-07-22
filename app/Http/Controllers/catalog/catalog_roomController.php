@@ -45,6 +45,7 @@ class catalog_roomController extends Controller
             'cr_id'=>$id,
             'cr_name'=>$req->cr_name,
             'cr_desc'=>$req->cr_desc,
+            'cr_desc_short'=>$req->cr_desc_short,
             'cr_type'=>$req->cr_type,
             'cr_price'=>filter_var($req->cr_price,FILTER_SANITIZE_NUMBER_INT)/1,
             'cr_tax'=>filter_var($req->cr_tax,FILTER_SANITIZE_NUMBER_INT)/1,

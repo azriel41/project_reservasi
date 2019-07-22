@@ -58,7 +58,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="r_level" class="col-2 col-form-label">Desc</label>
+                                                    <label for="r_level" class="col-2 col-form-label">Short Desc</label>
+                                                    <div class="col-10">
+                                                        <textarea class="form-control" name="cr_desc_short"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="r_level" class="col-2 col-form-label">Long Desc</label>
                                                     <div class="col-10">
                                                         <textarea class="form-control" name="cr_desc"></textarea>
                                                     </div>
