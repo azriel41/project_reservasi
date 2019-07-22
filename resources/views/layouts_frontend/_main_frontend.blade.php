@@ -7,7 +7,6 @@
     <div class="super_container">
         @include('layouts_frontend._nav_frontend')
         @yield('content')
-        @include('layouts_frontend._footer_frontend') 
 		@include('layouts_frontend._scripts_frontend')
     </div>
 </body>

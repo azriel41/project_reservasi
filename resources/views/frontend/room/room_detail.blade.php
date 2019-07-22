@@ -1,6 +1,11 @@
 @extends('layouts_frontend._main_frontend')
 @section('extra_style')
 <style type="text/css">
+  @@media screen and (max-width:980px) {
+    .moc{
+      display: inherit !important;
+    }
+  }
   .room_col {
     margin-top: 100px;
   }
@@ -129,6 +134,10 @@
     margin-bottom: 10px 0;
     border-bottom: 1px solid;
   }
+  .klos , .lanjot
+  {
+    font-size: 15px;
+  }
   .tutup
   {
     position: absolute;
@@ -160,6 +169,7 @@
     border-top:0px solid white !important;
   }
 
+
 </style>
 @endsection
 
@@ -171,68 +181,6 @@
             <div class="row row-lg-eq-height">
               @foreach ($data as $index => $element)
 
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="moc">
-                        <div class="col-xs-12 col-sm-6 mdl lee">
-                          <span class="tutup" title="close window"></span>
-                          <h2 class="text-center" style="font-size: large;"><i class="fa fa-check"></i>Room Succesfully added to your cart</h2>
-                          <h5 class="text-center prodname">Hotel California</h5>
-
-                          <div class="mgb">
-                            <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">
-                          </div>
-                          <div class="mpi">
-                            <div class="sub">
-                              <strong>Time Duration</strong>
-                              <span class="st" id="">02-06-2019</span>
-                              <span class="st">till</span>
-                              <span class="st" id="">03-06-2019</span>
-                            </div>
-                            <div class="sub">
-                              <strong>Rooms Quantity</strong>
-                              <span class="st" id="">3</span>
-                            </div>
-                            <div class="sub">
-                              <strong>Total Cost</strong>
-                              <span class="st" id="">Rp.3.000.000</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 mdl mdr">
-                          <h4 class="text-center paytit">There are 1 room(s) in your cart.</h4>
-                          <div class="payinf">
-                            <div class="sub">
-                              <strong>Total Room Cost</strong>
-                              <span class="st" id="">Rp.2.000.000</span>
-                            </div>
-                            <div class="sub">
-                              <strong>Total Additional</strong>
-                              <span class="st" id="">Rp.3.000.000</span>
-                            </div>
-                            <div class="sub">
-                              <strong>Total Cost</strong>
-                              <span class="st" id="">Rp.5.000.000</span>
-                            </div>
-                          </div>
-                          <div class="moc">
-                            <div class="col-xs-12 col-sm-6 boti">
-                              <button class="klos btn btn-secondary">
-                                <i class="fa fa-chevron-left"></i> Continue Shopping
-                              </button>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 boti">
-                              <button class="lanjot btn btn-primary">
-                                Proceed to Checkout <i class="fa fa-chevron-right"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <!-- Intro Content -->
                 <div class="col-lg-8 intro_col">
 

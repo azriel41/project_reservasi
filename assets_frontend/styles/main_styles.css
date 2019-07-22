@@ -1590,13 +1590,12 @@ li.nav-item.active:after
     background: #5a2a60;
     color: #fff; }
     .actions li:last-child a:hover {
-      background: #849963; }
+      background: #5a2a6085; }
     .actions li:last-child a:before {
-      content: '\f26b';
+      content: '\f1d8';
       position: absolute;
-      top: 13px;
       right: 28px;
-      font-family: Material-Design-Iconic-Font;
+      font-family: FontAwesome;
 		}
 		.actions li:last-child a:after{
 			display: none;
@@ -1609,7 +1608,7 @@ li.nav-item.active:after
     background: #5a2a60;
     color: #fff; }
     .actions li[aria-disabled="false"] ~ li a:hover {
-      background: #849963; }
+      background: #5a2a6085; }
 
 
 			.wizard > .steps .current-info, .wizard > .steps .number {

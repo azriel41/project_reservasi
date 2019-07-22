@@ -16,12 +16,15 @@
 }
 .rinf
 {
+	margin-bottom: 10px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #eaeaea;
 }
+
 .roi
 {
-	padding: 5px 0;
+	padding: 10px 0 15px 0;
+	display: flex;
 }
 .gab img
 {
@@ -106,6 +109,31 @@
     background-color: #081124;
     color: #d6baa0;
 }
+.ndeks{
+	display: flex;
+	padding: 5px;
+	font-size: smaller;
+}
+h5.ntitel{
+	width: 100px;
+	font-size: small;
+	font-weight: 600;
+}
+h5.vals{
+	font-family: inherit;
+	font-weight: 400;
+	font-size: small;
+	padding-left: 10px;
+}
+.modal
+{
+	padding: 0;
+}
+.modal.show .modal-dialog
+{
+	-webkit-transform: translateY(35%);
+	transform: translateY(35%);
+}
 </style>
 @endsection
 @section('content')
@@ -183,55 +211,28 @@
 						<section>
 							<div class="wrapper">
 								<div class="subttl">
-									<h4>Room & Price Summary</h4>
+									<h4>Guest Information</h4>
 								</div>
 								<div class="rinf">
-									<span class="roi">Room Information</span>
+									<span class="roi">Already have an account?&nbsp;<a href="#anu" data-toggle="modal">Login</a>&nbsp;here</span>
 									<div class="row">
-										<div class="col-xs-12 col-sm-3">
-											<div class="gab">
-					                    		<img src="{{asset('assets_frontend/images/intro_1.jpg')}}">
-											</div>
-											<div class="sampah">
-												<span class="fa fa-trash"> Remove</span>
-											</div>
-										</div>
-										<div class="col-xs-12 col-sm-9">
-											<div class="hott">
-												<h5>Hotel California</h5>
-											</div>
-											<div class="lok">
-												<span class="fa fa-map-marker"> Jl. Gatot Oioi, Kota Surabaya , 60118</span>
-											</div>
-											<div class="feature">
-												<span class="icco fa fa-wifi"> Wifi</span>
-				                              	<span class="icco fa fa-newspaper-o"> News Paper</span>
-				                              	<span class="icco fa fa-bed"> Bed 2</span>
-				                              	<span class="icco fa fa-television"> Television</span>
-				                              	<span class="icco fa fa-bath"> Bath</span>
-											</div>
-											<div class="row infor">
-												<div class="col-xs-12 col-sm-3">
-													<h5>Check In</h5>
-													<span>03 Jul 2019</span>
+										<div class="col-sm-12">
+											<div class="row">
+												<div class="col-sm-6">
+													<span class="form-label">First Name</span>
+													<input class="form-control" type="text" name="" value="">
+													<span class="form-label">Last Name</span>
+													<input class="form-control" type="text" name="" value="">
+													<span class="form-label">Address</span>
+													<input class="form-control" type="text" name="" value="">
 												</div>
-												<div class="col-xs-12 col-sm-3">
-													<h5>Check Out</h5>
-													<span>05 Jul 2019</span>
-												</div>
-												<div class="col-xs-12 col-sm-3">
-													<h5>Rooms</h5>
-													<span>01</span>
-												</div>
-												<div class="col-xs-12 col-sm-3">
-													<h5>No. of Guests</h5>
-													<span>2 adults, 2 child</span>
-												</div>
-											</div>
-											<div class="prai">
-												<div class="tal2">
-													<h5>Total room price</h5>
-													<span>Rp. 250.000,00</span>
+												<div class="col-sm-6">
+													<span class="form-label">Email</span>
+													<input class="form-control" type="text" name="" value="">
+													<span class="form-label">Phone Number</span>
+													<input class="form-control" type="text" name="" value="">
+													<span class="form-label">Phone Number 2</span>
+													<input class="form-control" type="text" name="" value="">
 												</div>
 											</div>
 										</div>
@@ -243,25 +244,39 @@
 						<!-- SECTION 3 -->
 						<h2></h2>
 						<section>
-							<div class="inner">
-								<div class="image-holder">
-									<!-- <img src="images/form-wizard-3.jpg" alt=""> -->
+							<div class="wrapper">
+								<div class="subttl">
+									<h4>Summary</h4>
 								</div>
-								<div class="form-content">
-									<div class="form-header">
-										<h3>Registration</h3>
-									</div>
-									<p>Send an optional message</p>
-									<div class="form-row">
-										<div class="form-holder w-100">
-											<textarea name="" id="" placeholder="Your messagere here!" class="form-control" style="height: 99px;"></textarea>
+								<div class="rinf">
+									<span class="roi">Your Information</span>
+									<div class="row sumer">
+										<div class="col-sm-12">
+											<div class="ndeks">
+												<h5 class="ntitel">First Name</h5>
+												:<h5 class="vals">John</h5>
+											</div>
+											<div class="ndeks">
+												<h5 class="ntitel">Last Name</h5>
+												:<h5 class="vals">Sorgon</h5>
+											</div>
+											<div class="ndeks">
+												<h5 class="ntitel">Address</h5>
+												:<h5 class="vals">Jl. Bulak</h5>
+											</div>
+											<div class="ndeks">
+												<h5 class="ntitel">Email</h5>
+												:<h5 class="vals">ngakbayar@yahoo.com</h5>
+											</div>
+											<div class="ndeks">
+												<h5 class="ntitel">Phone Number 1</h5>
+												:<h5 class="vals">08123456789</h5>
+											</div>
+											<div class="ndeks">
+												<h5 class="ntitel">Phone Number 2</h5>
+												:<h5 class="vals">08987654321</h5>
+											</div>
 										</div>
-									</div>
-									<div class="checkbox-circle mt-24">
-										<label>
-											<input type="checkbox" checked>  Please accept <a href="#">terms and conditions ?</a>
-											<span class="checkmark"></span>
-										</label>
 									</div>
 								</div>
 							</div>
@@ -281,6 +296,86 @@
 					<div class="det">
 						<h5>Total room price</h5>
 						<span>Rp. 250.000,00</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="anu" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="auth-box">
+				<div class="row" style="margin:0;">
+					<div class="col-sm-12">
+						<div id="loginform">
+							<div class="logo text-center">
+								<span class="db"><img src="{{ asset('assets_backend/images/logo-icon.png') }}" alt="logo" /></span>
+								<h5 class="font-medium m-b-20">Sign In</h5>
+							</div>
+							<!-- Form -->
+							<div class="row">
+								<div class="col-12">
+									<form method="POST" action="{{ route('login') }}">
+										@csrf
+										<div class="input-group mb-3">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
+											</div>
+
+											<input id="username" type="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }} form-control-lg" name="username" placeholder="Username" value="{{ old('username') }}" autofocus aria-label="Username" aria-describedby="basic-addon1">
+
+											@if ($errors->has('username'))
+											<span class="invalid-feedback" role="alert">
+												<strong>{{ $errors->first('username') }}</strong>
+											</span>
+											@endif
+										</div>
+										<div class="input-group mb-3">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>
+											</div>
+											<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-lg" name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+
+											@if ($errors->has('password'))
+											<span class="invalid-feedback" role="alert">
+												<strong>{{ $errors->first('password') }}</strong>
+											</span>
+											@endif
+										</div>
+										<div class="form-group row">
+											<div class="col-md-12">
+												<div class="custom-control custom-checkbox">
+													<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+													{{-- <input type="checkbox" class="custom-control-input" id="customCheck1"> --}}
+													<label class="custom-control-label" for="remember">Remember me</label>
+													<a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a>
+												</div>
+											</div>
+										</div>
+										<div class="form-group text-center">
+											<div class="col-xs-12 p-b-20">
+												<button class="btn btn-block btn-lg btn-info" type="submit">Log In</button>
+											</div>
+										</div>
+										{{--  <div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+												<div class="social">
+													<a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="" data-original-title="Login with Facebook"> <i aria-hidden="true" class="fab  fa-facebook"></i> </a>
+													<a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="" data-original-title="Login with Google"> <i aria-hidden="true" class="fab  fa-google-plus"></i> </a>
+												</div>
+											</div>
+										</div> --}}
+										<div class="form-group m-b-0 m-t-10">
+											<div class="col-sm-12 text-center">
+												Don't have an account? <a href="{{ url('register') }}" class="text-info m-l-5"><b>Sign Up</b></a>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

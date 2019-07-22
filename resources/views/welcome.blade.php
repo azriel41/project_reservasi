@@ -1,4 +1,4 @@
-@extends('layouts_frontend._main_frontend')  
+@extends('layouts_frontend._main_frontend')
 @section('extra_style')
 <style type="text/css">
   .room_col {
@@ -59,7 +59,7 @@
 
                         <!-- Big Room SLider -->
                         <div class="owl-carousel owl-theme big_room_slider">
-                            
+
                             <!-- Slide -->
                             <div class="owl-item">
                                 <div class="background_image" style="background-image:url({{ url('assets_frontend/images/home_slider_1.jpg') }})"></div>
@@ -111,7 +111,7 @@
                                 </div>
                             </div>
                         </div>
-                            
+
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@
 
     <div class="gallery">
         <div class="gallery_slider_container">
-            
+
             <!-- Gallery Slider -->
             <div class="owl-carousel owl-theme gallery_slider magic_up">
                 <div class="owl-item gallery_item">
@@ -193,10 +193,12 @@
                         </div>
                     </div>
                 </div>
-            </div>          
+            </div>
         </div>
 
     </div>
+
+@include('layouts_frontend._footer_frontend')
 
 @endsection
 
@@ -205,5 +207,5 @@
 @section('extra_scripts')
 <script type="text/javascript">
 
-</script>    
-@endsection 
+</script>
+@endsection
