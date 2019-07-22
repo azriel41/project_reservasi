@@ -1,4 +1,4 @@
-@extends('layouts_frontend._main_frontend')  
+@extends('layouts_frontend._main_frontend')
 @section('extra_style')
 <style type="text/css">
   .room_col {
@@ -35,7 +35,7 @@
   }
   .tbl img {
   	border: solid 5px #eaeaea;
-  	border-radius: 1px;  	
+  	border-radius: 1px;
   	width: 90px;
   	height: 80px;
   }
@@ -52,9 +52,9 @@
   {
     width: 85%;
   }
-  .clickable 
+  .clickable
   {
-  	cursor: pointer; 
+  	cursor: pointer;
   }
   .desc p
   {
@@ -166,22 +166,83 @@
 
 @section('content')
 <div class="intro">
-@include('layouts_frontend._search_frontend')  
+@include('layouts_frontend._search_frontend')
         <div class="container">
             <div class="row row-lg-eq-height">
               @foreach ($data as $index => $element)
 
-                
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="moc">
+                        <div class="col-xs-12 col-sm-6 mdl lee">
+                          <span class="tutup" title="close window"></span>
+                          <h2 class="text-center" style="font-size: large;"><i class="fa fa-check"></i>Room Succesfully added to your cart</h2>
+                          <h5 class="text-center prodname">Hotel California</h5>
+
+                          <div class="mgb">
+                            <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">
+                          </div>
+                          <div class="mpi">
+                            <div class="sub">
+                              <strong>Time Duration</strong>
+                              <span class="st" id="">02-06-2019</span>
+                              <span class="st">till</span>
+                              <span class="st" id="">03-06-2019</span>
+                            </div>
+                            <div class="sub">
+                              <strong>Rooms Quantity</strong>
+                              <span class="st" id="">3</span>
+                            </div>
+                            <div class="sub">
+                              <strong>Total Cost</strong>
+                              <span class="st" id="">Rp.3.000.000</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 mdl mdr">
+                          <h4 class="text-center paytit">There are 1 room(s) in your cart.</h4>
+                          <div class="payinf">
+                            <div class="sub">
+                              <strong>Total Room Cost</strong>
+                              <span class="st" id="">Rp.2.000.000</span>
+                            </div>
+                            <div class="sub">
+                              <strong>Total Additional</strong>
+                              <span class="st" id="">Rp.3.000.000</span>
+                            </div>
+                            <div class="sub">
+                              <strong>Total Cost</strong>
+                              <span class="st" id="">Rp.5.000.000</span>
+                            </div>
+                          </div>
+                          <div class="moc">
+                            <div class="col-xs-12 col-sm-6 boti">
+                              <button class="klos btn btn-secondary">
+                                <i class="fa fa-chevron-left"></i> Continue Shopping
+                              </button>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 boti">
+                              <button class="lanjot btn btn-primary">
+                                Proceed to Checkout <i class="fa fa-chevron-right"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <!-- Intro Content -->
                 <div class="col-lg-8 intro_col">
- 
+
                    <div class="intro_container d-flex flex-column align-items-start justify-content-center magic_up" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
                         <div class="intro_content2">
                           <div class="section_subtitle">room detail</div>
                             <div class="section_title"><h3>Relax in our Hotel</h3></div>
 
                             <div class="ner">
-                            	
+
                             	<div class="comn">
                             		<img src="{{asset('storage/app/'.$data[0]->c_room_image[0]->cri_image)}}">
                             	</div>
@@ -208,7 +269,7 @@
                             <!-- Tab panes -->
                             <div class="tab-content mods">
                               <div role="tabpanel" class="tab-pane fade-in active" id="rominfo">
-                              
+
                                 <div class="desc">
                                   <p>
                                     {!! $data[0]->cr_desc !!}
@@ -240,13 +301,13 @@
                 <div class="col-lg-4 intro_col">
 
                    <div class="d-flex flex-column align-items-start justify-content-center magic_up" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); padding-top: 80px;">
-                        
+
                         <div class="intro_content">
 
                             <div class="frm">
-                        
+
                             	<form action="" method="">
-                        
+
                             		<div class="form-group">
                             			<label for="" class="control-label">Type Bed</label>
                                       <input type="hidden" class="form-control" value="{{ $data[0]->m_type_room->tr_id }}" readonly="" name="type_room_id">
@@ -264,7 +325,7 @@
                               			<label for="" class="control-label">Number of Rooms</label>
                                     <input type="text" class="form-control qty" name="qty" value="1">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label class="control-label">Price Room</label>
                                     <h4 class="prc room_price_txt">Rp. {{ number_format($data[0]->cr_price,0,',','.') }}</h4>
@@ -275,7 +336,7 @@
                                 <button type="button" onclick="book_now()" class="btn btn-primary" data-toggle="modal">Book Now</button>
 
                             	</form>
-                        
+
                             </div>
 
                         </div>
@@ -301,7 +362,7 @@
               <h5 class="text-center prodname">{{$data[0]->cr_name}}</h5>
 
               <div class="mgb">
-                <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">     
+                <img class="img-fluid" src="{{asset('assets_frontend/images/intro_1.jpg')}}">
               </div>
               <div class="mpi">
                 <div class="sub">
@@ -396,9 +457,9 @@
     function hitung(argument) {
       var qty = $('.qty').val();
       var room_price = $('.room_price').val();
-      var tax_price = '{{ $data[0]->cr_tax }}'; 
-      var serve_price = '{{ $data[0]->cr_serve }}'; 
-      var additional_price = '{{ $data[0]->cr_additional }}'; 
+      var tax_price = '{{ $data[0]->cr_tax }}';
+      var serve_price = '{{ $data[0]->cr_serve }}';
+      var additional_price = '{{ $data[0]->cr_additional }}';
 
       var total_room_price = parseFloat(qty)*parseFloat(room_price);
       $('.room_price_txt').text(accounting.formatMoney(total_room_price,"Rp. ",0,'.',','));
@@ -426,7 +487,6 @@
       hitung();
     }
 
-    
 </script>
 
 @endsection

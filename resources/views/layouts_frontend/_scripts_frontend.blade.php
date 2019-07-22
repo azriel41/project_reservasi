@@ -13,3 +13,4 @@
 <script src="{{ asset('assets_frontend/plugins/parallax-js-master/parallax.min.js') }}"></script>
 <script src="{{ asset('assets_frontend/js/custom.js') }}"></script>
 <script src="{{ asset('assets_frontend/js/accounting.min.js') }}"></script>
+<script src="{{ asset('assets_frontend/js/jquery.steps.js') }}"></script>
