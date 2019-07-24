@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="header_inner d-flex flex-row align-items-center justify-content-start">
-                            <nav class="main_nav">
+                            <nav class="main_nav" @if(Request::is('room_detail/*')) style="display:none"@endif>
                                 <ul class="d-flex flex-row align-items-center justify-content-start">
                                     <li class="active"><a href="index.html"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>home</span></div></a></li>
                                     <li><a href="about.html"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>about us</span></div></a></li>
@@ -32,7 +32,11 @@
                                     <li><a href="contact.html"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>contact</span></div></a></li>
                                 </ul>
                             </nav>
-                            <a href="{{ route('login') }}" class="button_container header_button ml-auto"><div class="button text-center"><span>Login</span></div></a>
+                            <a href="{{ route('login') }}" class="button_container header_button ml-auto"><div class="button text-center lgn"><span>Login</span></div></a>
+                            <a class="button_container header_button"><div class="button text-center crt">
+                              <i class="fa fa-shopping-cart"></i>
+                              <i class="fa fa-chevron-down chvr"></i>
+                            </div></a>
                             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
                         </div>
                     </div>
