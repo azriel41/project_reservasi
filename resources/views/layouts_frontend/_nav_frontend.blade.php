@@ -76,6 +76,42 @@
                                   </tbody>
                                   </table>
                                 </div>
+                                <div class="row secone">
+                                  <div class="img-fluid kiwo citr">
+                                    <img class="minni" src="{{asset('assets_frontend/images/intro_1.jpg')}}">
+                                  </div>
+                                  <div class="kiwo">
+                                    <span class="judul">Hotel California</span>
+                                    <div class="detel">
+                                      <h5 class="detel1">Capacity</h5>
+                                      <span class="detel2">2 Adults & 2 children</span>
+                                    </div>
+                                    <div class="detel">
+                                      <h5 class="detel1">Price</h5>
+                                      <span class="detel2">Rp. 5.000.000,00</span>
+                                    </div>
+                                    <div class="detel">
+                                      <h5 class="detel1">Total Qty</h5>
+                                      <span class="detel2">Rp. 5.000.000,00</span>
+                                    </div>
+                                  </div>
+                                  <table class="table table-borderless males">
+                                    <thead>
+                                      <tr>
+                                        <th>Duration</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>02-12-2019 - 04-12-2019</td>
+                                        <td>2</td>
+                                        <td>Rp. 5.000.000,00</td>
+                                      </tr>
+                                  </tbody>
+                                  </table>
+                                </div>
                                 <div class="row sectwo">
                                   <div class="totalan">
                                     <h5 class="kr">Total</h5>

@@ -37,6 +37,12 @@
 		width: 300px!important;
 	}
 }
+@media screen and (max-height:600px) {
+	.cartcont
+	{
+	height: 475px!important;
+	}
+}
 *
 {
 	margin: 0;
@@ -280,12 +286,14 @@ section
 }
 .cartcont
 {
-	position: absolute;
-    right: 0;
+		position: absolute;
+		border-radius: 4px;
+		right: 0;
     z-index: 1000;
     display: none;
 		/* display: block; */
-    height: auto;
+    height: 550px;
+		overflow-y:scroll;
     background: #484848;
     color: #fff;
     width: 350px;
