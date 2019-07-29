@@ -28,6 +28,7 @@ class catalog_roomController extends Controller
     public function index()
     {
         $data = $this->models->c_room()->get();
+        // return Response()->json($data);
         return view('backend.catalog.catalog_room.index',compact('data'));
     }
     public function create()
