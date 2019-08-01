@@ -187,7 +187,7 @@
                    <div class="intro_container d-flex flex-column align-items-start justify-content-center magic_up" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
                         <div class="intro_content2">
                           <div class="section_subtitle">room detail</div>
-                            <div class="section_title"><h3>Relax in our Hotel</h3></div>
+                            <div class="section_title"><h3>{{ $data[0]->cr_name }}</h3></div>
 
                             <div class="ner">
 
@@ -258,8 +258,8 @@
 
                             		<div class="form-group">
                             			<label for="" class="control-label">Type Bed</label>
-                                      <input type="hidden" class="form-control" value="{{ $data[0]->m_type_room->tr_id }}" readonly="" name="type_room_id">
-                                      <input type="text" class="form-control" value="{{ $data[0]->m_type_room->tr_name }}" readonly="" name="type_room_name">
+                                      <input type="hidden" class="form-control type_room_id" value="{{ $data[0]->m_type_room->tr_id }}" readonly="" name="type_room_id">
+                                      <input type="text" class="form-control type_room_name" value="{{ $data[0]->m_type_room->tr_name }}" readonly="" name="type_room_name">
                             		</div>
                             		<div class="form-group">
                             			<label for="" class="control-label">Check In Date</label>
@@ -362,7 +362,7 @@
                   </button>
                 </div>
                 <div class="col-xs-12 col-sm-6 boti">
-                  <button class="lanjot btn btn-primary">
+                  <button class="btn btn-primary" onclick="proceed({{ $data[0]->cr_id }})">
                     Proceed to Checkout <i class="fa fa-chevron-right"></i>
                   </button>
                 </div>
@@ -423,6 +423,15 @@
     $('.lanjot').click(function(eve){
       window.location.href = '{{route('invoice')}}';
     });
+    function proceed(argument) {
+      var start_date = $('.start_date').val();
+      var end_date = $('.end_date').val();
+      var qty = $('.qty').val();
+      var typeid = $('.type_room_id').val();
+      var typename = $('.type_room_name').val();
+
+      window.location.href = baseUrl+'/book/book_room/book_detail/'+argument+'?&start_date='+start_date+'&end_date='+end_date+'&qty='+qty+'&typeid='+typeid+'&typename='+typename;
+    }
 
     function book_now(argument) {
       $('.bd-example-modal-lg').modal('show');

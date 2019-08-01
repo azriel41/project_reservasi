@@ -14,3 +14,7 @@
 <script src="{{ asset('assets_frontend/js/custom.js') }}"></script>
 <script src="{{ asset('assets_frontend/js/accounting.min.js') }}"></script>
 <script src="{{ asset('assets_frontend/js/jquery.steps.js') }}"></script>
+
+<script type="text/javascript">
+	var baseUrl = '{{ url('/') }}';
+</script>

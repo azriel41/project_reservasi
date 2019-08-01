@@ -156,7 +156,7 @@ h5.vals{
 									<div class="row">
 										<div class="col-xs-12 col-sm-3">
 											<div class="gab">
-		                    		<img src="{{asset('assets_frontend/images/intro_1.jpg')}}">
+		                    					<img src="{{asset('storage/app/'.$data[0]->c_room_image[0]->cri_image)}}">
 											</div>
 											<div class="sampah">
 												<span class="fa fa-trash"> Remove</span>
@@ -164,40 +164,38 @@ h5.vals{
 										</div>
 										<div class="col-xs-12 col-sm-9">
 											<div class="hott">
-												<h5>Hotel California</h5>
+												<h5>{{ $data[0]->cr_name }}</h5>
 											</div>
-											<div class="lok">
+											{{-- <div class="lok">
 												<span class="fa fa-map-marker"> Jl. Gatot Oioi, Kota Surabaya , 60118</span>
-											</div>
+											</div> --}}
 											<div class="feature">
-												<span class="icco fa fa-wifi"> Wifi</span>
-				                              	<span class="icco fa fa-newspaper-o"> News Paper</span>
-				                              	<span class="icco fa fa-bed"> Bed 2</span>
-				                              	<span class="icco fa fa-television"> Television</span>
-				                              	<span class="icco fa fa-bath"> Bath</span>
+												@foreach ($data[0]->c_room_features as $index2 => $element2)
+												<span class="icco {{ $data[0]->c_room_features[$index2]->m_features->mf_icon }}"> {{ $data[0]->c_room_features[$index2]->m_features->mf_name }}</span>
+				                                @endforeach
 											</div>
 											<div class="row infor">
 												<div class="col-xs-12 col-sm-3">
 													<h5>Check In</h5>
-													<span>03 Jul 2019</span>
+													<span>{{ $request['start_date'] }}</span>
 												</div>
 												<div class="col-xs-12 col-sm-3">
 													<h5>Check Out</h5>
-													<span>05 Jul 2019</span>
+													<span>{{ $request['end_date'] }}</span>
 												</div>
 												<div class="col-xs-12 col-sm-3">
-													<h5>Rooms</h5>
-													<span>01</span>
+													<h5>Type Room</h5>
+													<span>{{ $request['typename'] }}</span>
 												</div>
 												<div class="col-xs-12 col-sm-3">
 													<h5>No. of Guests</h5>
-													<span>2 adults, 2 child</span>
+													<span>{{ $request['qty'] }}</span>
 												</div>
 											</div>
 											<div class="prai">
 												<div class="tal2">
 													<h5>Total room price</h5>
-													<span>Rp. 250.000,00</span>
+	                    							<span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span>
 												</div>
 											</div>
 										</div>
@@ -288,15 +286,38 @@ h5.vals{
 
 			<div class="col-xs-12 col-sm-3">
 				<div class="romps">
-					<div class="det">
-						<h5>Total room price</h5>
-						<span>Rp. 250.000,00</span>
-					</div>
-
-					<div class="det">
-						<h5>Total room price</h5>
-						<span>Rp. 250.000,00</span>
-					</div>
+					<table class="table" style="font-size: 14px">
+	                  <tr>
+	                    <th>Total Room Cost</th>
+	                  </tr>
+	                  <tr>
+	                    <td align="right"><span class="st room_price_txt" id="">Rp. {{ number_format($data[0]->cr_price*$request['qty'],0,',','.') }}</span></td>
+	                  </tr>
+	                  <tr>
+	                    <th>Total Tax</th>
+	                  </tr>
+	                  <tr>
+	                    <td align="right"><span class="st tax_price_txt" id="">Rp. {{ number_format($data[0]->cr_tax,0,',','.') }}</span></td>
+	                  </tr>
+	                  <tr>
+	                    <th>Total Serve</th>
+	                  </tr>
+	                  <tr>
+	                    <td align="right"><span class="st serve_price_txt" id="">Rp. {{ number_format($data[0]->cr_serve,0,',','.') }}</span></td>
+	                  </tr>
+	                  <tr>
+	                    <th>Total Additional</th>
+	                  </tr>
+	                  <tr>
+	                    <td align="right"><span class="st additional_price_txt" id="">Rp. {{ number_format($data[0]->cr_additional,0,',','.') }}</span></td>
+	                  </tr>
+	                  <tr style="background-color: #f5f5f5">
+	                    <th>Total Cost</th>
+	                  </tr>
+	                  <tr>
+	                    <td align="right"><span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span></td>
+	                  </tr>
+	                </table>
 				</div>
 			</div>
 		</div>

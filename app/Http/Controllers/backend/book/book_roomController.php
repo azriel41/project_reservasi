@@ -36,4 +36,21 @@ class book_roomController extends Controller
         $type_room = $this->models->m_type_room()->get();
         return view('frontend.room.room_detail',compact('data','type_room'));
     }
+    public function book_detail(Request $req,$id)
+    {
+        // dd($req->all());
+        $dt = $this->models->c_room()->where('cr_id',$id)->get();
+        $data = [];
+        foreach ($dt as $key => $value) {
+           $data[$key] = $value;
+           $data[$key]->m_type_room;
+           $data[$key]->c_room_image;
+           $data[$key]->c_room_features;
+        }
+        $type_room = $this->models->m_type_room()->get();
+        $request = $req->all();
+        // return $request;
+        // return $request['start_date'];
+        return view('frontend.room.room_invoice',compact('data','type_room','request'));
+    }
 }
