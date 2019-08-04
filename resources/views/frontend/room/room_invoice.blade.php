@@ -134,6 +134,9 @@ h5.vals{
 	-webkit-transform: translateY(35%);
 	transform: translateY(35%);
 }
+.error {
+	color: red; 
+}
 </style>
 @endsection
 @section('content')
@@ -206,7 +209,7 @@ h5.vals{
 
 						<!-- SECTION 2 -->
 						<h2></h2>
-						<section>
+						<section class="sec2">
 							<div class="wrapper">
 								<div class="subttl">
 									<h4>Guest Information</h4>
@@ -217,20 +220,24 @@ h5.vals{
 										<div class="col-sm-12">
 											<div class="row">
 												<div class="col-sm-6">
-													<span class="form-label">First Name</span>
-													<input class="form-control" type="text" name="" value="">
-													<span class="form-label">Last Name</span>
-													<input class="form-control" type="text" name="" value="">
-													<span class="form-label">Address</span>
-													<input class="form-control" type="text" name="" value="">
+													<label for="first_name" class="form-label">First Name</label>
+													<input class="required form-control" id="first_name" type="text" name="first_name">
+													<br>
+													<label for="last_name" class="form-label">Last Name</label>
+													<input class="required form-control" id="last_name" type="text" name="last_name">
+													<br>
+													<label for="address" class="form-label">Address</label>
+													<input class="required form-control" id="address" type="text" name="address">
 												</div>
 												<div class="col-sm-6">
-													<span class="form-label">Email</span>
-													<input class="form-control" type="text" name="" value="">
-													<span class="form-label">Phone Number</span>
-													<input class="form-control" type="text" name="" value="">
-													<span class="form-label">Phone Number 2</span>
-													<input class="form-control" type="text" name="" value="">
+													<label for="email" class="form-label">Email</label>
+													<input class="required form-control" id="email" type="text" name="email">
+													<br>
+													<label for="phone" class="form-label">Phone Number</label>
+													<input class="required form-control" id="phone" type="text" name="phone">
+													<br>
+													<label for="phone1" class="form-label">Phone Number 2</label>
+													<input class="required form-control" id="phone1" type="text" name="phone1">
 												</div>
 											</div>
 										</div>
@@ -252,27 +259,27 @@ h5.vals{
 										<div class="col-sm-12">
 											<div class="ndeks">
 												<h5 class="ntitel">First Name</h5>
-												:<h5 class="vals">John</h5>
+												:<h5 class="first_name"></h5>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Last Name</h5>
-												:<h5 class="vals">Sorgon</h5>
+												:<h5 class="last_name"></h5>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Address</h5>
-												:<h5 class="vals">Jl. Bulak</h5>
+												:<h5 class="address"></h5>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Email</h5>
-												:<h5 class="vals">ngakbayar@yahoo.com</h5>
+												:<h5 class="email"></h5>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Phone Number 1</h5>
-												:<h5 class="vals">08123456789</h5>
+												:<h5 class="phone"></h5>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Phone Number 2</h5>
-												:<h5 class="vals">08987654321</h5>
+												:<h5 class="phone1"></h5>
 											</div>
 										</div>
 									</div>
@@ -377,7 +384,7 @@ h5.vals{
 										</div>
 										<div class="form-group text-center">
 											<div class="col-xs-12 p-b-20">
-												<button class="btn btn-block btn-lg btn-info" type="submit">Log In</button>
+												<button class="btn btn-block btn-lg btn-info" onclick="login()" type="button" >Log In</button>
 											</div>
 										</div>
 										{{--  <div class="row">
@@ -413,13 +420,24 @@ $("#wizard").steps({
 			headerTag: "h2",
 			bodyTag: "section",
 			transitionEffect: "fade",
-			enableAllSteps: true,
+			enableAllSteps: false,
 			transitionEffectSpeed: 500,
 			labels: {
 					finish: "Submit&nbsp;",
 					next: "Forward&nbsp;",
 					previous: " Backward"
-			}
+			},
+			onStepChanging: function (event, currentIndex, newIndex)
+		    {
+		        $("#wizard").validate().settings.ignore = ":disabled,:hidden";
+		        $('.first_name').text($('#first_name').val());
+		        $('.last_name').text($('#last_name').val());
+		        $('.address').text($('#address').val());
+		        $('.email').text($('#email').val());
+		        $('.phone').text($('#phone').val());
+		        $('.phone1').text($('#phone1').val());
+		        return $("#wizard").valid();
+		    },
 	});
 	$('.wizard > .steps li a').click(function(){
 		$(this).parent().addClass('checked');
@@ -448,7 +466,34 @@ $("#wizard").steps({
 			var text = $(this).attr('rel');
 			$(this).parent().prev().find('div').text(text);
 	})
+
 })
+function login(argument) {
+	$("#wizard").steps({
+		headerTag: "h2",
+			bodyTag: "section",
+			transitionEffect: "fade",
+			current:1,
+			enableAllSteps: false,
+			transitionEffectSpeed: 500,
+			labels: {
+					finish: "Submit&nbsp;",
+					next: "Forward&nbsp;",
+					previous: " Backward"
+			},
+			onStepChanging: function (event, currentIndex, newIndex)
+		    {
+		        $("#wizard").validate().settings.ignore = ":disabled,:hidden";
+		        $('.first_name').text($('#first_name').val());
+		        $('.last_name').text($('#last_name').val());
+		        $('.address').text($('#address').val());
+		        $('.email').text($('#email').val());
+		        $('.phone').text($('#phone').val());
+		        $('.phone1').text($('#phone1').val());
+		        return $("#wizard").valid();
+		    },
+	});
+}
 
 </script>
 

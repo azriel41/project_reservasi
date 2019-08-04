@@ -53,4 +53,8 @@ class book_roomController extends Controller
         // return $request['start_date'];
         return view('frontend.room.room_invoice',compact('data','type_room','request'));
     }
+    public function book_detail_room()
+    {
+        return view('frontend.room.room_detail',compact('data','type_room'));
+    }
 }
