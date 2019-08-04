@@ -21,14 +21,14 @@
    Route::get('/home', 'rumahController@index')->name('home');
 
 // ROOM DETAIL------------------------------------
-   
+
    Route::get('/room_detail', 'frontend\room\room_detailController@index')->name('room_detail');
    Route::get('/room_detail/invoice', 'frontend\room\room_invoiceController@index')->name('invoice');
 
    Auth::routes();
 
 // Route::group(['middleware' => 'auth'], function () {
-   
+
    $data = App\d_mem::all();
 
 
@@ -67,7 +67,7 @@
 
 
 
-// CATALOG --------------------------------------   
+// CATALOG --------------------------------------
    //CATALOG categories
    Route::get('/catalog/catalog_categories', 'catalog\catalog_categoriesController@index')->name('catalog_categories');
    Route::get('/catalog/catalog_categories/create', 'catalog\catalog_categoriesController@create')->name('catalog_categories_create');
@@ -91,9 +91,9 @@
    Route::get('/book/book_room/book_detail_room', 'backend\book\book_roomController@book_detail_room')->name('book_detail_room');
 
 
-   
 
-   
+
+
 
 
 

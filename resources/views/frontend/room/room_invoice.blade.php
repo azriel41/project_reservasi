@@ -106,8 +106,8 @@
 	line-height: 50px;
 }
 .prosbut:hover {
-    background-color: #081124;
-    color: #d6baa0;
+	background-color: #081124;
+	color: #d6baa0;
 }
 .ndeks{
 	display: flex;
@@ -135,7 +135,7 @@ h5.vals{
 	transform: translateY(35%);
 }
 .error {
-	color: red; 
+	color: red;
 }
 </style>
 @endsection
@@ -159,7 +159,7 @@ h5.vals{
 									<div class="row">
 										<div class="col-xs-12 col-sm-3">
 											<div class="gab">
-		                    					<img src="{{asset('storage/app/'.$data[0]->c_room_image[0]->cri_image)}}">
+												<img src="{{asset('storage/app/'.$data[0]->c_room_image[0]->cri_image)}}">
 											</div>
 											<div class="sampah">
 												<span class="fa fa-trash"> Remove</span>
@@ -175,30 +175,30 @@ h5.vals{
 											<div class="feature">
 												@foreach ($data[0]->c_room_features as $index2 => $element2)
 												<span class="icco {{ $data[0]->c_room_features[$index2]->m_features->mf_icon }}"> {{ $data[0]->c_room_features[$index2]->m_features->mf_name }}</span>
-				                                @endforeach
+												@endforeach
 											</div>
 											<div class="row infor">
 												<div class="col-xs-12 col-sm-3">
-													<h5>Check In</h5>
+													<h5 class="ntitel">Check In</h5>
 													<span>{{ $request['start_date'] }}</span>
 												</div>
 												<div class="col-xs-12 col-sm-3">
-													<h5>Check Out</h5>
+													<h5 class="ntitel">Check Out</h5>
 													<span>{{ $request['end_date'] }}</span>
 												</div>
 												<div class="col-xs-12 col-sm-3">
-													<h5>Type Room</h5>
+													<h5 class="ntitel">Type Room</h5>
 													<span>{{ $request['typename'] }}</span>
 												</div>
 												<div class="col-xs-12 col-sm-3">
-													<h5>No. of Guests</h5>
+													<h5 class="ntitel">No. of Guests</h5>
 													<span>{{ $request['qty'] }}</span>
 												</div>
 											</div>
 											<div class="prai">
 												<div class="tal2">
-													<h5>Total room price</h5>
-	                    							<span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span>
+													<h5 class="ntitel">Total room price</h5>
+													<span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span>
 												</div>
 											</div>
 										</div>
@@ -259,27 +259,27 @@ h5.vals{
 										<div class="col-sm-12">
 											<div class="ndeks">
 												<h5 class="ntitel">First Name</h5>
-												:<h5 class="first_name"></h5>
+												:<p class="first_name"></p>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Last Name</h5>
-												:<h5 class="last_name"></h5>
+												:<p class="last_name"></p>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Address</h5>
-												:<h5 class="address"></h5>
+												:<p class="address"></p>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Email</h5>
-												:<h5 class="email"></h5>
+												:<p class="email"></p>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Phone Number 1</h5>
-												:<h5 class="phone"></h5>
+												:<p class="phone"></p>
 											</div>
 											<div class="ndeks">
 												<h5 class="ntitel">Phone Number 2</h5>
-												:<h5 class="phone1"></h5>
+												:<p class="phone1"></p>
 											</div>
 										</div>
 									</div>
@@ -294,37 +294,37 @@ h5.vals{
 			<div class="col-xs-12 col-sm-3">
 				<div class="romps">
 					<table class="table" style="font-size: 14px">
-	                  <tr>
-	                    <th>Total Room Cost</th>
-	                  </tr>
-	                  <tr>
-	                    <td align="right"><span class="st room_price_txt" id="">Rp. {{ number_format($data[0]->cr_price*$request['qty'],0,',','.') }}</span></td>
-	                  </tr>
-	                  <tr>
-	                    <th>Total Tax</th>
-	                  </tr>
-	                  <tr>
-	                    <td align="right"><span class="st tax_price_txt" id="">Rp. {{ number_format($data[0]->cr_tax,0,',','.') }}</span></td>
-	                  </tr>
-	                  <tr>
-	                    <th>Total Serve</th>
-	                  </tr>
-	                  <tr>
-	                    <td align="right"><span class="st serve_price_txt" id="">Rp. {{ number_format($data[0]->cr_serve,0,',','.') }}</span></td>
-	                  </tr>
-	                  <tr>
-	                    <th>Total Additional</th>
-	                  </tr>
-	                  <tr>
-	                    <td align="right"><span class="st additional_price_txt" id="">Rp. {{ number_format($data[0]->cr_additional,0,',','.') }}</span></td>
-	                  </tr>
-	                  <tr style="background-color: #f5f5f5">
-	                    <th>Total Cost</th>
-	                  </tr>
-	                  <tr>
-	                    <td align="right"><span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span></td>
-	                  </tr>
-	                </table>
+						<tr>
+							<th>Total Room Cost</th>
+						</tr>
+						<tr>
+							<td align="right"><span class="st room_price_txt" id="">Rp. {{ number_format($data[0]->cr_price*$request['qty'],0,',','.') }}</span></td>
+						</tr>
+						<tr>
+							<th>Total Tax</th>
+						</tr>
+						<tr>
+							<td align="right"><span class="st tax_price_txt" id="">Rp. {{ number_format($data[0]->cr_tax,0,',','.') }}</span></td>
+						</tr>
+						<tr>
+							<th>Total Serve</th>
+						</tr>
+						<tr>
+							<td align="right"><span class="st serve_price_txt" id="">Rp. {{ number_format($data[0]->cr_serve,0,',','.') }}</span></td>
+						</tr>
+						<tr>
+							<th>Total Additional</th>
+						</tr>
+						<tr>
+							<td align="right"><span class="st additional_price_txt" id="">Rp. {{ number_format($data[0]->cr_additional,0,',','.') }}</span></td>
+						</tr>
+						<tr style="background-color: #f5f5f5">
+							<th>Total Cost</th>
+						</tr>
+						<tr>
+							<td align="right"><span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -416,82 +416,82 @@ h5.vals{
 
 <script type="text/javascript">
 $(function(){
-$("#wizard").steps({
-			headerTag: "h2",
-			bodyTag: "section",
-			transitionEffect: "fade",
-			enableAllSteps: false,
-			transitionEffectSpeed: 500,
-			labels: {
-					finish: "Submit&nbsp;",
-					next: "Forward&nbsp;",
-					previous: " Backward"
-			},
-			onStepChanging: function (event, currentIndex, newIndex)
-		    {
-		        $("#wizard").validate().settings.ignore = ":disabled,:hidden";
-		        $('.first_name').text($('#first_name').val());
-		        $('.last_name').text($('#last_name').val());
-		        $('.address').text($('#address').val());
-		        $('.email').text($('#email').val());
-		        $('.phone').text($('#phone').val());
-		        $('.phone1').text($('#phone1').val());
-		        return $("#wizard").valid();
-		    },
+	$("#wizard").steps({
+		headerTag: "h2",
+		bodyTag: "section",
+		transitionEffect: "fade",
+		enableAllSteps: false,
+		transitionEffectSpeed: 500,
+		labels: {
+			finish: "Submit&nbsp;",
+			next: "Forward&nbsp;",
+			previous: " Backward"
+		},
+		onStepChanging: function (event, currentIndex, newIndex)
+		{
+			$("#wizard").validate().settings.ignore = ":disabled,:hidden";
+			$('.first_name').text($('#first_name').val());
+			$('.last_name').text($('#last_name').val());
+			$('.address').text($('#address').val());
+			$('.email').text($('#email').val());
+			$('.phone').text($('#phone').val());
+			$('.phone1').text($('#phone1').val());
+			return $("#wizard").valid();
+		},
 	});
 	$('.wizard > .steps li a').click(function(){
 		$(this).parent().addClass('checked');
-	$(this).parent().prevAll().addClass('checked');
-	$(this).parent().nextAll().removeClass('checked');
+		$(this).parent().prevAll().addClass('checked');
+		$(this).parent().nextAll().removeClass('checked');
 	});
 	// Custome Jquery Step Button
 	$('.forward').click(function(){
 		$("#wizard").steps('next');
 	})
 	$('.backward').click(function(){
-			$("#wizard").steps('previous');
+		$("#wizard").steps('previous');
 	})
 	// Select Dropdown
 	$('html').click(function() {
-			$('.select .dropdown').hide();
+		$('.select .dropdown').hide();
 	});
 	$('.select').click(function(event){
-			event.stopPropagation();
+		event.stopPropagation();
 	});
 	$('.select .select-control').click(function(){
-			$(this).parent().next().toggle();
+		$(this).parent().next().toggle();
 	})
 	$('.select .dropdown li').click(function(){
-			$(this).parent().toggle();
-			var text = $(this).attr('rel');
-			$(this).parent().prev().find('div').text(text);
+		$(this).parent().toggle();
+		var text = $(this).attr('rel');
+		$(this).parent().prev().find('div').text(text);
 	})
 
 })
 function login(argument) {
 	$("#wizard").steps({
 		headerTag: "h2",
-			bodyTag: "section",
-			transitionEffect: "fade",
-			current:1,
-			enableAllSteps: false,
-			transitionEffectSpeed: 500,
-			labels: {
-					finish: "Submit&nbsp;",
-					next: "Forward&nbsp;",
-					previous: " Backward"
-			},
-			onStepChanging: function (event, currentIndex, newIndex)
-		    {
-		        $("#wizard").validate().settings.ignore = ":disabled,:hidden";
-		        $('.first_name').text($('#first_name').val());
-		        $('.last_name').text($('#last_name').val());
-		        $('.address').text($('#address').val());
-		        $('.email').text($('#email').val());
-		        $('.phone').text($('#phone').val());
-		        $('.phone1').text($('#phone1').val());
-		        return $("#wizard").valid();
-		    },
+		bodyTag: "section",
+		transitionEffect: "fade",
+		current:1,
+		enableAllSteps: false,
+		transitionEffectSpeed: 500,
+		labels: {
+			finish: "Submit&nbsp;",
+			next: "Forward&nbsp;",
+			previous: " Backward"
+		},
+		onStepChanging: function (event, currentIndex, newIndex)
+		{
+			$("#wizard").validate().settings.ignore = ":disabled,:hidden";
+			$('.first_name').text($('#first_name').val());
+			$('.last_name').text($('#last_name').val());
+			$('.address').text($('#address').val());
+			$('.email').text($('#email').val());
+			$('.phone').text($('#phone').val());
+			$('.phone1').text($('#phone1').val());
+			return $("#wizard").valid();
+		},
 	});
 }
 
