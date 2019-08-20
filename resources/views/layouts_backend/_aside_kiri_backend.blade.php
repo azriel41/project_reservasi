@@ -134,7 +134,7 @@
                                 </li>
                             </ul>
                             <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('ticket') }}" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('catalog_ticket') }}" aria-expanded="false">
                                 <i class="mdi mdi-directions"></i>
                                 <span class="hide-menu">Ticket</span>
                             </a>

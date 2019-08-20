@@ -100,11 +100,11 @@
 
 
    //TIKETING
-   Route::get('/ticket/ticket', 'ticket\ticketController@index')->name('ticket');
-   Route::get('/ticket/ticket/create', 'ticket\ticketController@create')->name('ticket_create');
-   Route::get('/ticket/ticket/save', 'ticket\ticketController@save')->name('ticket_save');
-   Route::get('/ticket/ticket/edit/{id}', 'ticket\ticketController@edit')->name('ticket_edit');
-   Route::get('/ticket/ticket/update', 'ticket\ticketController@update')->name('ticket_update');
-   Route::get('/ticket/ticket/delete/{id}', 'ticket\ticketController@delete')->name('ticket_delete');
+   Route::get('/ticket/catalog_ticket', 'catalog\catalog_ticketController@index')->name('catalog_ticket');
+   Route::get('/ticket/catalog_ticket/create', 'catalog\catalog_ticketController@create')->name('catalog_ticket_create');
+   Route::get('/ticket/catalog_ticket/save', 'catalog\catalog_ticketController@save')->name('catalog_ticket_save');
+   Route::get('/ticket/catalog_ticket/edit/{id}', 'catalog\catalog_ticketController@edit')->name('catalog_ticket_edit');
+   Route::get('/ticket/catalog_ticket/update', 'catalog\catalog_ticketController@update')->name('catalog_ticket_update');
+   Route::get('/ticket/catalog_ticket/delete/{id}', 'catalog\catalog_ticketController@delete')->name('catalog_ticket_delete');
 
 // });
