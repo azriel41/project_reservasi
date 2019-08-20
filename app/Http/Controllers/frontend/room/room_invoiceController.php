@@ -22,4 +22,8 @@ class room_invoiceController extends Controller
     {
         return view('frontend.room.room_invoice');
     }
+    public function FunctionName($value='')
+    {
+        # code...
+    }
 }

@@ -19,3 +19,4 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets_frontend/styles/main_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets_frontend/styles/responsive.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets_frontend/styles/steps.css') }}">
+<link href="{{ asset('assets_backend/libs/iziToast-master/dist/css/iziToast.css') }}" rel="stylesheet" type="text/css" >

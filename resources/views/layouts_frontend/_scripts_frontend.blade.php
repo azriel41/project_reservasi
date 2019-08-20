@@ -15,6 +15,7 @@
 <script src="{{ asset('assets_frontend/js/accounting.min.js') }}"></script>
 <script src="{{ asset('assets_frontend/js/jquery.steps.js') }}"></script>
 <script src="{{ asset('assets_frontend/plugins/jquery-validation-1.19.1/dist/jquery.validate.js') }}"></script>
+<script src="{{ asset('assets_backend/libs/iziToast-master/dist/js/iziToast.min.js') }}"></script>
 <script type="text/javascript">
 	var baseUrl = '{{ url('/') }}';
 </script>

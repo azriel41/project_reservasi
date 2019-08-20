@@ -168,6 +168,7 @@ h5.vals{
 										<div class="col-xs-12 col-sm-9">
 											<div class="hott">
 												<h5>{{ $data[0]->cr_name }}</h5>
+												<input type="hidden" value="{{ $data[0]->cr_id }}" name="id_room">
 											</div>
 											{{-- <div class="lok">
 												<span class="fa fa-map-marker"> Jl. Gatot Oioi, Kota Surabaya , 60118</span>
@@ -181,24 +182,29 @@ h5.vals{
 												<div class="col-xs-12 col-sm-3">
 													<h5>Check In</h5>
 													<span>{{ $request['start_date'] }}</span>
+													<input type="hidden" name="start_date" value="{{ $request['start_date'] }}">
 												</div>
 												<div class="col-xs-12 col-sm-3">
 													<h5>Check Out</h5>
 													<span>{{ $request['end_date'] }}</span>
+													<input type="hidden" name="end_date" value="{{ $request['end_date'] }}">
 												</div>
 												<div class="col-xs-12 col-sm-3">
 													<h5>Type Room</h5>
 													<span>{{ $request['typename'] }}</span>
+													<input type="hidden" name="typename" value="{{ $request['typename'] }}">
 												</div>
 												<div class="col-xs-12 col-sm-3">
 													<h5>No. of Guests</h5>
 													<span>{{ $request['qty'] }}</span>
+													<input type="hidden" name="qty" value="{{ $request['qty'] }}">
 												</div>
 											</div>
 											<div class="prai">
 												<div class="tal2">
 													<h5>Total room price</h5>
 	                    							<span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span>
+	                    							<input type="hidden" name="total_price" value="{{$data[0]->cr_price*$request['qty']+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional}}">
 												</div>
 											</div>
 										</div>
@@ -438,6 +444,75 @@ $("#wizard").steps({
 		        $('.phone1').text($('#phone1').val());
 		        return $("#wizard").valid();
 		    },
+		    onFinished: function (event, currentIndex)
+		    {
+		    	   iziToast.show({
+		            overlay: true,
+		            close: false,
+		            timeout: 20000, 
+		            color: 'dark',
+		            icon: 'fas fa-question-circle',
+		            title: 'Save Data!',
+		            message: 'Apakah Anda Yakin ?!',
+		            position: 'center',
+		            progressBarColor: 'rgb(0, 255, 184)',
+		            buttons: [
+		            [
+		                '<button style="background-color:#17a991;color:white;">Save</button>',
+			                function (instance, toast) {
+			                    var form  = $('#wizard');
+			                    formdata = new FormData(form[0]);
+			                    // formdata.append('k_status_id',$id);
+
+			                  $.ajaxSetup({
+			                      headers: {
+			                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			                        }
+			                    });
+
+			                    $.ajax({
+			                        type: "post",
+			                        url:'{{ route('room_detail_save') }}',
+			                        data: formdata ? formdata : form.serialize(),
+			                        processData: false,
+			                        contentType: false,
+			                      success:function(data){
+			                        if (data.status == 'sukses') {
+			                            iziToast.success({
+			                                icon: 'fa fa-save',
+			                                position:'topRight',
+			                                title: 'Success!',
+			                                message: 'Data Berhasil Disimpan!',
+			                            });
+
+			                            location.href = '{{ route('welcome') }}'
+			                        }
+			                      },error:function(){
+			                        iziToast.error({
+			                            icon: 'fa fa-info',
+			                            position:'topRight',
+			                            title: 'Error!',
+			                            message: data.message,
+			                        });
+			                      }
+			                    });
+			                    instance.hide({
+			                        transitionOut: 'fadeOutUp'
+			                    }, toast);
+			                }
+			            ],
+			            [
+			                '<button style="background-color:#d83939;color:white;">Cancel</button>',
+			                function (instance, toast) {
+			                  instance.hide({
+			                    transitionOut: 'fadeOutUp'
+			                  }, toast);
+			                }
+			              ]
+			            ]
+			        });
+
+		    }
 	});
 	$('.wizard > .steps li a').click(function(){
 		$(this).parent().addClass('checked');
@@ -469,31 +544,9 @@ $("#wizard").steps({
 
 })
 function login(argument) {
-	$("#wizard").steps({
-		headerTag: "h2",
-			bodyTag: "section",
-			transitionEffect: "fade",
-			current:1,
-			enableAllSteps: false,
-			transitionEffectSpeed: 500,
-			labels: {
-					finish: "Submit&nbsp;",
-					next: "Forward&nbsp;",
-					previous: " Backward"
-			},
-			onStepChanging: function (event, currentIndex, newIndex)
-		    {
-		        $("#wizard").validate().settings.ignore = ":disabled,:hidden";
-		        $('.first_name').text($('#first_name').val());
-		        $('.last_name').text($('#last_name').val());
-		        $('.address').text($('#address').val());
-		        $('.email').text($('#email').val());
-		        $('.phone').text($('#phone').val());
-		        $('.phone1').text($('#phone1').val());
-		        return $("#wizard").valid();
-		    },
-	});
+
 }
+
 
 </script>
 

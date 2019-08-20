@@ -88,6 +88,7 @@
    // BOOK
    Route::get('/book/book_room/detail/{id}', 'backend\book\book_roomController@room_detail')->name('room_detail');
    Route::get('/book/book_room/book_detail/{id}', 'backend\book\book_roomController@book_detail')->name('book_detail');
+   Route::post('/book/book_room/book_detail/save', 'backend\book\book_roomController@save')->name('room_detail_save');
    Route::get('/book/book_room/book_detail_room', 'backend\book\book_roomController@book_detail_room')->name('book_detail_room');
 
 
