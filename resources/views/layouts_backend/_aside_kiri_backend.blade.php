@@ -134,30 +134,11 @@
                                 </li>
                             </ul>
                             <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Car-Wheel"></i>
-                                <span class="hide-menu"> Ticketing </span>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('ticket') }}" aria-expanded="false">
+                                <i class="mdi mdi-directions"></i>
+                                <span class="hide-menu">Ticket</span>
                             </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Outbonds </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Swimming Pool </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Karaoke </span>
-                                    </a>
-                                </li>
-                            </ul>
+                        </li>
                             <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                                 <i class="icon-Car-Wheel"></i>
