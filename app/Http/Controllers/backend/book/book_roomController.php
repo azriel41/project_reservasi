@@ -59,6 +59,6 @@ class book_roomController extends Controller
     }
     public function book_detail_room()
     {
-        return view('frontend.room.room_detail',compact('data','type_room'));
+        return view('frontend.room.room_detail_book');
     }
 }
