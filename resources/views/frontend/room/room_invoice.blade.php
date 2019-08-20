@@ -14,6 +14,10 @@
 	margin-bottom: 20px;
 	display: flow-root;
 }
+.cek
+{
+	margin-right: 10px;
+}
 .rinf
 {
 	margin-bottom: 10px;
@@ -215,7 +219,37 @@ h5.vals{
 
 						<!-- SECTION 2 -->
 						<h2></h2>
-						<section class="sec2">
+						<section>
+							<div class="wrapper">
+								<div class="subttl">
+									<h4>JUDUL GAE PANGANAN</h4>
+								</div>
+								<div class="rinf">
+									<span class="roi">Your Information</span>
+
+									<div class="row sumer">
+										<div class="col-sm-12">
+											<div class="ndeks">
+												<input class="cek" type="checkbox" name="" value="">
+												<h5 class="ntitel">Breakfast</h5>
+											</div>
+											<div class="ndeks">
+												<input class="cek" type="checkbox" name="" value="">
+												<h5 class="ntitel">Lunch</h5>
+											</div>
+											<div class="ndeks">
+												<input class="cek" type="checkbox" name="" value="">
+												<h5 class="ntitel">Dinner</h5>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- SECTION 3 -->
+						<h2></h2>
+						<section>
 							<div class="wrapper">
 								<div class="subttl">
 									<h4>Guest Information</h4>
@@ -252,7 +286,7 @@ h5.vals{
 							</div>
 						</section>
 
-						<!-- SECTION 3 -->
+						<!-- SECTION 4 -->
 						<h2></h2>
 						<section>
 							<div class="wrapper">
@@ -449,7 +483,7 @@ $("#wizard").steps({
 		    	   iziToast.show({
 		            overlay: true,
 		            close: false,
-		            timeout: 20000, 
+		            timeout: 20000,
 		            color: 'dark',
 		            icon: 'fas fa-question-circle',
 		            title: 'Save Data!',
