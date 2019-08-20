@@ -1339,12 +1339,23 @@ box-shadow: -6px 0 #ffffff00, 6px 0 #ffffff00, 0 7px 5px -2px black;
 /*********************************
 10. Gallery
 *********************************/
-
+.sle
+{
+	padding: 0;
+}
+.taitel
+{
+	padding-bottom: 10px;
+}
+.taitel h4
+{
+	color: #fff;
+}
 .gallery
 {
 	width: 100%;
 	background: #282428;
-	padding: 60px 0;
+	padding: 20px 0 60px 0;
 	/* height: 35rem; */
 }
 .gallery_slider_container
@@ -1397,7 +1408,7 @@ box-shadow: -6px 0 #ffffff00, 6px 0 #ffffff00, 0 7px 5px -2px black;
 }
 .gallery_slider_nav_content
 {
-	float: right;
+	/* float: right; */
 }
 .gallery_slider_nav
 {

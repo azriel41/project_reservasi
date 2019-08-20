@@ -11,8 +11,8 @@
 @section('content')
 @include('layouts_frontend._slider_frontend')
 {{-- @include('layouts_frontend._search_frontend') --}}
-    
-   
+
+
 
     <div class="intro">
         <div class="container">
@@ -155,6 +155,13 @@
     <!-- Gallery -->
 
     <div class="gallery">
+      <div class="col taitel">
+          <div class="section_title_container text-center magic_up">
+              <div class="section_subtitle">luxury resort</div>
+              <div class="section_title"><h4>Food & Beverage</h4></div>
+          </div>
+      </div>
+
         <div class="gallery_slider_container">
 
             <!-- Gallery Slider -->
@@ -189,8 +196,15 @@
                 <div class="row">
                     <div class="col clearfix">
                         <div class="gallery_slider_nav_content d-flex flex-row align-items-start justify-content-start">
-                            <div class="gallery_slider_prev gallery_slider_nav"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-                            <div class="gallery_slider_next gallery_slider_nav"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                            <div class="col-sm-4 sle">
+                              <div class="gallery_slider_prev gallery_slider_nav" style="float:right"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+                            </div>
+                            <div class="col-sm-4 text-center">
+                              <a href="#" class="button_container intro_button" style="margin:0"><div class="button text-center"><span>See All</span></div></a>
+                            </div>
+                            <div class="col-sm-4 sle">
+                              <div class="gallery_slider_next gallery_slider_nav"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                            </div>
                         </div>
                     </div>
                 </div>

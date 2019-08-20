@@ -57,8 +57,8 @@ class book_roomController extends Controller
     {
         // $save = $this->models->c_
     }
-    public function book_detail_room()
-    {
-        return view('frontend.room.room_detail_book');
-    }
+    // public function book_detail_room()
+    // {
+    //     return view('frontend.room.room_detail_book');
+    // }
 }
