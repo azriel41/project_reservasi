@@ -55,7 +55,7 @@ class book_roomController extends Controller
     }
     public function save(Request $req)
     {
-        $save = $this->models->c_
+        // $save = $this->models->c_
     }
     public function book_detail_room()
     {

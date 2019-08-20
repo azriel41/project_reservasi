@@ -64,6 +64,13 @@
    Route::get('/master/master_features/edit/{id}', 'master\master_featuresController@edit')->name('master_features_edit');
    Route::get('/master/master_features/update', 'master\master_featuresController@update')->name('master_features_update');
    Route::get('/master/master_features/delete/{id}', 'master\master_featuresController@delete')->name('master_features_delete');
+    //MASTER ticket
+   Route::get('/master/master_ticket', 'master\master_ticketController@index')->name('master_ticket');
+   Route::get('/master/master_ticket/create', 'master\master_ticketController@create')->name('master_ticket_create');
+   Route::get('/master/master_ticket/save', 'master\master_ticketController@save')->name('master_ticket_save');
+   Route::get('/master/master_ticket/edit/{id}', 'master\master_ticketController@edit')->name('master_ticket_edit');
+   Route::get('/master/master_ticket/update', 'master\master_ticketController@update')->name('master_ticket_update');
+   Route::get('/master/master_ticket/delete/{id}', 'master\master_ticketController@delete')->name('master_ticket_delete');
 
 
 
@@ -92,10 +99,12 @@
    Route::get('/book/book_room/book_detail_room', 'backend\book\book_roomController@book_detail_room')->name('book_detail_room');
 
 
-
-
-
-
-
+   //TIKETING
+   Route::get('/ticket/ticket', 'ticket\ticketController@index')->name('ticket');
+   Route::get('/ticket/ticket/create', 'ticket\ticketController@create')->name('ticket_create');
+   Route::get('/ticket/ticket/save', 'ticket\ticketController@save')->name('ticket_save');
+   Route::get('/ticket/ticket/edit/{id}', 'ticket\ticketController@edit')->name('ticket_edit');
+   Route::get('/ticket/ticket/update', 'ticket\ticketController@update')->name('ticket_update');
+   Route::get('/ticket/ticket/delete/{id}', 'ticket\ticketController@delete')->name('ticket_delete');
 
 // });
