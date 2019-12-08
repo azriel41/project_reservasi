@@ -22,6 +22,8 @@ class c_room extends Model
                             'cr_desc_short',
                             'cr_price',
                             'cr_tax',
+                            'cr_type_room',
+                            'cr_total',
                             'cr_additional',
                             'cr_serve',
                             'cr_payment',
@@ -34,6 +36,9 @@ class c_room extends Model
     }
     public function c_room_image(){
         return $this->hasMany('App\models\catalog\c_room_image', 'cri_id', 'cr_id');
+    }
+    public function d_room_book(){
+        return $this->hasMany('App\models\book_room\d_room_book', 'drb_room_id', 'cr_id');
     }
     public function m_type_room(){
         return $this->belongsTo('App\models\master\m_type_room', 'cr_type_room', 'tr_id');

@@ -126,11 +126,18 @@
 @endsection
 
 @section('extra_scripts')
+    <script src="jquery.maskMoney.js" type="text/javascript"></script>
     <script type="text/javascript">
+    $('.qty_sold').maskMoney({precision:0,decimal:false});
+
     $('.add_data').click(function (argument) {
         $('.ticket').attr('disabled',false);
+        $('.modal-footer').empty();
         $('.modal-footer').append('<button type="button" class="btn btn-info submit waves-effect text-left" onclick="simpan()">Submit</button>');
         $('.id').val('');
+        $('.qty').attr('readonly',false);
+        $('.qty_sold').attr('readonly',true);
+        $('.qty_left').attr('readonly',true);
         $('.qty').val(0);
         $('.qty_sold').val(0);
         $('.qty_left').val(0);
@@ -237,12 +244,26 @@
        
     $('.view').click(function (argument) {
         $('.ticket').attr('disabled',true);
+        $('.modal-footer').empty();
         $('.modal-footer').append('<button type="button" class="btn btn-info update waves-effect text-left" onclick="update()">Update</button>');
         $('.id').val($(this).val());
         $('.qty').val($(this).data('qty'));
         $('.qty_sold').val($(this).data('qty_sold'));
         $('.qty_left').val($(this).data('qty_left'));
+        $('.qty').attr('readonly',true);
+        $('.qty_sold').attr('readonly',false);
+        $('.qty_left').attr('readonly',true);
+    });
+    $('.qty_sold').keyup(function (argument) {
+        hitung();
     })
+    function hitung() {
+        if (parseFloat($('.qty_sold').val()) > parseFloat($('.qty').val())) {
+            $('.qty_left').val(0);    
+        }else{
+            $('.qty_left').val(parseFloat($('.qty').val())-parseFloat($('.qty_sold').val()));
+        }
+    }
 
     function update(argument) {
         iziToast.question({

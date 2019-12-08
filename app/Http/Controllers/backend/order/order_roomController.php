@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\catalog;
+namespace App\Http\Controllers\backend\order;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use App\models;
 use Storage;
-class catalog_roomController extends Controller
+class order_roomController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -27,15 +27,14 @@ class catalog_roomController extends Controller
      */
     public function index()
     {
-        $data = $this->models->c_room()->get();
-        // return Response()->json($data);
-        return view('backend.catalog.catalog_room.index',compact('data'));
+        $data = $this->models->d_room_book()->with('d_mem')->with('d_room_guest')->get();
+        return view('backend.order.order_room.index',compact('data'));
     }
     public function create()
     {
-        $type = DB::table('m_type_room')->get();
+        $type     = DB::table('m_type_room')->get();
         $features = DB::table('m_features')->get();
-        return view('backend.catalog.catalog_room.create',compact('type','features'));
+        return view('backend.order.order_room.create',compact('type','features'));
     }
     public function save(Request $req)
     {
@@ -79,7 +78,7 @@ class catalog_roomController extends Controller
     }
     public function edit()
     {
-        return view('catalog.catalog_room.create');
+        return view('order.order_room.create');
     }
     public function update()
     {

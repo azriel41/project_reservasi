@@ -25,6 +25,8 @@
    Route::get('/room_detail', 'frontend\room\room_detailController@index')->name('room_detail');
    Route::get('/room_detail/invoice', 'frontend\room\room_invoiceController@index')->name('invoice');
 
+   Route::get('/payment', 'frontend\payment\paymentController@index')->name('payment');
+
    Auth::routes();
 
 // Route::group(['middleware' => 'auth'], function () {
@@ -90,13 +92,21 @@
    Route::get('/catalog/catalog_room/update', 'catalog\catalog_roomController@update')->name('catalog_room_update');
    Route::get('/catalog/catalog_room/delete/{id}', 'catalog\catalog_roomController@delete')->name('catalog_room_delete');
 
-
+// ORDER --------------------------------------
+ //CATALOG room
+   Route::get('/order/order', 'backend\order\order_roomController@index')->name('order');
+   Route::get('/order/order/create', 'backend\order\order_roomController@create')->name('order_create');
+   Route::post('/order/order/save', 'backend\order\order_roomController@save')->name('order_save');
+   Route::get('/order/order/edit/{id}', 'backend\order\order_roomController@edit')->name('order_edit');
+   Route::get('/order/order/update', 'backend\order\order_roomController@update')->name('order_update');
+   Route::get('/order/order/delete/{id}', 'backend\order\order_roomController@delete')->name('order_delete');
 
    // BOOK
    Route::get('/book/book_room/detail/{id}', 'backend\book\book_roomController@room_detail')->name('room_detail');
    Route::get('/book/book_room/book_detail/{id}', 'backend\book\book_roomController@book_detail')->name('book_detail');
    Route::post('/book/book_room/book_detail/save', 'backend\book\book_roomController@save')->name('room_detail_save');
    Route::get('/book/book_room/book_detail_room', 'backend\book\book_roomController@book_detail_room')->name('book_detail_room');
+
 
 
    //TIKETING

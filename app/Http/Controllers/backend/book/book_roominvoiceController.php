@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\models;
 use Mail;
 use Auth;
-class book_roomController extends Controller
+class book_roominvoiceController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,36 +25,12 @@ class book_roomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function room_detail($id)
+    public function room_invoice(Request $req)
     {
-        $dt = $this->models->c_room()->where('cr_id',$id)->get();
-        $data = [];
-        foreach ($dt as $key => $value) {
-           $data[$key] = $value;
-           $data[$key]->m_type_room;
-           $data[$key]->c_room_image;
-           $data[$key]->c_room_features;
-        }
-        $type_room = $this->models->m_type_room()->get();
-        return view('frontend.room.room_detail',compact('data','type_room'));
+        $dt = $this->models->c_room()->where('cr_id',$req->id)->get();
+        return view('frontend.room.room_invoice',compact('data'));
     }
-    public function book_detail(Request $req,$id)
-    {
-        // dd($req->all());
-        $dt = $this->models->c_room()->where('cr_id',$id)->get();
-        $data = [];
-        foreach ($dt as $key => $value) {
-           $data[$key] = $value;
-           $data[$key]->m_type_room;
-           $data[$key]->c_room_image;
-           $data[$key]->c_room_features;
-        }
-        $type_room = $this->models->m_type_room()->get();
-        $request = $req->all();
-        // return $request;
-        // return $request['start_date'];
-        return view('frontend.room.room_detail_book',compact('data','type_room','request'));
-    }
+   
     public function save(Request $req)
     {
         // dd($req->all());
@@ -68,14 +44,11 @@ class book_roomController extends Controller
         $typename      = $req->typename;
         $total_price   = $req->total_price;
         $room_price    = $req->room_price;
-        $room_id       = $req->id_room;
         $tax_price     = $req->tax_price;
         $serve_price   = $req->serve_price;
         $additional_price= $req->additional_price;
         $id_book       = $this->models->d_room_book()->max('drb_id')+1;
         $kode          = 'BKG-'.date('ym').'/'.$id_book;
-        $token = str_random(70);
-        $token2 = str_random(50);
         if (Auth::user() != null) {
              $id_user = Auth::user()->m_id;
              $id_guest = null;
@@ -99,7 +72,7 @@ class book_roomController extends Controller
 
         $this->models->d_room_book()->create([
                             'drb_id' =>$id_book,
-                            'drb_code' =>$kode,
+                            'drb_kode' =>$kode,
                             'drb_start_date'=>date('Y-m-d',strtotime($start_date)),
                             'drb_end_date'=>date('Y-m-d',strtotime($start_date)),
                             'drb_qty'=>$req->qty,
@@ -108,19 +81,12 @@ class book_roomController extends Controller
                             'drb_user'=>$id_user,
                             'drb_created_by'=>$id_pendaftar, 
                             'drb_room_price'=>$room_price,
-                            'drb_room_id'=>$req->id_room,
                             'drb_additional_price'=>$additional_price,
                             'drb_tax_price'=>$tax_price,
                             'drb_serve_price'=>$serve_price,
                             'drb_type_bed'=>$typename,
                             'drb_created_at'=>date('Y-m-d h:i:s')
         ]);
-
-
-
-        $room = $this->models->c_room()->where('cr_id',$req->id_room)->first();
-        $room_name = $room->cr_name;
-        
        
         
 
@@ -131,12 +97,7 @@ class book_roomController extends Controller
                       'typename' => $typename,
                       'email' => $email,
                       'total_price' => $total_price,
-                      'room_name' => $room_name,
-                      'kode' => $kode,
-                      'id_book' => $id_book,
-                      'token' => $token,
-                      'token2' => $token2,
-                    ], function($message) use ($email,$start_date,$end_date,$typename,$total_price,$username,$room_name,$kode,$token,$token2,$id_book){
+                    ], function($message) use ($email,$start_date,$end_date,$typename,$total_price,$username){
                         $message->from('system@ketikaku.com', 'GUNUNG BALE RESORT')
                             ->to($email)
                             ->subject('Resume Booking Room');
@@ -145,9 +106,9 @@ class book_roomController extends Controller
 
         return response()->json(['status'=>'sukses']);
     }
-    // public function book_detail_room()
+    // public function book_invoice_room()
     // {
-    //     return view('frontend.room.room_detail_book');
+    //     return view('frontend.room.room_invoice_book');
     // }
 
 }

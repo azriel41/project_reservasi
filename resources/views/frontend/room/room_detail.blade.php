@@ -256,6 +256,7 @@
 
                             	<form action="" method="">
 
+                                <input type="hidden" class="total_days_book" readonly>
                             		<div class="form-group">
                             			<label for="" class="control-label">Type Bed</label>
                                       <input type="hidden" class="form-control type_room_id" value="{{ $data[0]->m_type_room->tr_id }}" readonly="" name="type_room_id">
@@ -263,11 +264,11 @@
                             		</div>
                             		<div class="form-group">
                             			<label for="" class="control-label">Check In Date</label>
-                            			<input type="text" class="form-control start_date" id="tgl1" name="today" placeholder="Check In Date" readonly>
+                            			<input type="text" class="form-control start_date datess" id="tgl1" name="today" placeholder="Check In Date" readonly>
                             		</div>
                             		<div class="form-group">
                             			<label for="" class="control-label">Check Out Date</label>
-                                  <input type="text" class="form-control end_date" id="tgl2" name="gohome" placeholder="check Out Date" readonly>
+                                  <input type="text" class="form-control end_date datess" id="tgl2" name="gohome" placeholder="check Out Date" readonly>
                             		</div>
                             		<div class="form-group">
                               			<label for="" class="control-label">Number of Rooms</label>
@@ -389,30 +390,45 @@
       startDate: new Date(),
       format: 'dd-MM-yyyy',
       autoclose: true,
+      onSelect: function () {
+        hitung();
+      }
     });
 
 
     $("#tgl2").datepicker({
       startDate: new Date(),
       format:'dd-MM-yyyy',
-      autoclose: true
+      autoclose: true,
+      onSelect: function () {
+        hitung();
+      }
     });
 
     $('.qty').keyup(function(){
       hitung();
     });
+    $('.datess').change(function(){
+      hitung();
+    });
 
     function hitung(argument) {
+      var start= $(".start_date").datepicker("getDate");
+      var end= $(".end_date").datepicker("getDate");
+      days = (end- start) / (1000 * 60 * 60 * 24);
+      $('.total_days_book').val(days+1);
+
+
       var qty = $('.qty').val();
       var room_price = $('.room_price').val();
       var tax_price = '{{ $data[0]->cr_tax }}';
       var serve_price = '{{ $data[0]->cr_serve }}';
       var additional_price = '{{ $data[0]->cr_additional }}';
 
-      var total_room_price = parseFloat(qty)*parseFloat(room_price);
+      var total_room_price = parseFloat(qty)*parseFloat(room_price)*(days+1);
       $('.room_price_txt').text(accounting.formatMoney(total_room_price,"Rp. ",0,'.',','));
 
-      var total_price = total_room_price+parseFloat(tax_price)+parseFloat(serve_price)+parseFloat(additional_price);
+      var total_price = (total_room_price*(days+1))+parseFloat(tax_price)+parseFloat(serve_price)+parseFloat(additional_price);
       $('.total_price_txt').text(accounting.formatMoney(total_price,"Rp. ",0,'.',','));
 
     }
@@ -429,8 +445,9 @@
       var qty = $('.qty').val();
       var typeid = $('.type_room_id').val();
       var typename = $('.type_room_name').val();
+      var total_days_book = $('.total_days_book').val();
 
-      window.location.href = baseUrl+'/book/book_room/book_detail/'+argument+'?&start_date='+start_date+'&end_date='+end_date+'&qty='+qty+'&typeid='+typeid+'&typename='+typename;
+      window.location.href = baseUrl+'/book/book_room/book_detail/'+argument+'?&start_date='+start_date+'&end_date='+end_date+'&qty='+qty+'&typeid='+typeid+'&typename='+typename+'&total_menginap='+total_days_book;
     }
 
     function book_now(argument) {

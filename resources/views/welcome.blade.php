@@ -137,7 +137,7 @@
                         <div class="room">
                             <div class="room_image"><img src="{{asset('storage/app/'.$element->c_room_image[0]->cri_image)}}" alt="https://unsplash.com/@jonathan_percy"></div>
                             <div class="room_content text-center">
-                                <div class="room_price">{{ $element->cr_total }} / <span>Night</span></div>
+                                <div class="room_price">Rp. {{ number_format($element->cr_total,0,',','.') }} / <span>Malam</span></div>
                                 <div class="room_type">{{ $element->m_type_room->tr_name }}</div>
                                 <div class="room_title"><a href="rooms.html">{{ $element->cr_name }}</a></div>
                                 <div class="room_text">

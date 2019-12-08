@@ -207,8 +207,8 @@ h5.vals{
 											<div class="prai">
 												<div class="tal2">
 													<h5>Total room price</h5>
-	                    							<span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span>
-	                    							<input type="hidden" name="total_price" value="{{$data[0]->cr_price*$request['qty']+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional}}">
+	                    							<span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty']*$request['total_menginap'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span>
+	                    							<input type="hidden" name="total_price" value="{{$data[0]->cr_price*$request['qty']*$request['total_menginap']+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional}}">
 												</div>
 											</div>
 										</div>
@@ -222,7 +222,7 @@ h5.vals{
 						<section>
 							<div class="wrapper">
 								<div class="subttl">
-									<h4>JUDUL GAE PANGANAN</h4>
+									<h4>FOOD</h4>
 								</div>
 								<div class="rinf">
 									<span class="roi">Your Information</span>
@@ -248,6 +248,29 @@ h5.vals{
 						</section>
 
 						<!-- SECTION 3 -->
+						<div style="display: none;">
+							<input type="text" value="{{ $data[0]->cr_price*$request['qty']*$request['total_menginap'] }}" name="room_price">
+
+							<input type="text" value="{{ $data[0]->cr_tax }}" name="tax_price">
+
+							<input type="text" value="{{ $data[0]->cr_serve }}" name="serve_price">
+
+							<input type="text" value="{{ $data[0]->cr_additional }}" name="additional_price">
+
+							<input type="text" value="{{ number_format(($data[0]->cr_price*$request['qty']*$request['total_menginap'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}" name="total_prices">
+						</div>
+						@if (Auth::user() != null)
+						<input class="form-control" id="first_name" type="hidden" value="{{ Auth::user()->m_first_name }}" name="first_name">
+						<input class="form-control" id="last_name" type="hidden" value="{{ Auth::user()->m_last_name }}" name="last_name">
+						<input class="form-control" id="address" type="hidden" value="{{ Auth::user()->m_address }}" name="address">
+						<input class="form-control" id="email" type="hidden" value="{{ Auth::user()->m_email }}" name="email">
+						<input class="form-control" id="phone" type="hidden" value="{{ Auth::user()->m_phone }}" name="phone">
+						<input class="form-control" id="phone1" type="hidden" value="{{ Auth::user()->m_phone }}" name="phone1">
+						@else
+						
+
+							
+
 						<h2></h2>
 						<section>
 							<div class="wrapper">
@@ -285,6 +308,7 @@ h5.vals{
 								</div>
 							</div>
 						</section>
+						@endif
 
 						<!-- SECTION 4 -->
 						<h2></h2>
@@ -338,7 +362,7 @@ h5.vals{
 							<th>Total Room Cost</th>
 						</tr>
 						<tr>
-							<td align="right"><span class="st room_price_txt" id="">Rp. {{ number_format($data[0]->cr_price*$request['qty'],0,',','.') }}</span></td>
+							<td align="right"><span class="st room_price_txt" id="">Rp. {{ number_format($data[0]->cr_price*$request['qty']*$request['total_menginap'],0,',','.') }}</span></td>
 						</tr>
 						<tr>
 							<th>Total Tax</th>
@@ -362,7 +386,7 @@ h5.vals{
 							<th>Total Cost</th>
 						</tr>
 						<tr>
-							<td align="right"><span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span></td>
+							<td align="right"><span class="st total_price_txt" id="">Rp. {{ number_format(($data[0]->cr_price*$request['qty']*$request['total_menginap'])+$data[0]->cr_tax+$data[0]->cr_serve+$data[0]->cr_additional,0,',','.') }}</span></td>
 						</tr>
 					</table>
 				</div>

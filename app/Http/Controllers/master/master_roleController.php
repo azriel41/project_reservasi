@@ -7,7 +7,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Validator;
 use DB;
-use App\d_role;
+use App\m_role;
 
 class master_roleController extends Controller
 {
@@ -15,13 +15,13 @@ class master_roleController extends Controller
     public function index()
     {
 
-    	$data = DB::table('d_role')->get();
+    	$data = DB::table('m_role')->get();
 
-        return view('master.master_role.index',compact('data'));
+        return view('backend.master.master_role.index',compact('data'));
     }
     public function create()
     {
-        return view('master.master_role.create');
+        return view('backend.master.master_role.create');
     }
     public function save(Request $request)
     {
@@ -29,13 +29,13 @@ class master_roleController extends Controller
     	//get all name/value
     	$input = $request->all();
     	//check unique row , if exist == 1
-    	$check = DB::table('d_role')->where('r_level',$request->r_level)->count();
+    	$check = DB::table('m_role')->where('r_level',$request->r_level)->count();
     	//function check
     	if ($check > 0) {
         	return response()->json(['status'=>'ada']);
     	}
     	//save data
-        $data = d_role::create($input);
+        $data = m_role::create($input);
         //return response 
         if ($data == true) {
         	return response()->json(['status'=>'sukses']);
@@ -46,17 +46,17 @@ class master_roleController extends Controller
     }
     public function edit($id)
     {
-    	$data = DB::table('d_role')->where('r_id',$id)->first();
+    	$data = DB::table('m_role')->where('r_id',$id)->first();
 
-        return view('master.master_role.edit',compact('data'));
+        return view('backend.master.master_role.edit',compact('data'));
     }
     public function update(Request $request)
     {
     	//get all name/value
         $input = $request->except('r_id');
     	//check unique row , if exist == 1
-    	// $check = DB::table('d_role')->where('r_level',$request->r_level)->count();
-    	$check = DB::table('d_role')
+    	// $check = DB::table('m_role')->where('r_level',$request->r_level)->count();
+    	$check = DB::table('m_role')
                         ->where('r_id',$request->r_id)
                         ->first();
 
@@ -66,7 +66,7 @@ class master_roleController extends Controller
             }
         }
     	//save data
-        $data = d_role::where('r_id', $request->r_id)->update($input);
+        $data = m_role::where('r_id', $request->r_id)->update($input);
         //return response 
         if ($data == true) {
         	return response()->json(['status'=>'sukses']);
@@ -76,7 +76,7 @@ class master_roleController extends Controller
     }
     public function delete($id)
     {
-    	$check = DB::table('d_role')->where('r_id',$id)->delete();
+    	$check = DB::table('m_role')->where('r_id',$id)->delete();
 
     	if ($check == true) {
     		return response()->json(['status'=>'sukses']);

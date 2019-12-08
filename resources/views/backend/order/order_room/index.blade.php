@@ -1,6 +1,11 @@
 @extends('layouts_backend._main_backend')
 
 @section('extra_styles')
+<style type="text/css">
+    .text_kanan{
+        text-align: right;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -42,28 +47,50 @@
                             <thead>
                                 <tr>
                                     <th>Code</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                    <th>Address</th>
-                                    <th>Last Login</th>
-                                    <th>Last Logout</th>
+                                    <th>Date</th>
+                                    <th>Price</th>
+                                    <th>Booked By</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $element)
                                     <tr>
-                                        <td>{{ $element->m_code }}</td>
-                                        <td>{{ $element->m_first_name }}</td>
-                                        <td>{{ $element->m_last_name }}</td>
-                                        <td>{{ $element->m_username }}</td>
-                                        <td>{{ $element->m_address }}</td>
-                                        <td>{{ $element->m_last_login }}</td>
-                                        <td>{{ $element->m_last_logout }}</td>
+                                        <td>{{ $element->drb_code }}</td>
+                                        <td>{{ date('d-F-Y',strtotime($element->drb_start_date)) }} - {{ date('d-F-Y',strtotime($element->drb_end_date)) }} </td>
                                         <td>
-                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('master_user_edit', ['id' => $element->m_code]) }}"><i class="fas fa-pencil-alt"></i></a>
-                                            <button type="button" class="btn waves-effect waves-light btn-sm btn-danger delete" value="{{ $element->m_code }}" ><i class="fas fa-times"></i></button>
+                                            <table class="table">
+                                            <tr>
+                                                <td>Room price:</td>
+                                                <td class="text_kanan"><b>Rp. {{ number_format($element->drb_room_price,0,',','.') }}</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tax price:</td>
+                                                <td class="text_kanan"><b>Rp. {{ number_format($element->drb_tax_price,0,',','.') }}</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>additional price:</td>
+                                                <td class="text_kanan"><b>Rp. {{ number_format($element->drb_additional_price,0,',','.') }}</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>serve price:</td>
+                                                <td class="text_kanan"><b>Rp. {{ number_format($element->drb_serve_price,0,',','.') }}</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>total price:</td>
+                                                <td class="text_kanan"><b>Rp. {{ number_format($element->drb_total_price,0,',','.') }}</b></td>
+                                            </tr>
+                                            </table>
+                                        </td>
+                                        @if ($element->drb_user == null)
+                                        <td>{{ $element->d_room_guest->where('drbg_book_id',$element->drb_id)->first()->drbg_first_name}} {{ $element->d_room_guest->where('drbg_book_id',$element->drb_id)->first()->drbg_last_name }}</td>
+                                        @else
+                                        <td>{{ $element->d_mem->m_first_name}} {{ $element->d_mem->m_last_name }}</td>
+                                        @endif
+                                        <td>
+                                            <a class="btn waves-effect waves-light btn-sm btn-warning" href="{{ route('master_user_edit', ['id' => $element->drb_code]) }}"><i class="fas fa-pencil-alt"></i></a>
+                                            <button type="button" class="btn waves-effect waves-light btn-sm btn-danger delete" value="{{ $element->drb_code }}" ><i class="fas fa-times"></i></button>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -4,10 +4,10 @@ namespace App\models\book_room;
 
 use Illuminate\Database\Eloquent\Model;
 
-class d_room_guest extends Model
+class d_room_invoice extends Model
 {
-    protected $table = 'd_room_book_guest';
-    protected $primaryKey = 'drbg_id';
+    protected $table = 'd_room_book_invoice';
+    protected $primaryKey = 'drbi_id';
     public $incrementing = false;
     public $remember_token = false;
     public $timestamps = false;
@@ -16,18 +16,17 @@ class d_room_guest extends Model
     
     protected $fillable = [
 
-  'drbg_id',
-  'drbg_book_id',
-  'drbg_first_name',
-  'drbg_last_name',
-  'drbg_address',
-  'drbg_email',
-  'drbg_phone',
-  'drbg_phone1'
+  'drbi_id',
+  'drbi_code',
+  'drbi_book_id',
+  'drbi_created_by',
+  'drbi_price',
+  'drbi_image',
+  'drbi_created_at',
 
                           ];
     public function d_room_book(){
-        return $this->belongsTo('App\models\book_room\d_room_book', 'drbg_book_id', 'drb_id');
+        return $this->belongsTo('App\models\book_room\d_room_book', 'drbi_book_id', 'drb_id');
     }
     public function c_room(){
         return $this->belongsTo('App\models\catalog\c_room', 'crf_id', 'cr_id');

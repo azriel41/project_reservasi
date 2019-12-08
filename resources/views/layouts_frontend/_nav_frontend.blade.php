@@ -25,14 +25,18 @@
                         <div class="header_inner d-flex flex-row align-items-center justify-content-start">
                             <nav class="main_nav" @if(Request::is('room_detail/*')) style="display:none"@endif>
                                 <ul class="d-flex flex-row align-items-center justify-content-start">
-                                    <li class="active"><a href="index.html"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>home</span></div></a></li>
+                                    <li class="active"><a href="{{ url('/') }}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>home</span></div></a></li>
                                     <li><a href="about.html"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>about us</span></div></a></li>
                                     <li><a href="rooms.html"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>rooms</span></div></a></li>
                                     <li><a href="news.html"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>news</span></div></a></li>
                                     <li><a href="contact.html"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>contact</span></div></a></li>
                                 </ul>
                             </nav>
-                            <a href="{{ route('login') }}" class="button_container header_button ml-auto"><div class="button text-center lgn"><span>Login</span></div></a>
+                            @if (Auth::user() != null)
+                              <a href="{{ route('home') }}" class="button_container header_button ml-auto"><div class="button text-center lgn"><span>Dashboard</span></div></a>
+                            @else
+                              <a href="{{ route('login') }}" class="button_container header_button ml-auto"><div class="button text-center lgn"><span>Login</span></div></a>
+                            @endif
                             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
                             <div class="crt">
                               <a href="#" class="pancing">
